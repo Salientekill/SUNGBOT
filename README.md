@@ -1,177 +1,174 @@
 # SUNG BOT V1
 
 <div align="center">
-<img src="https://i.ibb.co/Fq0ThVbF/IMG-20250505-WA1002.jpg" alt="SUNG BOT" width="300" />
-</div><p align="center">
-  <a href="https://github.com/Salientekill/SUNGBOT.git"><img title="Author" src="https://img.shields.io/badge/Author-LotusDev-red.svg?style=for-the-badge&logo=github" /></a>
-  
-  
-<div align="center">
-  🚨 <b>ATENÇÃO: BOT PAGO</b> 🚨
+  <img src="https://i.ibb.co/Fq0ThVbF/IMG-20250505-WA1002.jpg" alt="SUNG BOT" width="300" />
+
+  <p align="center">
+    <a href="https://github.com/Salientekill/SUNGBOT.git"><img title="Author" src="https://img.shields.io/badge/Author-LotusDev-red.svg?style=for-the-badge&logo=github" /></a>
+    <img src="https://img.shields.io/badge/NodeJS-18.0+-green.svg?style=for-the-badge&logo=nodejs" alt="NodeJS Version" />
+    <img src="https://img.shields.io/badge/Versão-1.0.0-blue.svg?style=for-the-badge" alt="Versão" />
+  </p>
+
+  > 🚨 **ATENÇÃO: BOT PAGO** 🚨
 </div>
 
-Este é um bot privado. Para ativar o SUNG BOT, é necessária uma chave de acesso. Se você deseja adquirir a chave de ativação, entre no grupo oficial e entre em contato com Lotus.
+Este é um bot privado para WhatsApp com recursos premium. Para ativar o SUNG BOT, é necessária uma chave de acesso. Se você deseja adquirir a chave de ativação, entre no grupo oficial e entre em contato com Lotus.
 
-
-<div align="center">
-📦 <b>Download do Bot</b>
-</div>
-
-Baixe a versão mais recente da SUNG BOT diretamente do GitHub:
+## 📥 Download
 
 <div align="center">
   <a href="https://github.com/Salientekill/SUNGBOT/archive/refs/heads/main.zip">
-    <img src="https://img.shields.io/badge/Download-ZIP-brightgreen" alt="Download ZIP"/>
+    <img src="https://img.shields.io/badge/Download-ZIP-brightgreen?style=for-the-badge" alt="Download ZIP"/>
   </a>
 </div>
 
-
-
-Ou, se preferir, você pode clonar o repositório diretamente no seu ambiente:
+Ou utilize o Git para clonar o repositório:
 
 ```bash
 git clone https://github.com/Salientekill/SUNGBOT.git
 ```
 
-<div align="center">
-❓ <b>Precisa de Ajuda?</b>
-</div>
+### ⚠️ Aviso Importante de Compatibilidade
 
-Se precisar de suporte durante a instalação ou operação do bot, entre no nosso grupo de suporte no WhatsApp:
+**O SUNG BOT não é mais compatível com o Termux** devido à implementação de banco de dados SQLite (`better-sqlite3`), que requer bibliotecas nativas difíceis de compilar no ambiente Android. Recomendamos o uso em:
 
-<div align="center">
-<a href="https://chat.whatsapp.com/GTXYQ9ipObnKfHU1jMPLII">
-<img src="https://img.shields.io/badge/Entrar%20no%20Grupo%20do%20WhatsApp-25D366?style=for-the-badge&logo=whatsapp" alt="Entrar no Grupo do WhatsApp "/>
-</a>
-</div>
+- **VPS/Servidor Linux**: Para operação 24/7
+- **PC com Windows/Linux/Mac**: Para uso pessoal
+- **Serviços de hospedagem na nuvem**:
+  - [BronxysHost](https://dash.bronxyshost.com) (Parceiro Oficial)
+  - Heroku, Railway ou AWS
 
+### 🖥️ Requisitos de Sistema
 
+- **Node.js:** v14 ou superior
+- **RAM:** Mínimo 512MB (recomendado 1GB+)
+- **SQLite:** Bibliotecas de desenvolvimento
 
----
+### 📋 Processo de Instalação
 
-<div align="center">
-🛠️ <b>Requisitos de Instalação</b>
-</div>
+<details>
+<summary>🖱️ Clique para ver instruções detalhadas de instalação</summary>
 
+#### Windows:
+1. Instale o [Node.js](https://nodejs.org/)
+2. Instale [Visual Studio Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
+3. Execute no diretório do bot:
+   ```bash
+   # O bot já vem com os módulos incluídos, apenas execute:
+   npm start
+   ```
 
-🔧 Passo 1: Instalar o Termux
-
-Baixe e instale o Termux:
-
-<div align="center">
-  <a href="https://play.google.com/store/apps/details?id=com.termux">
-    <img src="https://img.shields.io/badge/Download%20Termux-3DDC84?style=for-the-badge&logo=googleplay" alt="Baixar Termux"/>
-  </a>
-</div>
-
-
-
-⚙️ Passo 2: Comandos Básicos para Preparar o Ambiente
-
-Após instalar o Termux, siga as instruções abaixo para configurar seu ambiente de desenvolvimento:
-
-1. Atualize os pacotes e instale as dependências necessárias:
-
+#### Linux (Ubuntu/Debian):
 ```bash
-pkg upgrade -y && pkg update -y && pkg install git nodejs nodejs-lts ffmpeg tesseract python -y
+# Instalar dependências do sistema
+sudo apt update
+sudo apt install -y nodejs build-essential python3
+
+# Iniciar o bot
+cd SUNGBOT
+npm start
 ```
 
-> Observação: Durante a instalação, você precisará confirmar com Y sempre que solicitado.
+#### Hospedagem BronxysHost (Recomendado):
+1. Crie uma conta em [dash.bronxyshost.com](https://dash.bronxyshost.com)
+2. Escolha o plano de hospedagem compatível com bots
+3. Faça upload dos arquivos do bot
+4. Inicie o serviço a partir do painel de controle
+</details>
 
+## 🚀 Iniciando o Bot
 
-
-
-2. Baixe a pasta do SUNG BOT:
+O bot já vem com todos os módulos necessários incluídos, não sendo necessário instalar dependências adicionais.
 
 ```bash
-cd /sdcard && rm -rf SUNGBOT && git clone https://github.com/Salientekill/SUNGBOT.git && cd SUNGBOT
-```
-
-
-3. Inicie o bot:
-
-Para iniciar o bot usando um QR Code:
-
+# Para iniciar o bot usando QR Code:
 bash start.sh
 
-Ou para usar o código de emparelhamento:
-
+# Para iniciar o bot usando código de emparelhamento:
 bash start.sh -code
+```
 
+## 🤝 Suporte e Comunidade
 
-
-
-> Nota: Se você encontrar o erro "Access Denied", certifique-se de que o Termux tenha permissão para acessar todos os arquivos.
-
-
-
-
----
-
-
-<div align="center">
-🚑 <b>Suporte e Solução de Problemas</b>
-</div>
-
-Caso enfrente problemas durante a instalação ou execução, entre no grupo oficial e solicite assistência de um dos administradores ou do próprio criador, Lotus.
+Se precisar de suporte durante a instalação ou uso do bot, entre no nosso grupo oficial:
 
 <div align="center">
 <a href="https://chat.whatsapp.com/GTXYQ9ipObnKfHU1jMPLII">
-<img src="https://img.shields.io/badge/Entrar%20no%20Grupo%20do%20WhatsApp-25D366?style=for-the-badge&logo=whatsapp" alt="Entrar no Grupo do WhatsApp "/>
+<img src="https://img.shields.io/badge/Grupo%20Oficial-WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="Grupo Oficial" />
 </a>
 </div>
 
----
-
-
-<div align="center">
-🤖 <b>Funcionalidades e Recursos do SUNG BOT</b>
-</div>
-
-Acesso Controlado: O bot só pode ser ligado com uma chave de acesso válida.
-
-Comandos Inteligentes: Ampla gama de comandos para automatizar tarefas em grupos do WhatsApp.
-
-Atualizações Constantes: O SUNG BOT está em constante evolução, com novos recursos e melhorias regulares.
-
-Suporte Técnico: Time dedicado para ajudar na instalação e uso do bot.
-
----
-
+## ✨ Funcionalidades
 
 <div align="center">
-  <span style="color: #4CAF50; font-size: 28px; font-weight: bold;">🌟 <b>Funcionalidades do SUNG BOT</b></span>
+
+### 🛡️ Proteção e Moderação
+
+| Função | Descrição |
+|--------|-----------|
+| 🔗 **Anti Link** | Bloqueia links indesejados automaticamente |
+| 🚫 **Anti Fake** | Remove números falsos/estrangeiros |
+| 👤 **Anti Contato** | Previne envio de contatos |
+| 📛 **Anti Marcações** | Evita marcações em massa |
+| 🔒 **Gestão de Grupo** | Sistemas de abertura/fechamento automático |
+
+### 🎮 Diversão e Interação
+
+| Função | Descrição |
+|--------|-----------|
+| 📌 **Marca Todos** | Notificações para todos os membros |
+| 🎲 **Brincadeiras** | Jogos e interações divertidas |
+| 💳 **Sistema Gold** | Economia virtual no grupo |
+| 🎯 **Níveis e XP** | Sistema de progressão por atividade |
+| 🎵 **Mídia e Downloads** | YouTube, Spotify, TikTok, Instagram |
+
 </div>
 
+## 📊 Recursos em Destaque
+
+- **⏱️ Sistema Anti-Inatividade**: Remove membros inativos automaticamente
+- **🎭 Figurinhas**: Crie stickers normais e animados facilmente
+- **🤖 Respostas Automáticas**: Configure respostas personalizadas
+- **📊 Estatísticas**: Acompanhe dados de atividade do grupo
+- **🔄 Mensagens Programadas**: Agende mensagens para envio automático
+
+## 🧩 Exemplos de Comandos
+
+```
+!menu        - Exibe o menu principal de comandos
+!sticker     - Cria uma figurinha a partir de imagem/vídeo
+!play        - Baixa e envia músicas do YouTube
+!tiktok      - Baixa vídeos do TikTok sem marca d'água
+!gold        - Verifica seu saldo de gold no grupo
+!level       - Mostra seu nível e experiência
+!ban         - Remove um membro do grupo
+```
 
 
 
+## 📋 Configuração Necessária
 
-<div style="background-color: #f9f9f9; border-radius: 10px; padding: 20px; margin: 20px;">
-  <ul style="list-style-type: none; padding: 0;">
-    <li>🔗 <b>Anti Link</b>: Bloqueia links indesejados para proteger o grupo.</li>
-    <li>🚫 <b>Anti Fake</b>: Detecta e remove contas falsas.</li>
-    <li>👤 <b>Anti Contato</b>: Evita o compartilhamento de contatos não autorizados.</li>
-    <li>📛 <b>Anti Marcações</b>: Restringe marcações excessivas para manter o foco.</li>
-    <li>📌 <b>Marca Todos do Grupo</b>: Envia mensagens para todos os membros do grupo de forma rápida.</li>
-    <li>🔒 <b>Sistema de Fechar e Abrir Grupo</b>: Controle sobre a participação no grupo.</li>
-    <li>🎉 <b>Brincadeiras</b>: Várias interações divertidas para animar o grupo.</li>
-    <li>💳 <b>Sistema de Gold</b>: Recursos premium disponíveis para usuários específicos.</li>
-    <li>🔄 <b>Interações</b>: Aumenta o engajamento com mensagens automáticas e reações.</li>
-    <li>🎵 <b>Play YouTube de Vídeos e Músicas</b>: Toque vídeos e músicas diretamente no grupo.</li>
-    <li>🎧 <b>Play Spotify</b>: Integração com Spotify para streaming de músicas.</li>
-    <li>📥 <b>Download TikTok/Instagram/Twitter/Facebook</b>: Baixe conteúdos de várias plataformas.</li>
-    <li>🔇 <b>Sistema de Mute</b>: Mute membros que estão incomodando.</li>
-    <li>🖼️ <b>Fazer Figurinhas e Figurinhas Animadas</b>: Criação de stickers personalizados.</li>
-    <li>📊 <b>Contador de Mensagens/Figurinhas</b>: Monitora e exibe estatísticas de interações.</li>
-    <li>⚙️ <b>Entre Outras Coisas</b>: Recursos adicionais que tornam o bot ainda mais versátil.</li>
-  </ul>
-</div>
+Para configuração avançada, consulte os arquivos:
+- `dados/settings.json` - Configurações básicas
+- `dados/nescessario.json` - Chaves de API e configurações sensíveis
+- `dados/org/json/configsgold.js` - Configuração do sistema gold
 
+## 📜 Licença e Informações
+
+Este é um software proprietário. Todos os direitos reservados.
+Desenvolvido por Lotus - © 2025
 
 ---
 
-Esperamos que você aproveite todas as funcionalidades do SUNG BOT. Fique à vontade para contribuir, relatar problemas ou sugerir melhorias diretamente no grupo do whatsapp.
-
-
----
+<div align="center">
+  <p>
+    <sub>
+      Powered by <a href="https://api.whatsapp.com">WhatsApp API</a> and <a href="https://github.com/whiskeysockets/baileys">Baileys</a>
+    </sub>
+  </p>
+  
+  <p>
+    <img src="https://visitor-badge.laobi.icu/badge?page_id=Salientekill.SUNGBOT" alt="Visualizações" />
+    <a href="https://github.com/Salientekill/SUNGBOT/issues"><img src="https://img.shields.io/github/issues/Salientekill/SUNGBOT" alt="Issues"></a>
+  </p>
+</div>
