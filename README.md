@@ -1,4 +1,4 @@
-# SUNG BOT V11
+# SUNG BOT V1
 
 <div align="center">
 <img src="https://i.ibb.co/Fq0ThVbF/IMG-20250505-WA1002.jpg" alt="SUNG BOT" width="300" />
