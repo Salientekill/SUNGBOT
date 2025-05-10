@@ -152,6 +152,7 @@ Para configuração avançada, consulte os arquivos:
 - `dados/settings.json` - Configurações básicas
 - `dados/nescessario.json` - Chaves de API e configurações sensíveis
 - `dados/org/json/configsgold.js` - Configuração do sistema gold
+- `dados/org/json/configleveling.js` - Configuração do sistema leveling
 
 ## 📜 Licença e Informações
 
@@ -163,7 +164,7 @@ Desenvolvido por Lotus - © 2025
 <div align="center">
   <p>
     <sub>
-      Powered by <a href="https://api.whatsapp.com">WhatsApp API</a> and <a href="https://github.com/whiskeysockets/baileys">Baileys</a>
+      Feito Por: Lotus Dev </>
     </sub>
   </p>
   
