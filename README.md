@@ -36,7 +36,6 @@ git clone https://github.com/Salientekill/SUNGBOT.git
 - **PC com Windows/Linux/Mac**: Para uso pessoal
 - **Serviços de hospedagem na nuvem**:
   - [BronxysHost](https://dash.bronxyshost.com) (Parceiro Oficial)
-  - Heroku, Railway ou AWS
 
 ### 🖥️ Requisitos de Sistema
 
