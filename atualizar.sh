@@ -2,8 +2,29 @@
 
 # Mensagens de log coloridas
 GREEN="\e[32m"
+YELLOW="\e[33m"
 RED="\e[31m"
+CYAN="\e[36m"
 RESET="\e[0m"
+
+# Desenhar título
+echo -e "${CYAN}╔════════════════════════════════════════════════╗${RESET}"
+echo -e "${CYAN}║             SCRIPT DE ATUALIZAÇÃO              ║${RESET}"
+echo -e "${CYAN}╚════════════════════════════════════════════════╝${RESET}"
+echo ""
+
+# Verificar modo de execução
+if [ "$1" == "2" ]; then
+    MODO="modo sem inicialização"
+    INICIAR_BOT=false
+    echo -e "${YELLOW}Executando em ${MODO}${RESET}"
+else
+    MODO="modo com inicialização automática"
+    INICIAR_BOT=true
+    echo -e "${YELLOW}Executando em ${MODO}${RESET}"
+fi
+
+echo ""
 
 # Verificar se os pacotes necessários estão instalados
 echo -e "${GREEN}Verificando pacotes necessários...${RESET}"
@@ -33,10 +54,18 @@ if [ -f "DADOS.zip" ]; then
     echo -e "${GREEN}Extraindo o arquivo DADOS.zip${RESET}" && \
     unzip -o DADOS.zip -d . && \
     echo -e "${GREEN}Removendo o arquivo DADOS.zip${RESET}" && \
-    rm DADOS.zip && \
-    echo -e "${GREEN}Executando o start.sh${RESET}" && \
-    npm start && \
+    rm DADOS.zip
+    
+    # Iniciar o bot apenas se estiver no modo de inicialização
+    if [ "$INICIAR_BOT" = true ]; then
+        echo -e "${GREEN}Executando o npm start${RESET}" && \
+        npm start
+    else
+        echo -e "${YELLOW}Atualização concluída sem iniciar o bot${RESET}"
+    fi
+    
     echo -e "${GREEN}Script concluído com sucesso${RESET}"
 else
     echo -e "${RED}Falha ao criar o arquivo ZIP. O script será encerrado.${RESET}"
+    exit 1
 fi
