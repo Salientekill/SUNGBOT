@@ -69,7 +69,7 @@ const makeGroupsSocket = (config) => {
         ...sock,
         groupMetadata,
         groupCreate: async (subject, participants) => {
-            const key = (0, Utils_1.generateMessageID)();
+            const key = (0, Utils_1.generateMessageIDV2)();
             const result = await groupQuery('@g.us', 'set', [
                 {
                     tag: 'create',
@@ -163,7 +163,7 @@ const makeGroupsSocket = (config) => {
                 {
                     tag: 'description',
                     attrs: {
-                        ...(description ? { id: (0, Utils_1.generateMessageID)() } : { delete: 'true' }),
+                        ...(description ? { id: (0, Utils_1.generateMessageIDV2)() } : { delete: 'true' }),
                         ...(prev ? { prev } : {})
                     },
                     content: description ? [
