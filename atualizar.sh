@@ -56,6 +56,17 @@ if [ -f "DADOS.zip" ]; then
     echo -e "${GREEN}Removendo o arquivo DADOS.zip${RESET}" && \
     rm DADOS.zip
     
+    # Recompilar módulos nativos para o servidor atual
+    echo -e "${GREEN}Recompilando módulos nativos (npm rebuild)${RESET}"
+    npm rebuild
+    
+    # Verificar se o rebuild foi bem-sucedido
+    if [ $? -eq 0 ]; then
+        echo -e "${GREEN}Módulos recompilados com sucesso${RESET}"
+    else
+        echo -e "${YELLOW}Aviso: Alguns módulos podem não ter sido recompilados corretamente${RESET}"
+    fi
+    
     # Iniciar o bot apenas se estiver no modo de inicialização
     if [ "$INICIAR_BOT" = true ]; then
         echo -e "${GREEN}Executando o npm start${RESET}" && \
