@@ -83,49 +83,217 @@ MENSAGEM_DE_SO_QUANDO_MODO_BRINCADEIRA_FOR_ATIVO: `┌────────�
 // ========================================
 
 COMMANDS_SYSTEM: {
-// Erros gerais
-ERROR_COMMAND_NO_NAME: "Comando sem nome não pode ser registrado",
-ERROR_LOAD_COMMANDS_ARRAY: "loadCommands espera um array",
-ERROR_COMMAND_EXECUTION: "Erro ao executar o comando",
-ERROR_INTERNAL: "Erro interno.",
-ERROR_INVALID_TYPE: "Tipo inválido.",
+    // Erros gerais
+    ERROR_COMMAND_NO_NAME: "❌ Comando sem nome não pode ser registrado",
+    ERROR_LOAD_COMMANDS_ARRAY: "❌ loadCommands espera um array",
+    ERROR_COMMAND_EXECUTION: "❌ Erro ao executar o comando",
+    ERROR_INTERNAL: "❌ Erro interno do sistema",
+    ERROR_INVALID_TYPE: "❌ Tipo inválido fornecido",
 
-// Permissões
-PERM_GROUPS_ONLY: "Este comando só pode ser usado em grupos.",
-PERM_OWNER_ONLY: "Este comando só pode ser usado pelo dono.",
-PERM_ADMIN_ONLY: "Este comando só pode ser usado por administradores.",
-PERM_BOT_ADMIN_ONLY: "O bot precisa ser administrador.",
-PERM_CREATOR_ONLY: "Este comando só pode ser usado pelo criador.",
-PERM_NSFW_REQUIRED: "Este comando requer modo NSFW ativado.",
-PERM_PREMIUM_ONLY: "Este comando é exclusivo para premium.",
-PERM_GAME_MODE_REQUIRED: "O modo brincadeira precisa estar ativado!",
-PERM_GOLD_MODE_REQUIRED: "O modo gold precisa estar ativado!",
-PERM_LEVELING_REQUIRED: "O modo leveling precisa estar ativado!",
-PERM_ADMIN_ONLY_GROUP: "🔒 Apenas administradores podem usar comandos neste grupo.",
+    // Permissões estilizadas
+    PERM_GROUPS_ONLY: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
+┃ 🏠 𝐀𝐏𝐄𝐍𝐀𝐒 𝐄𝐌 𝐆𝐑𝐔𝐏𝐎𝐒! 🏠
+┃
+┃ 📍 Este comando funciona
+┃ apenas em grupos!
+┃
+┃ 💡 Me adicione em um grupo!
+╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
 
-// Argumentos e menções
-ARG_MENTION_REQUIRED: "Marque alguém ou responda a mensagem de alguém!",
-ARG_USAGE_FORMAT: "Use: {PREFIX}{COMMAND} {USAGE}",
-ARG_INSUFFICIENT: "Argumentos insuficientes. Use: {PREFIX}{COMMAND} {USAGE}",
+    PERM_OWNER_ONLY: `╭─────────────────────────────────╮
+│ 👑 𝐀𝐂𝐄𝐒𝐒𝐎 𝐑𝐄𝐒𝐓𝐑𝐈𝐓𝐎! 👑
+│
+│ ⚡ Comando exclusivo para
+│ o proprietário do bot!
+│
+│ 🔐 Apenas usuários
+│ autorizados podem usar!
+╰─────────────────────────────────╯`,
 
-// Cooldowns
-COOLDOWN_ACTIVE: "⏱️ Comando \"{COMMAND}\" em cooldown. Aguarde {TIME}.",
-COOLDOWN_USER_LIMITED: "⏱️ Você está limitado. Aguarde {TIME} para usar qualquer comando.",
-COOLDOWN_NATIVE_EXISTS: "Este comando tem cooldown nativo ({TIME}) que não pode ser alterado.",
-COOLDOWN_GLOBAL_SET: "Cooldown global definido: {TIME} para \"{COMMAND}\".",
-COOLDOWN_GROUP_SET: "Cooldown do grupo definido: {TIME} para \"{COMMAND}\".",
-COOLDOWN_GLOBAL_REMOVED: "Cooldown global removido para \"{COMMAND}\".",
-COOLDOWN_GROUP_REMOVED: "Cooldown do grupo removido para \"{COMMAND}\".",
-COOLDOWN_GLOBAL_NOT_EXISTS: "Não existe cooldown global para \"{COMMAND}\".",
-COOLDOWN_GROUP_NOT_EXISTS: "Não existe cooldown do grupo para \"{COMMAND}\".",
-COOLDOWN_NATIVE_CANNOT_REMOVE: "Este comando tem cooldown nativo que não pode ser removido.",
+    PERM_ADMIN_ONLY: `┏━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 🛡️ 𝐀𝐃𝐌𝐈𝐍𝐒 𝐀𝐏𝐄𝐍𝐀𝐒! 🛡️
+┃
+┃ ⚜️ Somente administradores
+┃ podem usar este comando!
+┃
+┃ 📋 Peça para um admin
+┃ te promover!
+┗━━━━━━━━━━━━━━━━━━━━━━━┛`,
 
-// Permissões de cooldown
-COOLDOWN_PERM_OWNER_GLOBAL: "Apenas o dono pode definir cooldowns globais.",
-COOLDOWN_PERM_ADMIN_GROUP: "Apenas administradores podem definir cooldowns do grupo.",
-COOLDOWN_PERM_OWNER_REMOVE_GLOBAL: "Apenas o dono pode remover cooldowns globais.",
-COOLDOWN_PERM_ADMIN_REMOVE_GROUP: "Apenas administradores podem remover cooldowns do grupo.",
-COOLDOWN_GLOBAL_EXISTS: "Este comando tem cooldown global ({TIME}) definido pelo dono."
+    PERM_BOT_ADMIN_ONLY: `╔══════════════════════════════════╗
+║ 🤖 𝐁𝐎𝐓 𝐏𝐑𝐄𝐂𝐈𝐒𝐀 𝐒𝐄𝐑 𝐀𝐃𝐌! 🤖
+║
+║ ⚙️ Para executar este comando,
+║ preciso ser administrador!
+║
+║ 📝 Peça para um admin me
+║ promover!
+║
+║ 🎯 Com admin posso proteger
+║ melhor o grupo!
+╚══════════════════════════════════╝`,
+
+    PERM_CREATOR_ONLY: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
+┃ 👨‍💻 𝐂𝐑𝐈𝐀𝐃𝐎𝐑 𝐀𝐏𝐄𝐍𝐀𝐒! 👨‍💻
+┃
+┃ 🔥 Este comando é exclusivo
+┃ para o criador do grupo!
+┃
+┃ 👑 Nível máximo necessário!
+╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
+
+    PERM_NSFW_REQUIRED: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
+┃ 🔞 𝐌𝐎𝐃𝐎 𝐍𝐒𝐅𝐖! 🔞
+┃
+┃ ⚠️ Este comando requer
+┃ modo NSFW ativado!
+┃
+┃ 🔐 Conteúdo adulto!
+╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
+
+    PERM_PREMIUM_ONLY: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
+┃ 💎 𝐏𝐑𝐄𝐌𝐈𝐔𝐌 𝐀𝐏𝐄𝐍𝐀𝐒! 💎
+┃
+┃ ⭐ Este comando é exclusivo
+┃ para usuários premium!
+┃
+┃ 🚀 Upgrade sua conta!
+╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
+
+    PERM_GAME_MODE_REQUIRED: `┌────────────────────────────────┐
+│ 🎮 𝐌𝐎𝐃𝐎 𝐁𝐑𝐈𝐍𝐂𝐀𝐃𝐄𝐈𝐑𝐀! 🎮
+│
+│ 🎯 Este comando requer que
+│ o modo brincadeira esteja
+│ ativado!
+│
+│ 💡 Use {PREFIX}modobrincadeira
+│ para ativar os jogos!
+│
+│ 🎪 Diversão garantida!
+└────────────────────────────────┘`,
+
+    PERM_GOLD_MODE_REQUIRED: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
+┃ 🏆 𝐌𝐎𝐃𝐎 𝐆𝐎𝐋𝐃! 🏆
+┃
+┃ ⚡ O modo gold precisa
+┃ estar ativado!
+┃
+┃ 💰 Recursos premium!
+╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
+
+    PERM_LEVELING_REQUIRED: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
+┃ 📊 𝐌𝐎𝐃𝐎 𝐋𝐄𝐕𝐄𝐋𝐈𝐍𝐆! 📊
+┃
+┃ 📈 O modo leveling precisa
+┃ estar ativado!
+┃
+┃ 🎮 Sistema de experiência!
+╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
+
+    PERM_ADMIN_ONLY_GROUP: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
+┃ 🔒 𝐆𝐑𝐔𝐏𝐎 𝐑𝐄𝐒𝐓𝐑𝐈𝐓𝐎! 🔒
+┃
+┃ 🛡️ Apenas administradores
+┃ podem usar comandos
+┃ neste grupo!
+┃
+┃ 📋 Configuração ativa!
+╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
+
+    // Mensagens de bloqueio e banimento
+    USER_BANNED: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
+┃ 🚫 𝐔𝐒𝐔Á𝐑𝐈𝐎 𝐁𝐀𝐍𝐈𝐃𝐎! 🚫
+┃
+┃ ❌ Você foi banido de utilizar
+┃ os comandos do bot!
+┃
+┃ 📞 Entre em contato com o
+┃ proprietário para saber o motivo
+┃
+┃ 🛡️ Sistema de proteção ativo!
+╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
+
+    COMMAND_BLOCKED_GLOBAL: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
+┃ 🔒 𝐂𝐎𝐌𝐀𝐍𝐃𝐎 𝐁𝐋𝐎𝐐𝐔𝐄𝐀𝐃𝐎! 🔒
+┃
+┃ ⚠️ Este comando está bloqueado
+┃ pelo dono e não pode ser
+┃ utilizado em lugar nenhum!
+┃
+┃ 🛡️ Proteção global ativa!
+╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
+
+    COMMAND_BLOCKED_GROUP: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
+┃ 🚫 𝐂𝐎𝐌𝐀𝐍𝐃𝐎 𝐁𝐋𝐎𝐐𝐔𝐄𝐀𝐃𝐎! 🚫
+┃
+┃ ⚠️ Este comando está bloqueado
+┃ neste grupo!
+┃
+┃ 👥 Bloqueio específico do grupo
+┃ 🛡️ Proteção ativa!
+╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
+
+    // Argumentos e menções
+    ARG_MENTION_REQUIRED: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
+┃ 👤 𝐌𝐄𝐍Ç𝐀̃𝐎 𝐍𝐄𝐂𝐄𝐒𝐒Á𝐑𝐈𝐀! 👤
+┃
+┃ 📝 Marque alguém ou responda
+┃ a mensagem de alguém!
+┃
+┃ 💡 Exemplo: @usuario
+╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
+
+    ARG_USAGE_FORMAT: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
+┃ 📋 𝐔𝐒𝐎 𝐂𝐎𝐑𝐑𝐄𝐓𝐎! 📋
+┃
+┃ 💡 Use: {PREFIX}{COMMAND} {USAGE}
+┃
+┃ ℹ️ Argumentos necessários!
+╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
+
+    ARG_INSUFFICIENT: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
+┃ ❌ 𝐀𝐑𝐆𝐔𝐌𝐄𝐍𝐓𝐎𝐒! ❌
+┃
+┃ 📝 Argumentos insuficientes!
+┃
+┃ 💡 Use: {PREFIX}{COMMAND} {USAGE}
+╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
+
+    // Cooldowns estilizados
+    COOLDOWN_ACTIVE: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
+┃ ⏱️ 𝐂𝐎𝐎𝐋𝐃𝐎𝐖𝐍 𝐀𝐓𝐈𝐕𝐎! ⏱️
+┃
+┃ 🚫 Comando "{COMMAND}" em
+┃ cooldown!
+┃
+┃ ⏰ Aguarde {TIME} para usar
+┃ novamente!
+╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
+
+    COOLDOWN_USER_LIMITED: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
+┃ 🚫 𝐋𝐈𝐌𝐈𝐓𝐄 𝐀𝐓𝐈𝐍𝐆𝐈𝐃𝐎! 🚫
+┃
+┃ ⏱️ Você está limitado!
+┃
+┃ ⏰ Aguarde {TIME} para usar
+┃ qualquer comando!
+╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
+
+    // Outras mensagens de cooldown (mantendo formato simples para logs/configuração)
+    COOLDOWN_NATIVE_EXISTS: "Este comando tem cooldown nativo ({TIME}) que não pode ser alterado.",
+    COOLDOWN_GLOBAL_SET: "Cooldown global definido: {TIME} para \"{COMMAND}\".",
+    COOLDOWN_GROUP_SET: "Cooldown do grupo definido: {TIME} para \"{COMMAND}\".",
+    COOLDOWN_GLOBAL_REMOVED: "Cooldown global removido para \"{COMMAND}\".",
+    COOLDOWN_GROUP_REMOVED: "Cooldown do grupo removido para \"{COMMAND}\".",
+    COOLDOWN_GLOBAL_NOT_EXISTS: "Não existe cooldown global para \"{COMMAND}\".",
+    COOLDOWN_GROUP_NOT_EXISTS: "Não existe cooldown do grupo para \"{COMMAND}\".",
+    COOLDOWN_NATIVE_CANNOT_REMOVE: "Este comando tem cooldown nativo que não pode ser removido.",
+    COOLDOWN_PERM_OWNER_GLOBAL: "Apenas o dono pode definir cooldowns globais.",
+    COOLDOWN_PERM_ADMIN_GROUP: "Apenas administradores podem definir cooldowns do grupo.",
+    COOLDOWN_PERM_OWNER_REMOVE_GLOBAL: "Apenas o dono pode remover cooldowns globais.",
+    COOLDOWN_PERM_ADMIN_REMOVE_GROUP: "Apenas administradores podem remover cooldowns do grupo.",
+    COOLDOWN_GLOBAL_EXISTS: "Este comando tem cooldown global ({TIME}) definido pelo dono."
 },
 
 // ========================================
@@ -463,76 +631,57 @@ USUARIO_APROVADO_DONO: `╭━━━━━━━━━━━━━━━━━�
 ╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
 
 MENSAGENS_DE_AGUARDE: [
-"⏳ *[ ! ] Aguarde, estou processando...*",
-"🔄 *Preparando sua solicitação!*",
-"💫 *Vai beber água, já tô enviando..*",
-"⚡ *㋡ Opa, calma aí, tô indo!!*",
-"🎯 *❬❗❭ Aguarde 5 segundos...*",
-"🚀 *☬ Seu pedido é uma ordem!*",
-"🎪 *ههههه𓅂 Calma filho de Deus..*",
-"💖 *Oi princesa, já tô preparando..*",
-"🔥 *Salve mano, só um pouquinho!!*",
-"⭐ *Aquieta o coração, já tô indo!*",
-"😄 *Espere sentado que tô enviando!*",
-"🎭 *Pisa no freio aí, tô indo rsrs!*",
-"📢 *Foi daqui que pediram? Ta vindo...*",
-"💯 *O que não pede chorando, faço rindo!*",
-"🎮 *Em 365 dias termino kkkk, tô indo!*",
-"🔔 *Não precisa gritar, já ouvi!*",
-"💧 *Aproveita e beba água!*",
-"👑 *Seu pedido é uma ordem, patrão!*",
-"⚖️ *Manda quem pode, obedece quem juízo!*",
-"⏰ *Jaja está na mão, aguarde!*",
-"🍀 *Quem espera, sempre alcança!*",
-"💪 *Tô enviando já amigão!*",
-"🌟 *Carregando... Vai dar certo!*",
-"🎲 *Rolando os dados... Yahtzee!*",
-"🧙‍♂️ *Conjurando códigos antigos!*",
-"🎸 *Afinando a resposta perfeita!*",
-"🍔 *Montando hambúrguer de dados!*",
-"🎨 *Pintando com cores vivas!*",
-"🎵 *Compondo sinfonia de dados...*",
-"🌟 *Alinhando as estrelas!*",
-"🏃‍♂️ *Correndo atrás da info!*",
-"🎪 *Montando o circo de dados!*",
-"🚂 *Trem da diversão chegando!*",
-"🎊 *Preparando festa de dados!*",
-"🔮 *Consultando bola de cristal!*",
-"🎈 *Inflando balões coloridos!*",
-"🎡 *Girando roda das possibilidades!*",
-"🎳 *Strike! Derrubando problemas!*",
-"🎯 *Acertando no centro do alvo!*",
-"🎭 *Trocando máscaras da performance!*",
-"🚀 *3... 2... 1... Decolando!*",
-"⚡ *Flash! Captando a essência!*",
-"🎨 *Misturando tintas criativas!*",
-"🎵 *DJ Bot mixando informações!*",
-"🎯 *Calibrando pontaria pro sucesso!*",
-"🎪 *Equilibrista de dados em ação!*",
-"🎈 *Voando nas nuvens digitais!*",
-"🎊 *Explodindo confetes de saber!*",
-"🎡 *Volta na roda da sabedoria!*",
-"🎢 *Montanha-russa dos dados!*",
-"🎯 *Bullseye! Acertei sua meta!*",
-"🎭 *Grande final chegando!*",
-"🎪 *Palhaço fazendo malabarismos!*",
-"🎨 *Obra-prima sendo finalizada!*",
-"🎵 *Solo épico de informações!*",
-"⚡ *Raio atingiu o servidor!*",
-"🎯 *X no alvo da perfeição!*",
-"🎊 *Chuva de dados caindo!*",
-"🎪 *Números saltando pelos aros!*",
-"🎈 *Balões de alegria subindo!*",
-"🎡 *Vista panorâmica dos dados!*",
-"🎢 *Loop infinito de diversão!*",
-"🎯 *Último disparo certeiro!*",
-"🎭 *Cortinas abrindo pra resposta!*",
-"🌈 *Criando arco-íris digital!*",
-"🎪 *Espetáculo da info começando!*",
-"🔥 *Fogo na mente, gelo na resposta!*",
-"⭐ *Estrela cadente passando!*",
-"🎯 *Mira telescópica ativada!*",
-"🎨 *Van Gogh dos dados pintando!*"
+"⏳ *Aguarde, estou processando...*",
+"🔄 *Preparando sua solicitação...*",
+"⚡ *Processando, só um momento!*",
+"🎯 *Aguarde alguns segundos...*",
+"🚀 *Preparando sua resposta!*",
+"⭐ *Um momento, por favor...*",
+"💫 *Estou trabalhando nisso!*",
+"🔔 *Processando seu pedido...*",
+"⏰ *Já está quase pronto!*",
+"💪 *Trabalhando na sua solicitação!*",
+"🌟 *Carregando... Aguarde!*",
+"🔥 *Processamento em andamento!*",
+"💯 *Quase lá, aguarde um pouco!*",
+"🎮 *Loading... Por favor, aguarde!*",
+"📢 *Sua solicitação está sendo processada!*",
+"💧 *Enquanto isso, beba água! 😄*",
+"🍀 *Aguarde, a resposta está chegando!*",
+"⚖️ *Analisando sua solicitação...*",
+"🏃‍♂️ *Indo buscar a informação!*",
+"🎪 *Preparando algo especial para você!*",
+"🔮 *Consultando a base de dados...*",
+"🎯 *Focado na sua solicitação!*",
+"⚡ *Rapidinho! Só um momento!*",
+"🌈 *Processando com carinho!*",
+"🎨 *Preparando uma resposta caprichada!*",
+"🔍 *Buscando as melhores informações...*",
+"💻 *Sistema trabalhando a todo vapor!*",
+"🎲 *Calculando a resposta perfeita...*",
+"🧠 *Pensando na melhor resposta!*",
+"📊 *Analisando os dados...*",
+"🎵 *Processando ao som da produtividade!*",
+"🚀 *Turbinando os motores!*",
+"⭐ *Alinhando as informações...*",
+"🔧 *Ajustando os últimos detalhes!*",
+"🎭 *Preparando o espetáculo da resposta!*",
+"📱 *Sincronizando com o servidor...*",
+"🌟 *Polindo a resposta para você!*",
+"🎯 *Mirando na resposta certeira!*",
+"⚡ *Energia máxima para processar!*",
+"🔄 *Girando os algoritmos...*",
+"💎 *Lapidando uma resposta valiosa!*",
+"🎨 *Criando algo incrível!*",
+"🚀 *Decolando em direção à resposta!*",
+"⏳ *Cronômetro rodando, aguarde!*",
+"🔥 *Aquecendo os processadores!*",
+"💫 *Magia digital acontecendo!*",
+"🎪 *Show da informação começando!*",
+"⚡ *Raio veloz da resposta chegando!*",
+"🌟 *Brilho da solução aparecendo!*",
+"🎯 *Acertando em cheio sua necessidade!*",
+"🔧 *Engrenagens funcionando perfeitamente!*"
 ],
 
 // LINK DA IMAGEM DO COMANDO DE CASAL
