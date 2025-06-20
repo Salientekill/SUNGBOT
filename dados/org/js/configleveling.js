@@ -4,8 +4,8 @@ const ConfigsLevel = {
 ranking: {
 dailyTime: { hour: 21, minute: 0 },// Horário do ranking diário (21:00)
 weeklyTime: { hour: 21, minute: 0, day: 6 }, // Ranking semanal (Sábado 21:00)
-tolerance: 5, // Janela de 5 minutos após o horário
-activeMessageCount: 200,// Mínimo de mensagens para aparecer no ranking
+tolerance: 60, // Janela de 60 minutos após o horário (21:00-21:59)
+activeMessageCount: 50,// Mínimo de mensagens para aparecer no ranking
 messageGoals: [50, 100, 200, 300, 400, 500], // Metas de mensagens para conquistas
 rewards: {
 daily: [200, 150, 100, 75, 50],// XP para 1º ao 5º lugar do ranking diário

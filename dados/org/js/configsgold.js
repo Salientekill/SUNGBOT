@@ -1,5 +1,5 @@
 /**
- * Configurações do Sistema Gold
+ * Configurações do Sistema Gold - VERSÃO ATUALIZADA
  * Aqui você pode personalizar todas as configurações do sistema de Gold
  */
 
@@ -42,13 +42,32 @@ max: 4.0 // Ganho máximo (400%)
 },
 
 // Gold recebido diariamente
-diaria: 50,
+diaria: 50
+},
 
-// Recompensas para ranking de emoji gold
+// Configurações específicas do EmojiGold
+emojiGold: {
+// Horários para reset/ranking (formato 24h)
+horariosReset: [21], // Pode adicionar múltiplos horários: [9, 15, 21]
+
+// Janela de tempo após horário configurado (em minutos)
+// Se configurado 21h com janela 60min, executa entre 21:00-21:59
+janelaExecucao: 60,
+
+// Recompensas para ranking diário (TOP 5)
 ranking: {
-primeiro: 50,
-segundo: 30,
-terceiro: 15
+primeiro: 200, // 1º lugar
+segundo: 150,// 2º lugar
+terceiro: 100, // 3º lugar
+quarto: 50,// 4º lugar
+quinto: 25 // 5º lugar
+},
+
+// tempo e pontuação
+settings: {
+goldPorAcerto: 100,// Gold ganho por acerto
+pontosPorAcerto: 1, // Pontos ganhos por acerto
+timeoutMinutos: 60// Timeout em minutos para novo desafio
 }
 },
 
@@ -80,10 +99,22 @@ preto: 2
 roubo: {
 chanceBaseDeExito: 40, // 40% de chance base de sucesso
 chanceBaseDeDefesa: 30,// 30% de chance base de defesa
+chanceQuebrarEscudo: 20, // 20% de chance de quebrar escudo no roubo
 perdaFalhada: {
 min: 0,// Mínimo perdido se falhar (0%)
 max: 50// Máximo perdido se falhar (50%)
 }
+},
+
+// 🆕 Configurações para vingança
+vinganca: {
+chanceBase: 50, // 50% de chance base de sucesso na vingança
+chanceQuebrarEscudo: 50, // 50% de chance de quebrar escudo na vingança
+multiplicadorMin: 1.0, // 100% do valor original (mínimo)
+multiplicadorMax: 2.0, // 200% do valor original (máximo)
+chancePunicao: 20, // 20% de chance de perder gold se falhar
+perdaFalha: 20, // 20% de perda do gold atual se falhar
+tempoLimite: 24 * 60 * 60 * 1000 // 24 horas para se vingar (em ms)
 },
 
 // Configurações para o sistema de empréstimos
@@ -112,6 +143,9 @@ roulette: "🎡",
 quiz: "🧩",
 cachaça: "🍾",
 aviator: "✈️",
-double: "🎲"
+double: "🎲",
+revenge: "⚔️", 
+skull: "💀",
+fire: "🔥"
 }
 };
