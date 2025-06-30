@@ -36,6 +36,6 @@ type PollContext = {
  * @param ctx additional info about the poll required for decryption
  * @returns list of SHA256 options
  */
-export declare function decryptPollVote({ encPayload, encIv }: proto.Message.IPollEncValue, { pollCreatorJid, pollMsgId, pollEncKey, voterJid, }: PollContext): proto.Message.PollVoteMessage;
+export declare function decryptPollVote({ encPayload, encIv }: proto.Message.IPollEncValue, { pollCreatorJid, pollMsgId, pollEncKey, voterJid }: PollContext): proto.Message.PollVoteMessage;
 declare const processMessage: (message: proto.IWebMessageInfo, { shouldProcessHistoryMsg, placeholderResendCache, ev, creds, keyStore, logger, options }: ProcessMessageContext) => Promise<void>;
 export default processMessage;

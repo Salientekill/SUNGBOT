@@ -29,34 +29,31 @@ const jidDecode = (jid) => {
 };
 exports.jidDecode = jidDecode;
 /** is the jid a user */
-const areJidsSameUser = (jid1, jid2) => {
-    var _a, _b;
-    return (((_a = (0, exports.jidDecode)(jid1)) === null || _a === void 0 ? void 0 : _a.user) === ((_b = (0, exports.jidDecode)(jid2)) === null || _b === void 0 ? void 0 : _b.user));
-};
+const areJidsSameUser = (jid1, jid2) => { var _a, _b; return ((_a = (0, exports.jidDecode)(jid1)) === null || _a === void 0 ? void 0 : _a.user) === ((_b = (0, exports.jidDecode)(jid2)) === null || _b === void 0 ? void 0 : _b.user); };
 exports.areJidsSameUser = areJidsSameUser;
 /** is the jid Meta IA */
-const isJidMetaIa = (jid) => (jid === null || jid === void 0 ? void 0 : jid.endsWith('@bot'));
+const isJidMetaIa = (jid) => jid === null || jid === void 0 ? void 0 : jid.endsWith('@bot');
 exports.isJidMetaIa = isJidMetaIa;
 /** is the jid a user */
-const isJidUser = (jid) => (jid === null || jid === void 0 ? void 0 : jid.endsWith('@s.whatsapp.net'));
+const isJidUser = (jid) => jid === null || jid === void 0 ? void 0 : jid.endsWith('@s.whatsapp.net');
 exports.isJidUser = isJidUser;
 /** is the jid a group */
-const isLidUser = (jid) => (jid === null || jid === void 0 ? void 0 : jid.endsWith('@lid'));
+const isLidUser = (jid) => jid === null || jid === void 0 ? void 0 : jid.endsWith('@lid');
 exports.isLidUser = isLidUser;
 /** is the jid a broadcast */
-const isJidBroadcast = (jid) => (jid === null || jid === void 0 ? void 0 : jid.endsWith('@broadcast'));
+const isJidBroadcast = (jid) => jid === null || jid === void 0 ? void 0 : jid.endsWith('@broadcast');
 exports.isJidBroadcast = isJidBroadcast;
 /** is the jid a group */
-const isJidGroup = (jid) => (jid === null || jid === void 0 ? void 0 : jid.endsWith('@g.us'));
+const isJidGroup = (jid) => jid === null || jid === void 0 ? void 0 : jid.endsWith('@g.us');
 exports.isJidGroup = isJidGroup;
 /** is the jid the status broadcast */
 const isJidStatusBroadcast = (jid) => jid === 'status@broadcast';
 exports.isJidStatusBroadcast = isJidStatusBroadcast;
 /** is the jid a newsletter */
-const isJidNewsletter = (jid) => (jid === null || jid === void 0 ? void 0 : jid.endsWith('@newsletter'));
+const isJidNewsletter = (jid) => jid === null || jid === void 0 ? void 0 : jid.endsWith('@newsletter');
 exports.isJidNewsletter = isJidNewsletter;
 const botRegexp = /^1313555\d{4}$|^131655500\d{2}$/;
-const isJidBot = (jid) => (jid && botRegexp.test(jid.split('@')[0]) && jid.endsWith('@c.us'));
+const isJidBot = (jid) => jid && botRegexp.test(jid.split('@')[0]) && jid.endsWith('@c.us');
 exports.isJidBot = isJidBot;
 const jidNormalizedUser = (jid) => {
     const result = (0, exports.jidDecode)(jid);

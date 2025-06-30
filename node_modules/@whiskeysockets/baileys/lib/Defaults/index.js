@@ -16,20 +16,20 @@ exports.DEF_TAG_PREFIX = 'TAG:';
 exports.PHONE_CONNECTION_CB = 'CB:Pong';
 exports.WA_DEFAULT_EPHEMERAL = 7 * 24 * 60 * 60;
 exports.NOISE_MODE = 'Noise_XX_25519_AESGCM_SHA256\0\0\0\0';
-exports.DICT_VERSION = 2;
+exports.DICT_VERSION = 3;
 exports.KEY_BUNDLE_TYPE = Buffer.from([5]);
 exports.NOISE_WA_HEADER = Buffer.from([87, 65, 6, exports.DICT_VERSION]); // last is "DICT_VERSION"
 /** from: https://stackoverflow.com/questions/3809401/what-is-a-good-regular-expression-to-match-a-url */
 exports.URL_REGEX = /https:\/\/(?![^:@\/\s]+:[^:@\/\s]+@)[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(:\d+)?(\/[^\s]*)?/g;
 exports.WA_CERT_DETAILS = {
-    SERIAL: 0,
+    SERIAL: 0
 };
 exports.PROCESSABLE_HISTORY_TYPES = [
     WAProto_1.proto.Message.HistorySyncNotification.HistorySyncType.INITIAL_BOOTSTRAP,
     WAProto_1.proto.Message.HistorySyncNotification.HistorySyncType.PUSH_NAME,
     WAProto_1.proto.Message.HistorySyncNotification.HistorySyncType.RECENT,
     WAProto_1.proto.Message.HistorySyncNotification.HistorySyncType.FULL,
-    WAProto_1.proto.Message.HistorySyncNotification.HistorySyncType.ON_DEMAND,
+    WAProto_1.proto.Message.HistorySyncNotification.HistorySyncType.ON_DEMAND
 ];
 exports.DEFAULT_CONNECTION_CONFIG = {
     version: baileys_version_json_1.version,
@@ -56,7 +56,7 @@ exports.DEFAULT_CONNECTION_CONFIG = {
     options: {},
     appStateMacVerification: {
         patch: false,
-        snapshot: false,
+        snapshot: false
     },
     countryCode: 'US',
     getMessage: async () => undefined,
@@ -72,18 +72,18 @@ exports.MEDIA_PATH_MAP = {
     'thumbnail-link': '/mms/image',
     'product-catalog-image': '/product/image',
     'md-app-state': '',
-    'md-msg-hist': '/mms/md-app-state',
+    'md-msg-hist': '/mms/md-app-state'
 };
 exports.MEDIA_HKDF_KEY_MAPPING = {
-    'audio': 'Audio',
-    'document': 'Document',
-    'gif': 'Video',
-    'image': 'Image',
-    'ppic': '',
-    'product': 'Image',
-    'ptt': 'Audio',
-    'sticker': 'Image',
-    'video': 'Video',
+    audio: 'Audio',
+    document: 'Document',
+    gif: 'Video',
+    image: 'Image',
+    ppic: '',
+    product: 'Image',
+    ptt: 'Audio',
+    sticker: 'Image',
+    video: 'Video',
     'thumbnail-document': 'Document Thumbnail',
     'thumbnail-image': 'Image Thumbnail',
     'thumbnail-video': 'Video Thumbnail',
@@ -92,7 +92,7 @@ exports.MEDIA_HKDF_KEY_MAPPING = {
     'md-app-state': 'App State',
     'product-catalog-image': '',
     'payment-bg-image': 'Payment Background',
-    'ptv': 'Video'
+    ptv: 'Video'
 };
 exports.MEDIA_KEYS = Object.keys(exports.MEDIA_PATH_MAP);
 exports.MIN_PREKEY_COUNT = 5;
@@ -101,5 +101,5 @@ exports.DEFAULT_CACHE_TTLS = {
     SIGNAL_STORE: 5 * 60, // 5 minutes
     MSG_RETRY: 60 * 60, // 1 hour
     CALL_OFFER: 5 * 60, // 5 minutes
-    USER_DEVICES: 5 * 60, // 5 minutes
+    USER_DEVICES: 5 * 60 // 5 minutes
 };

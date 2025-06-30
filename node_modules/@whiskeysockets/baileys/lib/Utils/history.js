@@ -34,7 +34,12 @@ const processHistoryMessage = (item) => {
         case WAProto_1.proto.HistorySync.HistorySyncType.FULL:
         case WAProto_1.proto.HistorySync.HistorySyncType.ON_DEMAND:
             for (const chat of item.conversations) {
-                contacts.push({ id: chat.id, name: chat.name || undefined });
+                contacts.push({
+                    id: chat.id,
+                    name: chat.name || undefined,
+                    lid: chat.lidJid || undefined,
+                    jid: (0, WABinary_1.isJidUser)(chat.id) ? chat.id : undefined
+                });
                 const msgs = chat.messages || [];
                 delete chat.messages;
                 delete chat.archived;
@@ -50,12 +55,12 @@ const processHistoryMessage = (item) => {
                     if (!message.key.fromMe && !chat.lastMessageRecvTimestamp) {
                         chat.lastMessageRecvTimestamp = (0, generics_1.toNumber)(message.messageTimestamp);
                     }
-                    if ((message.messageStubType === Types_1.WAMessageStubType.BIZ_PRIVACY_MODE_TO_BSP
-                        || message.messageStubType === Types_1.WAMessageStubType.BIZ_PRIVACY_MODE_TO_FB)
-                        && ((_b = message.messageStubParameters) === null || _b === void 0 ? void 0 : _b[0])) {
+                    if ((message.messageStubType === Types_1.WAMessageStubType.BIZ_PRIVACY_MODE_TO_BSP ||
+                        message.messageStubType === Types_1.WAMessageStubType.BIZ_PRIVACY_MODE_TO_FB) &&
+                        ((_b = message.messageStubParameters) === null || _b === void 0 ? void 0 : _b[0])) {
                         contacts.push({
                             id: message.key.participant || message.key.remoteJid,
-                            verifiedName: (_c = message.messageStubParameters) === null || _c === void 0 ? void 0 : _c[0],
+                            verifiedName: (_c = message.messageStubParameters) === null || _c === void 0 ? void 0 : _c[0]
                         });
                     }
                 }

@@ -17,21 +17,21 @@ const baileys_version_json_1 = require("../Defaults/baileys-version.json");
 const Types_1 = require("../Types");
 const WABinary_1 = require("../WABinary");
 const PLATFORM_MAP = {
-    'aix': 'AIX',
-    'darwin': 'Mac OS',
-    'win32': 'Windows',
-    'android': 'Android',
-    'freebsd': 'FreeBSD',
-    'openbsd': 'OpenBSD',
-    'sunos': 'Solaris'
+    aix: 'AIX',
+    darwin: 'Mac OS',
+    win32: 'Windows',
+    android: 'Android',
+    freebsd: 'FreeBSD',
+    openbsd: 'OpenBSD',
+    sunos: 'Solaris'
 };
 exports.Browsers = {
-    ubuntu: (browser) => ['Ubuntu', browser, '22.04.4'],
-    macOS: (browser) => ['Mac OS', browser, '14.4.1'],
-    baileys: (browser) => ['Baileys', browser, '6.5.0'],
-    windows: (browser) => ['Windows', browser, '10.0.22631'],
+    ubuntu: browser => ['Ubuntu', browser, '22.04.4'],
+    macOS: browser => ['Mac OS', browser, '14.4.1'],
+    baileys: browser => ['Baileys', browser, '6.5.0'],
+    windows: browser => ['Windows', browser, '10.0.22631'],
     /** The appropriate browser based on your OS & release */
-    appropriate: (browser) => [PLATFORM_MAP[(0, os_1.platform)()] || 'Ubuntu', browser, (0, os_1.release)()]
+    appropriate: browser => [PLATFORM_MAP[(0, os_1.platform)()] || 'Ubuntu', browser, (0, os_1.release)()]
 };
 const getPlatformId = (browser) => {
     const platformType = WAProto_1.proto.DeviceProps.PlatformType[browser.toUpperCase()];
@@ -55,7 +55,7 @@ exports.BufferJSON = {
         return value;
     }
 };
-const getKeyAuthor = (key, meId = 'me') => (((key === null || key === void 0 ? void 0 : key.fromMe) ? meId : (key === null || key === void 0 ? void 0 : key.participant) || (key === null || key === void 0 ? void 0 : key.remoteJid)) || '');
+const getKeyAuthor = (key, meId = 'me') => ((key === null || key === void 0 ? void 0 : key.fromMe) ? meId : (key === null || key === void 0 ? void 0 : key.participant) || (key === null || key === void 0 ? void 0 : key.remoteJid)) || '';
 exports.getKeyAuthor = getKeyAuthor;
 const writeRandomPadMax16 = (msg) => {
     const pad = (0, crypto_1.randomBytes)(1);
@@ -78,7 +78,7 @@ const unpadRandomMax16 = (e) => {
     return new Uint8Array(t.buffer, t.byteOffset, t.length - r);
 };
 exports.unpadRandomMax16 = unpadRandomMax16;
-const encodeWAMessage = (message) => ((0, exports.writeRandomPadMax16)(WAProto_1.proto.Message.encode(message).finish()));
+const encodeWAMessage = (message) => (0, exports.writeRandomPadMax16)(WAProto_1.proto.Message.encode(message).finish());
 exports.encodeWAMessage = encodeWAMessage;
 const generateRegistrationId = () => {
     return Uint16Array.from((0, crypto_1.randomBytes)(2))[0] & 16383;
@@ -94,7 +94,7 @@ const encodeBigEndian = (e, t = 4) => {
     return a;
 };
 exports.encodeBigEndian = encodeBigEndian;
-const toNumber = (t) => ((typeof t === 'object' && t) ? ('toNumber' in t ? t.toNumber() : t.low) : t || 0);
+const toNumber = (t) => typeof t === 'object' && t ? ('toNumber' in t ? t.toNumber() : t.low) : t || 0;
 exports.toNumber = toNumber;
 /** unix timestamp of a date in seconds */
 const unixTimestampSeconds = (date = new Date()) => Math.floor(date.getTime() / 1000);
@@ -112,8 +112,8 @@ const debouncedTimeout = (intervalMs = 1000, task) => {
             timeout && clearTimeout(timeout);
             timeout = undefined;
         },
-        setTask: (newTask) => task = newTask,
-        setInterval: (newInterval) => intervalMs = newInterval
+        setTask: (newTask) => (task = newTask),
+        setInterval: (newInterval) => (intervalMs = newInterval)
     };
 };
 exports.debouncedTimeout = debouncedTimeout;
@@ -156,8 +156,7 @@ async function promiseTimeout(ms, promise) {
         })))
             .catch(err => reject(err));
         promise(resolve, reject);
-    })
-        .finally(cancel);
+    }).finally(cancel);
     return p;
 }
 // inspired from whatsmeow code
@@ -185,11 +184,10 @@ function bindWaitForEvent(ev, event) {
     return async (check, timeoutMs) => {
         let listener;
         let closeListener;
-        await (promiseTimeout(timeoutMs, (resolve, reject) => {
+        await promiseTimeout(timeoutMs, (resolve, reject) => {
             closeListener = ({ connection, lastDisconnect }) => {
                 if (connection === 'close') {
-                    reject((lastDisconnect === null || lastDisconnect === void 0 ? void 0 : lastDisconnect.error)
-                        || new boom_1.Boom('Connection Closed', { statusCode: Types_1.DisconnectReason.connectionClosed }));
+                    reject((lastDisconnect === null || lastDisconnect === void 0 ? void 0 : lastDisconnect.error) || new boom_1.Boom('Connection Closed', { statusCode: Types_1.DisconnectReason.connectionClosed }));
                 }
             };
             ev.on('connection.update', closeListener);
@@ -199,11 +197,10 @@ function bindWaitForEvent(ev, event) {
                 }
             };
             ev.on(event, listener);
-        })
-            .finally(() => {
+        }).finally(() => {
             ev.off(event, listener);
             ev.off('connection.update', closeListener);
-        }));
+        });
     };
 }
 const bindWaitForConnectionUpdate = (ev) => bindWaitForEvent(ev, 'connection.update');
@@ -276,9 +273,9 @@ const generateMdTagPrefix = () => {
 };
 exports.generateMdTagPrefix = generateMdTagPrefix;
 const STATUS_MAP = {
-    'sender': WAProto_1.proto.WebMessageInfo.Status.SERVER_ACK,
-    'played': WAProto_1.proto.WebMessageInfo.Status.PLAYED,
-    'read': WAProto_1.proto.WebMessageInfo.Status.READ,
+    sender: WAProto_1.proto.WebMessageInfo.Status.SERVER_ACK,
+    played: WAProto_1.proto.WebMessageInfo.Status.PLAYED,
+    read: WAProto_1.proto.WebMessageInfo.Status.READ,
     'read-self': WAProto_1.proto.WebMessageInfo.Status.READ
 };
 /**
@@ -354,8 +351,9 @@ const getCodeFromWSError = (error) => {
     }
     else if (
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    ((_b = error === null || error === void 0 ? void 0 : error.code) === null || _b === void 0 ? void 0 : _b.startsWith('E'))
-        || ((_c = error === null || error === void 0 ? void 0 : error.message) === null || _c === void 0 ? void 0 : _c.includes('timed out'))) { // handle ETIMEOUT, ENOTFOUND etc
+    ((_b = error === null || error === void 0 ? void 0 : error.code) === null || _b === void 0 ? void 0 : _b.startsWith('E')) ||
+        ((_c = error === null || error === void 0 ? void 0 : error.message) === null || _c === void 0 ? void 0 : _c.includes('timed out'))) {
+        // handle ETIMEOUT, ENOTFOUND etc
         statusCode = 408;
     }
     return statusCode;

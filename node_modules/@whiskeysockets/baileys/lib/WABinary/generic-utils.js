@@ -98,7 +98,7 @@ function binaryNodeToString(node, i = 0) {
         return tabs(i) + Buffer.from(node).toString('hex');
     }
     if (Array.isArray(node)) {
-        return node.map((x) => tabs(i + 1) + binaryNodeToString(x, i + 1)).join('\n');
+        return node.map(x => tabs(i + 1) + binaryNodeToString(x, i + 1)).join('\n');
     }
     const children = binaryNodeToString(node.content, i + 1);
     const tag = `<${node.tag} ${Object.entries(node.attrs || {})

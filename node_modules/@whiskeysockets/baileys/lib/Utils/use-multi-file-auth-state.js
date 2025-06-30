@@ -75,8 +75,7 @@ const useMultiFileAuthState = async (folder) => {
                 }
             });
         }
-        catch (_a) {
-        }
+        catch (_a) { }
     };
     const folderInfo = await (0, promises_1.stat)(folder).catch(() => { });
     if (folderInfo) {
@@ -88,7 +87,7 @@ const useMultiFileAuthState = async (folder) => {
         await (0, promises_1.mkdir)(folder, { recursive: true });
     }
     const fixFileName = (file) => { var _a; return (_a = file === null || file === void 0 ? void 0 : file.replace(/\//g, '__')) === null || _a === void 0 ? void 0 : _a.replace(/:/g, '-'); };
-    const creds = await readData('creds.json') || (0, auth_utils_1.initAuthCreds)();
+    const creds = (await readData('creds.json')) || (0, auth_utils_1.initAuthCreds)();
     return {
         state: {
             creds,

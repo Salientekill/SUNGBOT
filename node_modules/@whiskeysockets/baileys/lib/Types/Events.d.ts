@@ -98,7 +98,7 @@ export type BaileysEventMap = {
         type: 'add' | 'remove';
     };
     /** Receive an update on a call, including when the call was received, rejected, accepted */
-    'call': WACallEvent[];
+    call: WACallEvent[];
     'labels.edit': Label;
     'labels.association': {
         association: LabelAssociation;

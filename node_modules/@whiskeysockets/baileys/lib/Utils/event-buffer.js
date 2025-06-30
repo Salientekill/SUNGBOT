@@ -21,7 +21,7 @@ const BUFFERABLE_EVENT = [
     'messages.delete',
     'messages.reaction',
     'message-receipt.update',
-    'groups.update',
+    'groups.update'
 ];
 const BUFFERABLE_EVENT_SET = new Set(BUFFERABLE_EVENT);
 /**
@@ -112,7 +112,7 @@ const makeEventBuffer = (logger) => {
         },
         on: (...args) => ev.on(...args),
         off: (...args) => ev.off(...args),
-        removeAllListeners: (...args) => ev.removeAllListeners(...args),
+        removeAllListeners: (...args) => ev.removeAllListeners(...args)
     };
 };
 exports.makeEventBuffer = makeEventBuffer;
@@ -314,9 +314,7 @@ eventData, logger) {
                 else {
                     data.messageUpserts[key] = {
                         message,
-                        type: type === 'notify' || ((_b = data.messageUpserts[key]) === null || _b === void 0 ? void 0 : _b.type) === 'notify'
-                            ? 'notify'
-                            : type
+                        type: type === 'notify' || ((_b = data.messageUpserts[key]) === null || _b === void 0 ? void 0 : _b.type) === 'notify' ? 'notify' : type
                     };
                 }
             }
@@ -372,8 +370,7 @@ eventData, logger) {
                     (0, messages_1.updateMessageWithReaction)(existing.message, reaction);
                 }
                 else {
-                    data.messageReactions[keyStr] = data.messageReactions[keyStr]
-                        || { key, reactions: [] };
+                    data.messageReactions[keyStr] = data.messageReactions[keyStr] || { key, reactions: [] };
                     (0, messages_1.updateMessageWithReaction)(data.messageReactions[keyStr], reaction);
                 }
             }
@@ -387,8 +384,7 @@ eventData, logger) {
                     (0, messages_1.updateMessageWithReceipt)(existing.message, receipt);
                 }
                 else {
-                    data.messageReceipts[keyStr] = data.messageReceipts[keyStr]
-                        || { key, userReceipt: [] };
+                    data.messageReceipts[keyStr] = data.messageReceipts[keyStr] || { key, userReceipt: [] };
                     (0, messages_1.updateMessageWithReceipt)(data.messageReceipts[keyStr], receipt);
                 }
             }
@@ -428,10 +424,10 @@ eventData, logger) {
         // if the message has already been marked read by us
         const chatId = message.key.remoteJid;
         const chat = data.chatUpdates[chatId] || data.chatUpserts[chatId];
-        if ((0, process_message_1.isRealMessage)(message, '')
-            && (0, process_message_1.shouldIncrementChatUnread)(message)
-            && typeof (chat === null || chat === void 0 ? void 0 : chat.unreadCount) === 'number'
-            && chat.unreadCount > 0) {
+        if ((0, process_message_1.isRealMessage)(message, '') &&
+            (0, process_message_1.shouldIncrementChatUnread)(message) &&
+            typeof (chat === null || chat === void 0 ? void 0 : chat.unreadCount) === 'number' &&
+            chat.unreadCount > 0) {
             logger.debug({ chatId: chat.id }, 'decrementing chat counter');
             chat.unreadCount -= 1;
             if (chat.unreadCount === 0) {

@@ -9,7 +9,7 @@ class USyncStatusProtocol {
     getQueryElement() {
         return {
             tag: 'status',
-            attrs: {},
+            attrs: {}
         };
     }
     getUserElement() {
@@ -34,7 +34,7 @@ class USyncStatusProtocol {
             }
             return {
                 status,
-                setAt,
+                setAt
             };
         }
     }

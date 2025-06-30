@@ -8,9 +8,7 @@ const encodeWAM = (binaryInfo) => {
     encodeWAMHeader(binaryInfo);
     encodeEvents(binaryInfo);
     console.log(binaryInfo.buffer);
-    const totalSize = binaryInfo.buffer
-        .map((a) => a.length)
-        .reduce((a, b) => a + b);
+    const totalSize = binaryInfo.buffer.map(a => a.length).reduce((a, b) => a + b);
     const buffer = Buffer.alloc(totalSize);
     let offset = 0;
     for (const buffer_ of binaryInfo.buffer) {
@@ -40,9 +38,9 @@ function encodeGlobalAttributes(binaryInfo, globals) {
     }
 }
 function encodeEvents(binaryInfo) {
-    for (const [name, { props, globals },] of binaryInfo.events.map((a) => Object.entries(a)[0])) {
+    for (const [name, { props, globals }] of binaryInfo.events.map(a => Object.entries(a)[0])) {
         encodeGlobalAttributes(binaryInfo, globals);
-        const event = constants_1.WEB_EVENTS.find((a) => a.name === name);
+        const event = constants_1.WEB_EVENTS.find(a => a.name === name);
         const props_ = Object.entries(props);
         let extended = false;
         for (const [, value] of props_) {
@@ -52,8 +50,8 @@ function encodeEvents(binaryInfo) {
         binaryInfo.buffer.push(serializeData(event.id, -event.weight, eventFlag));
         for (let i = 0; i < props_.length; i++) {
             const [key, _value] = props_[i];
-            const id = (event.props)[key][0];
-            extended = i < (props_.length - 1);
+            const id = event.props[key][0];
+            extended = i < props_.length - 1;
             let value = _value;
             if (typeof value === 'boolean') {
                 value = value ? 1 : 0;

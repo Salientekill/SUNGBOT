@@ -8,7 +8,7 @@ class USyncLIDProtocol {
     getQueryElement() {
         return {
             tag: 'lid',
-            attrs: {},
+            attrs: {}
         };
     }
     getUserElement() {

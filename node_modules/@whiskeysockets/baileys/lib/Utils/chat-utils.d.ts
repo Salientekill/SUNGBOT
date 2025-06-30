@@ -29,11 +29,6 @@ export declare const decodeSyncdPatch: (msg: proto.ISyncdPatch, name: WAPatchNam
     };
 }>;
 export declare const extractSyncdPatches: (result: BinaryNode, options: AxiosRequestConfig<{}>) => Promise<{
-    critical_block: {
-        patches: proto.ISyncdPatch[];
-        hasMorePatches: boolean;
-        snapshot?: proto.ISyncdSnapshot;
-    };
     critical_unblock_low: {
         patches: proto.ISyncdPatch[];
         hasMorePatches: boolean;
@@ -45,6 +40,11 @@ export declare const extractSyncdPatches: (result: BinaryNode, options: AxiosReq
         snapshot?: proto.ISyncdSnapshot;
     };
     regular_low: {
+        patches: proto.ISyncdPatch[];
+        hasMorePatches: boolean;
+        snapshot?: proto.ISyncdSnapshot;
+    };
+    critical_block: {
         patches: proto.ISyncdPatch[];
         hasMorePatches: boolean;
         snapshot?: proto.ISyncdSnapshot;
