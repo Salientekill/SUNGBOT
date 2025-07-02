@@ -53,9 +53,7 @@ const Defaults_1 = require("../Defaults");
 // insure browser & node compatibility
 const { subtle } = globalThis.crypto;
 /** prefix version byte to the pub keys, required for some curve crypto functions */
-const generateSignalPubKey = (pubKey) => (pubKey.length === 33
-    ? pubKey
-    : Buffer.concat([Defaults_1.KEY_BUNDLE_TYPE, pubKey]));
+const generateSignalPubKey = (pubKey) => pubKey.length === 33 ? pubKey : Buffer.concat([Defaults_1.KEY_BUNDLE_TYPE, pubKey]);
 exports.generateSignalPubKey = generateSignalPubKey;
 exports.Curve = {
     generateKeyPair: () => {
@@ -70,7 +68,7 @@ exports.Curve = {
         const shared = libsignal.curve.calculateAgreement((0, exports.generateSignalPubKey)(publicKey), privateKey);
         return Buffer.from(shared);
     },
-    sign: (privateKey, buf) => (libsignal.curve.calculateSignature(privateKey, buf)),
+    sign: (privateKey, buf) => libsignal.curve.calculateSignature(privateKey, buf),
     verify: (pubKey, message, signature) => {
         try {
             libsignal.curve.verifySignature((0, exports.generateSignalPubKey)(pubKey), message, signature);
@@ -153,14 +151,10 @@ function md5(buffer) {
 // HKDF key expansion
 async function hkdf(buffer, expandedLength, info) {
     // Ensure we have a Uint8Array for the key material
-    const inputKeyMaterial = buffer instanceof Uint8Array
-        ? buffer
-        : new Uint8Array(buffer);
+    const inputKeyMaterial = buffer instanceof Uint8Array ? buffer : new Uint8Array(buffer);
     // Set default values if not provided
     const salt = info.salt ? new Uint8Array(info.salt) : new Uint8Array(0);
-    const infoBytes = info.info
-        ? new TextEncoder().encode(info.info)
-        : new Uint8Array(0);
+    const infoBytes = info.info ? new TextEncoder().encode(info.info) : new Uint8Array(0);
     // Import the input key material
     const importedKey = await subtle.importKey('raw', inputKeyMaterial, { name: 'HKDF' }, false, ['deriveBits']);
     // Derive bits using HKDF

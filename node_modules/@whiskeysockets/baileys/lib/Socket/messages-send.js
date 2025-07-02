@@ -13,9 +13,10 @@ const link_preview_1 = require("../Utils/link-preview");
 const WABinary_1 = require("../WABinary");
 const WAUSync_1 = require("../WAUSync");
 const groups_1 = require("./groups");
+const newsletter_1 = require("./newsletter");
 const makeMessagesSocket = (config) => {
     const { logger, linkPreviewImageThumbnailWidth, generateHighQualityLinkPreview, options: axiosOptions, patchMessageBeforeSending, cachedGroupMetadata } = config;
-    const sock = (0, groups_1.makeGroupsSocket)(config);
+    const sock = (0, newsletter_1.makeNewsletterSocket)((0, groups_1.makeGroupsSocket)(config));
     const { ev, authState, processingMutex, signalRepository, upsertMessage, query, fetchPrivacySettings, sendNode, groupMetadata, groupToggleEphemeral } = sock;
     const userDevicesCache = config.userDevicesCache ||
         new node_cache_1.default({
@@ -265,6 +266,7 @@ const makeMessagesSocket = (config) => {
         const isGroup = server === 'g.us';
         const isStatus = jid === statusJid;
         const isLid = server === 'lid';
+        const isNewsletter = server === 'newsletter';
         msgId = msgId || (0, Utils_1.generateMessageIDV2)((_a = sock.user) === null || _a === void 0 ? void 0 : _a.id);
         useUserDevicesCache = useUserDevicesCache !== false;
         useCachedGroupMetadata = useCachedGroupMetadata !== false && !isStatus;
@@ -276,7 +278,8 @@ const makeMessagesSocket = (config) => {
             deviceSentMessage: {
                 destinationJid,
                 message
-            }
+            },
+            messageContextInfo: message.messageContextInfo
         };
         const extraAttrs = {};
         if (participant) {
@@ -294,6 +297,29 @@ const makeMessagesSocket = (config) => {
             const mediaType = getMediaType(message);
             if (mediaType) {
                 extraAttrs['mediatype'] = mediaType;
+            }
+            if (isNewsletter) {
+                // Patch message if needed, then encode as plaintext
+                const patched = patchMessageBeforeSending ? await patchMessageBeforeSending(message, []) : message;
+                const bytes = (0, Utils_1.encodeNewsletterMessage)(patched);
+                binaryNodeContent.push({
+                    tag: 'plaintext',
+                    attrs: {},
+                    content: bytes
+                });
+                const stanza = {
+                    tag: 'message',
+                    attrs: {
+                        to: jid,
+                        id: msgId,
+                        type: getMessageType(message),
+                        ...(additionalAttributes || {})
+                    },
+                    content: binaryNodeContent
+                };
+                logger.debug({ msgId }, `sending newsletter message to ${jid}`);
+                await sendNode(stanza);
+                return;
             }
             if ((_a = (0, Utils_1.normalizeMessageContent)(message)) === null || _a === void 0 ? void 0 : _a.pinInChatMessage) {
                 extraAttrs['decrypt-fail'] = 'hide';

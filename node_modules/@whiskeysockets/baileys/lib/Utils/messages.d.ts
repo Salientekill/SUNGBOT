@@ -1,6 +1,6 @@
 import { type Transform } from 'stream';
 import { proto } from '../../WAProto';
-import { AnyMediaMessageContent, AnyMessageContent, MediaGenerationOptions, MessageContentGenerationOptions, MessageGenerationOptions, MessageGenerationOptionsFromContent, MessageUserReceipt, WAMessage, WAMessageContent, WAProto } from '../Types';
+import { AnyMediaMessageContent, AnyMessageContent, MessageContentGenerationOptions, MessageGenerationOptions, MessageGenerationOptionsFromContent, MessageUserReceipt, WAMessage, WAMessageContent, WAProto } from '../Types';
 import { ILogger } from './logger';
 import { MediaDownloadOptions } from './messages-media';
 /**
@@ -10,7 +10,7 @@ import { MediaDownloadOptions } from './messages-media';
  */
 export declare const extractUrlFromText: (text: string) => string | undefined;
 export declare const generateLinkPreviewIfRequired: (text: string, getUrlInfo: MessageGenerationOptions["getUrlInfo"], logger: MessageGenerationOptions["logger"]) => Promise<import("../Types").WAUrlInfo | undefined>;
-export declare const prepareWAMessageMedia: (message: AnyMediaMessageContent, options: MediaGenerationOptions) => Promise<proto.Message>;
+export declare const prepareWAMessageMedia: (message: AnyMediaMessageContent, options: MessageContentGenerationOptions) => Promise<proto.Message>;
 export declare const prepareDisappearingMessageSettingContent: (ephemeralExpiration?: number) => proto.Message;
 /**
  * Generate forwarded message content like WA does
