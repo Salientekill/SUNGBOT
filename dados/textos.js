@@ -65,18 +65,18 @@ MENSAGEM_DE_QUANDO_O_BOT_NAO_E_ADM: `╔═════════════�
 ╚══════════════════════════════════╝`,
 
 // O #prefixo# é padrão para mostrar o prefixo do bot.
-MENSAGEM_DE_SO_QUANDO_MODO_BRINCADEIRA_FOR_ATIVO: `┌────────────────────────────────┐
+MENSAGEM_DE_SO_QUANDO_MODO_BRINCADEIRA_FOR_ATIVO: `┌──────────────────────────┐
 │ 🎮 𝐌𝐎𝐃𝐎 𝐁𝐑𝐈𝐍𝐂𝐀𝐃𝐄𝐈𝐑𝐀! 🎮
 │
 │ 🎯 Este comando requer que
 │ o modo brincadeira esteja 
 │ ativado!
 │
-│ 💡 Use #prefixo#modobrincadeira
+│ 💡 Use #prefixo#ativacoes
 │ para ativar os jogos! 
 │
 │ 🎪 Diversão garantida!
-└────────────────────────────────┘`,
+└──────────────────────────┘`,
 
 // ========================================
 // 📋 MENSAGENS DO SISTEMA DE COMANDOS
@@ -160,18 +160,18 @@ PERM_PREMIUM_ONLY: `╭━━━━━━━━━━━━━━━━━━━
 ┃ 🚀 Upgrade sua conta!
 ╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
 
-PERM_GAME_MODE_REQUIRED: `┌────────────────────────────────┐
+PERM_GAME_MODE_REQUIRED: `┌──────────────────────────┐
 │ 🎮 𝐌𝐎𝐃𝐎 𝐁𝐑𝐈𝐍𝐂𝐀𝐃𝐄𝐈𝐑𝐀! 🎮
 │
 │ 🎯 Este comando requer que
 │ o modo brincadeira esteja
 │ ativado!
 │
-│ 💡 Use {PREFIX}modobrincadeira
+│ 💡 Use #prefix#ativacoes
 │ para ativar os jogos!
 │
 │ 🎪 Diversão garantida!
-└────────────────────────────────┘`,
+└──────────────────────────┘`,
 
 PERM_GOLD_MODE_REQUIRED: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
 ┃ 🏆 𝐌𝐎𝐃𝐎 𝐆𝐎𝐋𝐃! 🏆
@@ -247,7 +247,7 @@ ARG_MENTION_REQUIRED: `╭━━━━━━━━━━━━━━━━━━
 ARG_USAGE_FORMAT: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
 ┃ 📋 𝐔𝐒𝐎 𝐂𝐎𝐑𝐑𝐄𝐓𝐎! 📋
 ┃
-┃ 💡 Use: {PREFIX}{COMMAND} {USAGE}
+┃ 💡 Use: #prefix##comando# #uso#
 ┃
 ┃ ℹ️ Argumentos necessários!
 ╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
@@ -257,17 +257,17 @@ ARG_INSUFFICIENT: `╭━━━━━━━━━━━━━━━━━━━�
 ┃
 ┃ 📝 Argumentos insuficientes!
 ┃
-┃ 💡 Use: {PREFIX}{COMMAND} {USAGE}
+┃ 💡 Use: #prefix##comando# #uso#
 ╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
 
 // Cooldowns estilizados
 COOLDOWN_ACTIVE: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
 ┃ ⏱️ 𝐂𝐎𝐎𝐋𝐃𝐎𝐖𝐍 𝐀𝐓𝐈𝐕𝐎! ⏱️
 ┃
-┃ 🚫 Comando "{COMMAND}" em
+┃ 🚫 Comando "#comando#" em
 ┃ cooldown!
 ┃
-┃ ⏰ Aguarde {TIME} para usar
+┃ ⏰ Aguarde #tempo# para usar
 ┃ novamente!
 ╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
 
@@ -276,7 +276,7 @@ COOLDOWN_USER_LIMITED: `╭━━━━━━━━━━━━━━━━━�
 ┃
 ┃ ⏱️ Você está limitado!
 ┃
-┃ ⏰ Aguarde {TIME} para usar
+┃ ⏰ Aguarde #tempo# para usar
 ┃ qualquer comando!
 ╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
 
@@ -784,14 +784,14 @@ LIMITE_CARACTERES_MSG: `╔═════════════════�
 ║ 🛡️ Proteção ativada! 
 ╚════════════════════════════════╝`,
 
-LISTA_NEGRA_GLOBAL_MENSAGEM: `┌────────────────────────────────┐
+LISTA_NEGRA_GLOBAL_MENSAGEM: `┌──────────────────────────┐
 │ 🚫 𝐋𝐈𝐒𝐓𝐀 𝐍𝐄𝐆𝐑𝐀! 🚫
 │
 │ ⚡ Olha quem deu as caras... 
 │ 🔨 Sente o poder do ban!
 │
 │ 🛡️ Sistema de proteção ativo! 
-└────────────────────────────────┘`,
+└──────────────────────────┘`,
 
 MENSAGEM_GRUPO_ABRIU: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
 ┃ 🔓 𝐆𝐑𝐔𝐏𝐎 𝐀𝐁𝐄𝐑𝐓𝐎! 🔓
