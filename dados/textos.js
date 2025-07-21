@@ -13,7 +13,9 @@ const PALAVRAS_FILTRO_UNIFICADO = [
 "babaca", "desgraçado", "vagabundo", "prostituta", "putaria"
 ];
 
-const TEXTOS_GERAL ={
+const TEXTOS_GERAL = {
+
+CHOICE_MENU_TIMEOUT_DEFAULT: "⏰ Tempo esgotado. Menu expirado automaticamente.",
 
 MENSAGEM_DOS_ANTI_LINKS: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
 ┃ 🚫 𝐋𝐈𝐍𝐊 𝐃𝐄𝐓𝐄𝐂𝐓𝐀𝐃𝐎! 🚫
