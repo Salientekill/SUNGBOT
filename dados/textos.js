@@ -833,7 +833,7 @@ MENSAGEM_GRUPO_FECHOU: `╭━━━━━━━━━━━━━━━━━�
 // ========================================
 
 // URL da imagem para o comando de prefixo
-PREFIXO_IMAGEM_URL: "https://esdeath.vip/api/media/get/f6b6c095-6e6d-4538-bd6a-f617482186aa",
+PREFIXO_IMAGEM_URL: "https://sungbot.vip/api/media/get/93c05bad-dc67-4b0e-adcc-1b60008c1858",
 
 // URL de redirecionamento - #numerodono# será substituído pelo número do dono
 PREFIXO_REDIRECT_URL: "https://wa.me/#numerodono#",
