@@ -5,59 +5,31 @@ cleanup_files() {
 }
 
 start_node_script() {
-    echo -e "\e[32mSUNG BOT ESTÁ INICIANDO AGUARDE...\e[0m"
+    echo -e "\e[32m🚀 SUNG BOT ESTÁ INICIANDO AGUARDE...\e[0m"
+    echo -e "\e[36m✨ Sistema de autenticação interativo ativado\e[0m"
     NODE_NO_WARNINGS=1 node --trace-deprecation iniciar.js
 }
 
-start_node_script_with_code() {
-    echo -e "\e[32mSUNG BOT ESTÁ INICIANDO AGUARDE...\e[0m"
-    NODE_NO_WARNINGS=1 node --trace-deprecation iniciar.js -code
-}
+# ===== SCRIPT SIMPLIFICADO =====
+# Agora não precisa mais de argumentos -code ou -code2
+# O método de autenticação é escolhido interativamente
 
-start_node_script_with_code2() {
-    echo -e "\e[32mSUNG BOT ESTÁ INICIANDO AGUARDE...\e[0m"
-    NODE_NO_WARNINGS=1 node --trace-deprecation iniciar.js -code2
-}
+echo -e "\e[95m════════════════════════════════════════════════════════════════════════════════\e[0m"
+echo -e "\e[96m                           🤖 SUNG BOT - INICIALIZAÇÃO                         \e[0m"
+echo -e "\e[95m════════════════════════════════════════════════════════════════════════════════\e[0m"
+echo -e "\e[93m🔧 SISTEMA DE AUTENTICAÇÃO INTELIGENTE ATIVADO\e[0m"
+echo -e "\e[92m✅ QR Code e Código de Emparelhamento disponíveis\e[0m"
+echo -e "\e[94m📱 Você escolherá o método durante a inicialização\e[0m"
+echo -e "\e[95m════════════════════════════════════════════════════════════════════════════════\e[0m"
 
-if echo "$*" | grep -q -- "-code2"; then
-    if [ ! -f DADOS/SUNG-QR/creds.json ]; then
-        echo -e "\e[32m - iniciado com código de emparelhamento...\e[0m"
-        while : 
-        do
-            cleanup_files
-            start_node_script_with_code2
-            sleep 1
-        done
-    else
-        while : 
-        do
-            cleanup_files
-            start_node_script
-            sleep 1
-        done
-    fi
-elif echo "$*" | grep -q -- "-code"; then
-    if [ ! -f DADOS/SUNG-QR/creds.json ]; then
-        echo -e "\e[32m - iniciado com código de emparelhamento...\e[0m"
-        while : 
-        do
-            cleanup_files
-            start_node_script_with_code
-            sleep 1
-        done
-    else
-        while : 
-        do
-            cleanup_files
-            start_node_script
-            sleep 1
-        done
-    fi
-else
-    while : 
-    do
-        cleanup_files
-        start_node_script
-        sleep 1
-    done
-fi
+while : 
+do
+    cleanup_files
+    start_node_script
+    
+    # Aguarda 3 segundos antes de reiniciar (em caso de erro)
+    echo -e "\e[93m⏳ Aguardando 3 segundos antes de reiniciar...\e[0m"
+    sleep 3
+    
+    echo -e "\e[94m🔄 Reiniciando o bot...\e[0m"
+done
