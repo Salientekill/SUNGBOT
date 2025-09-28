@@ -444,6 +444,15 @@ ANTI_MENCAO_MSG: `╭━━━━━━━━━━━━━━━━━━━�
 ┃ 🛡️ Proteção contra spam!
 ╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
 
+ANTI_STATUS_MSG: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
+┃ 📱 𝐒𝐓𝐀𝐓𝐔𝐒 𝐏𝐑𝐎𝐈𝐁𝐈𝐃𝐎! 📱
+┃
+┃ 🚫 Menções no status do grupo
+┃ não são permitidas!
+┃
+┃ 🛡️ Proteção ativa!
+╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
+
 ANTI_PALAVRAO_MSG: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
 ┃ 🤬 𝐏𝐀𝐋𝐀𝐕𝐑𝐀̃𝐎 𝐃𝐄𝐓𝐄𝐂𝐓𝐀𝐃𝐎! 🤬
 ┃
