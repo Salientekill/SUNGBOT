@@ -1,3 +1,4 @@
+import P from 'pino';
 export interface ILogger {
     level: string;
     child(obj: Record<string, unknown>): ILogger;
@@ -7,6 +8,6 @@ export interface ILogger {
     warn(obj: unknown, msg?: string): void;
     error(obj: unknown, msg?: string): void;
 }
-declare const _default: import("pino").Logger<never, boolean>;
+declare const _default: P.Logger<never, boolean>;
 export default _default;
 //# sourceMappingURL=logger.d.ts.map
