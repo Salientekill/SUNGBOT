@@ -444,15 +444,6 @@ ANTI_MENCAO_MSG: `╭━━━━━━━━━━━━━━━━━━━�
 ┃ 🛡️ Proteção contra spam!
 ╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
 
-ANTI_STATUS_MSG: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
-┃ 📱 𝐒𝐓𝐀𝐓𝐔𝐒 𝐏𝐑𝐎𝐈𝐁𝐈𝐃𝐎! 📱
-┃
-┃ 🚫 Menções no status do grupo
-┃ não são permitidas!
-┃
-┃ 🛡️ Proteção ativa!
-╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
-
 ANTI_PALAVRAO_MSG: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
 ┃ 🤬 𝐏𝐀𝐋𝐀𝐕𝐑𝐀̃𝐎 𝐃𝐄𝐓𝐄𝐂𝐓𝐀𝐃𝐎! 🤬
 ┃
@@ -614,6 +605,16 @@ ACEITO_E_BANIDO_LISTANEGRA: `╭━━━━━━━━━━━━━━━━
 ┃ 🛡️ Proteção automática!
 ╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
 
+ENTRADA_E_BANIDO_LISTANEGRA: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
+┃ ⛔ 𝐋𝐈𝐒𝐓𝐀 𝐍𝐄𝐆𝐑𝐀! ⛔
+┃
+┃ @#usuario# foi removido(a)
+┃ por estar na lista negra
+┃ global!
+┃
+┃ 🛡️ Proteção automática!
+╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
+
 ACEITO_E_BANIDO_GRUPO: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
 ┃ 🚫 𝐀𝐂𝐄𝐈𝐓𝐎 𝐄 𝐁𝐀𝐍𝐈𝐃𝐎! 🚫
 ┃
@@ -624,12 +625,35 @@ ACEITO_E_BANIDO_GRUPO: `╭━━━━━━━━━━━━━━━━━�
 ┃ 🛡️ Proteção automática!
 ╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
 
+ENTRADA_E_BANIDO_GRUPO: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
+┃ 🚫 𝐋𝐈𝐒𝐓𝐀 𝐍𝐄𝐆𝐑𝐀! 🚫
+┃
+┃ @#usuario# foi removido(a)
+┃ por estar na lista negra
+┃ deste grupo!
+┃
+┃ 🛡️ Proteção automática!
+╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
+
 ACEITO_E_BANIDO_ANTIFAKE: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
 ┃ ❌ 𝐀𝐍𝐓𝐈-𝐅𝐀𝐊𝐄 𝐀𝐓𝐈𝐕𝐀𝐃𝐎! ❌
 ┃
 ┃ @#usuario# foi aceito e
 ┃ imediatamente removido por
 ┃ não ser um número brasileiro!
+┃
+┃ 🇧🇷 Apenas números BR são
+┃ permitidos neste grupo!
+┃
+┃ 🛡️ Proteção automática!
+╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
+
+ENTRADA_E_BANIDO_ANTIFAKE: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
+┃ ❌ 𝐀𝐍𝐓𝐈-𝐅𝐀𝐊𝐄! ❌
+┃
+┃ @#usuario# foi removido(a)
+┃ por não ser um número
+┃ brasileiro!
 ┃
 ┃ 🇧🇷 Apenas números BR são
 ┃ permitidos neste grupo!
