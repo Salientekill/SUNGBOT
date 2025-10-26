@@ -462,13 +462,22 @@ ANTI_LINK_GRUPO_MSG: `╭━━━━━━━━━━━━━━━━━━�
 ┃ 🛡️ Proteção ativa!
 ╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
 
-ANTI_FAKE_MSG: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
-┃ 🚫 𝐍Ú𝐌𝐄𝐑𝐎 𝐅𝐀𝐊𝐄! 🚫
+ANTI_STATUS_MSG: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
+┃ 📢 𝐌𝐄𝐍Ç𝐀̃𝐎 𝐄𝐌 𝐒𝐓𝐀𝐓𝐔𝐒! 📢
 ┃
-┃ ⚠️ Número internacional ou
-┃ suspeito detectado!
+┃ 🚫 Menções ao grupo em status
+┃ não são permitidas!
 ┃
-┃ 🛡️ Proteção contra fakes!
+┃ 🛡️ Proteção ativa!
+╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
+
+ANTI_NOTAS_MSG: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
+┃ 💰 𝐍𝐎𝐓𝐀𝐒 𝐅𝐀𝐊𝐄𝐒! 💰
+┃
+┃ 🚫 Notas falsas não são
+┃ permitidas neste grupo!
+┃
+┃ 🛡️ Proteção contra fraudes!
 ╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
 
 // ========================================
@@ -573,38 +582,6 @@ DESPEDIDA_PADRAO: `╭━━━━━━━━━━━━━━━━━━━�
 ┃ a caminhos incríveis! ✨
 ╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
 
-LISTA_NEGRA_GRUPO_MSG: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
-┃ 🚫 𝐋𝐈𝐒𝐓𝐀 𝐍𝐄𝐆𝐑𝐀 𝐆𝐑𝐔𝐏𝐎! 🚫
-┃
-┃ ⚠️ @#usuario# estava na lista
-┃ negra deste grupo!
-┃
-┃ 🔨 Remoção automática! 
-┃ 🛡️ Proteção ativa!
-╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
-
-ANTI_FAKE_GRUPO_MSG: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
-┃ 🇧🇷 𝐀𝐍𝐓𝐈-𝐅𝐀𝐊𝐄 𝐀𝐓𝐈𝐕𝐎! 🇧🇷
-┃
-┃ 🚫 @#usuario# não é um
-┃ número brasileiro!
-┃
-┃ 🛡️ Apenas números BR são
-┃ permitidos neste grupo!
-┃
-┃ 🔨 Remoção automática!
-╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
-
-ACEITO_E_BANIDO_LISTANEGRA: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
-┃ ⛔ 𝐀𝐂𝐄𝐈𝐓𝐎 𝐄 𝐁𝐀𝐍𝐈𝐃𝐎! ⛔
-┃
-┃ @#usuario# foi aceito e
-┃ imediatamente removido por
-┃ estar na lista negra global!
-┃
-┃ 🛡️ Proteção automática!
-╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
-
 ENTRADA_E_BANIDO_LISTANEGRA: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
 ┃ ⛔ 𝐋𝐈𝐒𝐓𝐀 𝐍𝐄𝐆𝐑𝐀! ⛔
 ┃
@@ -615,35 +592,12 @@ ENTRADA_E_BANIDO_LISTANEGRA: `╭━━━━━━━━━━━━━━━�
 ┃ 🛡️ Proteção automática!
 ╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
 
-ACEITO_E_BANIDO_GRUPO: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
-┃ 🚫 𝐀𝐂𝐄𝐈𝐓𝐎 𝐄 𝐁𝐀𝐍𝐈𝐃𝐎! 🚫
-┃
-┃ @#usuario# foi aceito e
-┃ imediatamente removido por
-┃ estar na lista negra do grupo!
-┃
-┃ 🛡️ Proteção automática!
-╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
-
 ENTRADA_E_BANIDO_GRUPO: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
 ┃ 🚫 𝐋𝐈𝐒𝐓𝐀 𝐍𝐄𝐆𝐑𝐀! 🚫
 ┃
 ┃ @#usuario# foi removido(a)
 ┃ por estar na lista negra
 ┃ deste grupo!
-┃
-┃ 🛡️ Proteção automática!
-╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
-
-ACEITO_E_BANIDO_ANTIFAKE: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
-┃ ❌ 𝐀𝐍𝐓𝐈-𝐅𝐀𝐊𝐄 𝐀𝐓𝐈𝐕𝐀𝐃𝐎! ❌
-┃
-┃ @#usuario# foi aceito e
-┃ imediatamente removido por
-┃ não ser um número brasileiro!
-┃
-┃ 🇧🇷 Apenas números BR são
-┃ permitidos neste grupo!
 ┃
 ┃ 🛡️ Proteção automática!
 ╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
@@ -696,16 +650,6 @@ DONO_PROMOVIDO_AUTO: `╭━━━━━━━━━━━━━━━━━━�
 ┃
 ┃ ⚡ Sistema de proteção
 ┃ ativado!
-╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
-
-USUARIO_APROVADO_DONO: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
-┃ 🎉 𝐁𝐄𝐌-𝐕𝐈𝐍𝐃𝐎! 🎉
-┃
-┃ 👑 Bem-vindo ao grupo
-┃ @#usuario#!
-┃
-┃ ⚡ Usuário especial aprovado
-┃ e promovido automaticamente!
 ╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
 
 MENSAGENS_DE_AGUARDE: [
@@ -776,8 +720,6 @@ TEXTO_COMANDO_CASAL: `╭━━━━━━━━━━━━━━━━━━�
 ╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
 
 // PALAVRAS QUE SÃO PROIBIDAS DO SIMIH FALAR (usando o filtro unificado).
-PALAVRAS_PROIBIDA_DE_O_SIMI_FALAR: PALAVRAS_FILTRO_UNIFICADO,
-
 COMANDO_BAN_MENSAGEM: `╔═══════════════════════╗
 ║ 🔨 𝐔𝐒𝐔Á𝐑𝐈𝐎 𝐑𝐄𝐌𝐎𝐕𝐈𝐃𝐎! 🔨
 ║
@@ -813,20 +755,11 @@ LIMITE_CARACTERES_MSG: `╔═════════════════�
 ║ ⚠️ 𝐌𝐄𝐍𝐒𝐀𝐆𝐄𝐌 𝐋𝐎𝐍𝐆𝐀! ⚠️
 ║
 ║ 📏 Muitos caracteres enviados!
-║ Contra as normas do grupo! 
+║ Contra as normas do grupo!
 ║
 ║ ✂️ Por precaução, irei remover.
-║ 🛡️ Proteção ativada! 
+║ 🛡️ Proteção ativada!
 ╚════════════════════════════════╝`,
-
-LISTA_NEGRA_GLOBAL_MENSAGEM: `┌──────────────────────────┐
-│ 🚫 𝐋𝐈𝐒𝐓𝐀 𝐍𝐄𝐆𝐑𝐀! 🚫
-│
-│ ⚡ Olha quem deu as caras... 
-│ 🔨 Sente o poder do ban!
-│
-│ 🛡️ Sistema de proteção ativo! 
-└──────────────────────────┘`,
 
 MENSAGEM_GRUPO_ABRIU: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
 ┃ 🔓 𝐆𝐑𝐔𝐏𝐎 𝐀𝐁𝐄𝐑𝐓𝐎! 🔓
@@ -847,10 +780,6 @@ X9_PROMOCAO_MSG: `👑 *PROMOÇÃO DETECTADA*\n\n@#promovido# foi promovido(a) a
 X9_REBAIXAMENTO_MSG: `⬇️ *REBAIXAMENTO DETECTADO*\n\n@#rebaixado# foi rebaixado(a) para membro comum por @#admin#.`,
 
 X9_SOLICITACAO_REJEITADA_MSG: `❌ *SOLICITAÇÃO REJEITADA*\n\nO admin @#admin# rejeitou a entrada de @#usuario# no grupo.`,
-
-// ===== MENSAGEM DO SISTEMA ANTI-ROUBO =====
-
-ANTI_ROUBO_ADMINS_REMOVIDOS_INFO: `📢 *INFORMAÇÃO*\n\nAdministradores removidos sem autorização: #removidos#\n\nO criador do grupo ou administradores autorizados podem adicioná-los novamente.\n\n*Alerta para todos os administradores.*`,
 
 MENSAGEM_GRUPO_FECHOU: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
 ┃ 🔒 𝐆𝐑𝐔𝐏𝐎 𝐅𝐄𝐂𝐇𝐀𝐃𝐎! 🔒
