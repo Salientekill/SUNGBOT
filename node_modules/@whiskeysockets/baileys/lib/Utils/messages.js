@@ -9,6 +9,7 @@ import { isJidGroup, isJidNewsletter, isJidStatusBroadcast, jidNormalizedUser } 
 import { sha256 } from './crypto.js';
 import { generateMessageIDV2, getKeyAuthor, unixTimestampSeconds } from './generics.js';
 import { downloadContentFromMessage, encryptedStream, generateThumbnail, getAudioDuration, getAudioWaveform, getRawMediaUploadData } from './messages-media.js';
+import { shouldIncludeReportingToken } from './reporting-utils.js';
 const MIMETYPE_MAP = {
     image: 'image/jpeg',
     video: 'video/mp4',
@@ -504,6 +505,12 @@ export const generateWAMessageContent = async (message, options) => {
         }
         else if (key) {
             key.contextInfo = message.contextInfo;
+        }
+    }
+    if (shouldIncludeReportingToken(m)) {
+        m.messageContextInfo = m.messageContextInfo || {};
+        if (!m.messageContextInfo.messageSecret) {
+            m.messageContextInfo.messageSecret = randomBytes(32);
         }
     }
     return WAProto.Message.create(m);

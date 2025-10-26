@@ -2,7 +2,7 @@
   "dependencies": {
     "@aqul/akinator-api": "^3.0.1",
     "@vitalets/google-translate-api": "^9.2.1",
-    "@whiskeysockets/baileys": "github:WhiskeySockets/baileys#chore-improve-some-type-safety",
+    "@whiskeysockets/baileys": "github:WhiskeySockets/baileys#reporting-tctoken-elements",
     "assemblyai": "^4.8.0",
     "async-lock": "^1.4.1",
     "async-mutex": "^0.5.0",
@@ -17,10 +17,12 @@
     "fluent-ffmpeg": "^2.1.2",
     "fs-extra": "^11.1.0",
     "human-readable": "^0.2.1",
+    "ioredis": "^5.8.1",
     "jsdom": "^19.0.0",
     "lastfm": "^0.9.4",
     "linkifyjs": "^4.1.0",
     "lodash": "^4.17.21",
+    "lru-cache": "^11.2.2",
     "lz-string": "^1.5.0",
     "moment-timezone": "^0.5.40",
     "multistream": "^4.1.0",
@@ -40,11 +42,14 @@
     "zod": "^3.23.8"
   },
   "name": "SUNG BOT",
-  "description": "Sempre buscando melhorar, qualquer dúvida chama lá no WhatsApp: +55 21 99540-0244",
-  "version": "2.0",
+  "description": "Sempre buscando melhorar, qualquer dúvida chama lá no WhatsApp: +55 21 97220-2744",
+  "version": "3.3",
+  "config": {
+    "storage": "sqlite"
+  },
   "scripts": {
-    "start": "ulimit -c 0 && bash start.sh",
-    "start2": "ulimit -c 0 && bash start.sh",
+    "start": "bash start.sh",
+    "start2": "bash start.sh",
     "atualizar": "bash atualizar.sh",
     "test": "node iniciar.js"
   },
