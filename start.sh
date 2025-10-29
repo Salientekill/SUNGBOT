@@ -11,8 +11,7 @@ start_node_script() {
 }
 
 # ===== SCRIPT SIMPLIFICADO =====
-# Agora não precisa mais de argumentos -code ou -code2
-# O método de autenticação é escolhido interativamente
+# Redis inicia automaticamente via iniciar.js
 
 echo -e "\e[95m════════════════════════════════════════════════════════════════════════════════\e[0m"
 echo -e "\e[96m                           🤖 SUNG BOT - INICIALIZAÇÃO                         \e[0m"
@@ -22,14 +21,14 @@ echo -e "\e[92m✅ QR Code e Código de Emparelhamento disponíveis\e[0m"
 echo -e "\e[94m📱 Você escolherá o método durante a inicialização\e[0m"
 echo -e "\e[95m════════════════════════════════════════════════════════════════════════════════\e[0m"
 
-while : 
+while :
 do
     cleanup_files
     start_node_script
-    
+
     # Aguarda 3 segundos antes de reiniciar (em caso de erro)
     echo -e "\e[93m⏳ Aguardando 3 segundos antes de reiniciar...\e[0m"
     sleep 3
-    
+
     echo -e "\e[94m🔄 Reiniciando o bot...\e[0m"
 done
