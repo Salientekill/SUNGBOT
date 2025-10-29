@@ -5,13 +5,10 @@
 # ║              Redis + SQLite Support                   ║
 # ╚═══════════════════════════════════════════════════════╝
 #
-# Este script limpa a sessão do bot tanto no Redis quanto no SQLite.
-# Detecta automaticamente qual storage está sendo usado.
+# Este script limpa a sessão do bot baseado na configuração do settings.json
 # Após executar, o bot pedirá para escanear QR code novamente.
 #
-# USO: ./reset.sh
-
-set -e
+# USO: bash reset.sh
 
 echo ""
 echo "╔═══════════════════════════════════════════════════════╗"
@@ -21,10 +18,10 @@ echo ""
 
 # ===== FUNÇÕES AUXILIARES =====
 
-# Detectar qual storage está configurado no package.json
+# Detectar qual storage está configurado no dados/settings.json
 detect_storage_mode() {
-    if [ -f package.json ]; then
-        STORAGE_MODE=$(cat package.json | grep -A 5 '"config"' | grep '"storage"' | sed 's/.*"storage".*"\([^"]*\)".*/\1/' | tr '[:upper:]' '[:lower:]')
+    if [ -f dados/settings.json ]; then
+        STORAGE_MODE=$(grep '"storage"' dados/settings.json 2>/dev/null | sed 's/.*"storage".*:.*"\([^"]*\)".*/\1/' | tr '[:upper:]' '[:lower:]')
 
         if [ -z "$STORAGE_MODE" ]; then
             STORAGE_MODE="sqlite"
@@ -38,6 +35,11 @@ detect_storage_mode() {
 
 # Verificar se Redis está disponível
 check_redis_available() {
+    # Verificar se redis-cli existe
+    if ! command -v redis-cli &>/dev/null; then
+        return 1
+    fi
+
     # Tentar Unix Socket
     if redis-cli -s /run/redis/redis-server.sock ping &>/dev/null 2>&1; then
         echo "socket:/run/redis/redis-server.sock"
@@ -68,151 +70,85 @@ get_bot_id() {
     fi
 }
 
-# ===== DETECÇÃO AUTOMÁTICA DO MODO =====
+# ===== INÍCIO DO PROCESSO =====
+
 STORAGE_MODE=$(detect_storage_mode)
-REDIS_CONNECTION=$(check_redis_available)
-REDIS_AVAILABLE=$?
+echo "📊 Storage configurado: $STORAGE_MODE"
+echo ""
 
-echo "📊 Detecção de Storage:"
-echo "   • Configurado: $STORAGE_MODE"
+# ===== VERIFICAR O QUE SERÁ DELETADO BASEADO NO STORAGE CONFIGURADO =====
 
-if [ $REDIS_AVAILABLE -eq 0 ]; then
-    echo "   • Redis: ✅ Disponível ($REDIS_CONNECTION)"
-else
-    echo "   • Redis: ❌ Indisponível"
-fi
+if [ "$STORAGE_MODE" = "redis" ]; then
+    # ===== MODO REDIS - PRECISA DE BOTID =====
+    BOTID=$(get_bot_id)
 
-# Pegar BotId
-BOTID=$(get_bot_id)
-
-if [ -z "$BOTID" ]; then
-    echo ""
-    echo "⚠️  Arquivo .bot-session-id não encontrado!"
-    echo ""
-
-    # Se Redis está disponível, listar sessões
-    if [ $REDIS_AVAILABLE -eq 0 ]; then
-        echo "Opções:"
-        echo "  1. Listar sessões Redis disponíveis"
-        echo "  2. Listar sessões SQLite disponíveis"
-        echo "  3. Digitar BotId manualmente"
-        echo "  4. Sair"
+    if [ -z "$BOTID" ]; then
+        echo "⚠️  Arquivo .bot-session-id não encontrado!"
         echo ""
-        read -p "Escolha (1/2/3/4): " opcao
-
-        case $opcao in
-            1)
-                echo ""
-                echo "📋 Sessões Redis encontradas:"
-                if [[ "$REDIS_CONNECTION" == socket:* ]]; then
-                    SOCKET_PATH="${REDIS_CONNECTION#socket:}"
-                    redis-cli -s "$SOCKET_PATH" keys "sessions:*:creds" | sed 's/sessions://g' | sed 's/:creds//g'
-                else
-                    redis-cli keys "sessions:*:creds" | sed 's/sessions://g' | sed 's/:creds//g'
-                fi
-                echo ""
-                read -p "Digite o botId para resetar: " BOTID
-                ;;
-            2)
-                echo ""
-                echo "📋 Sessões SQLite encontradas:"
-                ls -1 dados/DB/*-auth.db 2>/dev/null | sed 's/dados\/DB\///g' | sed 's/-auth.db//g' || echo "   (nenhuma sessão encontrada)"
-                echo ""
-                read -p "Digite o botId para resetar: " BOTID
-                ;;
-            3)
-                read -p "Digite o botId: " BOTID
-                ;;
-            *)
-                echo "Saindo..."
-                exit 0
-                ;;
-        esac
+        read -p "Digite o BotId para resetar: " BOTID
 
         if [ -z "$BOTID" ]; then
             echo "❌ BotId não pode ser vazio!"
             exit 1
         fi
     else
-        # Apenas SQLite disponível
-        echo "📋 Sessões SQLite disponíveis:"
-        ls -1 dados/DB/*-auth.db 2>/dev/null | sed 's/dados\/DB\///g' | sed 's/-auth.db//g' || echo "   (nenhuma sessão encontrada)"
-        echo ""
-        read -p "Digite o botId para resetar: " BOTID
-
-        if [ -z "$BOTID" ]; then
-            echo "❌ BotId não pode ser vazio!"
-            exit 1
-        fi
+        echo "🆔 BotId: $BOTID"
     fi
-else
-    echo "   • BotId: $BOTID"
-fi
 
-echo ""
-echo "═══════════════════════════════════════════════════════"
-echo ""
+    echo ""
+    echo "═══════════════════════════════════════════════════════"
+    echo ""
 
-# ===== VERIFICAR O QUE SERÁ DELETADO =====
+    REDIS_CONNECTION=$(check_redis_available)
+    REDIS_AVAILABLE=$?
 
-REDIS_KEYS_COUNT=0
-SQLITE_FILE_EXISTS=0
+    if [ $REDIS_AVAILABLE -ne 0 ]; then
+        echo "❌ ERRO: Storage configurado como Redis mas Redis não está disponível!"
+        echo ""
+        echo "Verifique:"
+        echo "  • Redis está rodando?"
+        echo "  • Comando redis-cli está instalado?"
+        echo ""
+        exit 1
+    fi
 
-# Verificar Redis
-if [ $REDIS_AVAILABLE -eq 0 ]; then
+    # Contar chaves
     if [[ "$REDIS_CONNECTION" == socket:* ]]; then
         SOCKET_PATH="${REDIS_CONNECTION#socket:}"
         REDIS_KEYS_COUNT=$(redis-cli -s "$SOCKET_PATH" keys "sessions:${BOTID}:*" 2>/dev/null | wc -l)
     else
         REDIS_KEYS_COUNT=$(redis-cli keys "sessions:${BOTID}:*" 2>/dev/null | wc -l)
     fi
-fi
 
-# Verificar SQLite
-SQLITE_DB_PATH="dados/DB/${BOTID}-auth.db"
-if [ -f "$SQLITE_DB_PATH" ]; then
-    SQLITE_FILE_EXISTS=1
-fi
+    echo "📊 Dados encontrados (Redis):"
+    echo "   • Conexão: $REDIS_CONNECTION"
+    echo "   • Chaves: $REDIS_KEYS_COUNT"
+    echo ""
 
-echo "📊 Status da sessão '$BOTID':"
-echo ""
+    if [ $REDIS_KEYS_COUNT -eq 0 ]; then
+        echo "ℹ️  Nenhuma sessão encontrada no Redis para '$BOTID'!"
+        exit 0
+    fi
 
-if [ $REDIS_KEYS_COUNT -gt 0 ]; then
-    echo "   Redis:"
-    echo "   • Chaves encontradas: $REDIS_KEYS_COUNT"
-    echo "   • Será limpo: ✅ SIM"
 else
-    echo "   Redis:"
-    echo "   • Chaves encontradas: 0"
-    echo "   • Será limpo: ⏭️  NÃO (nada para limpar)"
-fi
+    # ===== MODO SQLITE - NÃO PRECISA DE BOTID =====
+    echo "═══════════════════════════════════════════════════════"
+    echo ""
 
-echo ""
+    SQLITE_DB_PATH="dados/DB/SUNG-AUTH.db"
 
-if [ $SQLITE_FILE_EXISTS -eq 1 ]; then
-    SQLITE_SIZE=$(du -h "$SQLITE_DB_PATH" | cut -f1)
-    echo "   SQLite:"
+    if [ ! -f "$SQLITE_DB_PATH" ]; then
+        echo "ℹ️  Nenhuma sessão encontrada no SQLite!"
+        echo "   Arquivo esperado: $SQLITE_DB_PATH"
+        exit 0
+    fi
+
+    SQLITE_SIZE=$(du -h "$SQLITE_DB_PATH" 2>/dev/null | cut -f1 || echo "?")
+
+    echo "📊 Dados encontrados (SQLite):"
     echo "   • Arquivo: $SQLITE_DB_PATH"
     echo "   • Tamanho: $SQLITE_SIZE"
-    echo "   • Será deletado: ✅ SIM"
-else
-    echo "   SQLite:"
-    echo "   • Arquivo: Não encontrado"
-    echo "   • Será deletado: ⏭️  NÃO (nada para deletar)"
-fi
-
-echo ""
-
-# Se não há nada para limpar
-if [ $REDIS_KEYS_COUNT -eq 0 ] && [ $SQLITE_FILE_EXISTS -eq 0 ]; then
-    echo "ℹ️  Nenhuma sessão encontrada para '$BOTID'!"
     echo ""
-    echo "Possíveis motivos:"
-    echo "  • Bot nunca foi iniciado com este BotId"
-    echo "  • Sessão já foi resetada anteriormente"
-    echo "  • BotId incorreto ou digitado errado"
-    echo ""
-    exit 0
 fi
 
 echo "═══════════════════════════════════════════════════════"
@@ -227,12 +163,11 @@ echo ""
 echo "   Após o reset:"
 echo "   • O bot pedirá QR code ou código novamente"
 echo "   • Será como uma nova instalação"
-echo "   • Contatos/grupos terão que sincronizar novamente"
 echo ""
 echo "═══════════════════════════════════════════════════════"
 echo ""
 
-read -p "🔴 Confirma o RESET da sessão '$BOTID'? (Digite 'SIM' para confirmar): " confirma
+read -p "🔴 Digite 'SIM' para confirmar o RESET: " confirma
 
 if [ "$confirma" != "SIM" ]; then
     echo ""
@@ -246,14 +181,15 @@ echo "🔄 Processando reset..."
 echo ""
 
 # Criar diretório de backup
-mkdir -p ./backups
+mkdir -p ./backups 2>/dev/null || true
 
-BACKUP_TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+BACKUP_TIMESTAMP=$(date +%Y%m%d-%H%M%S 2>/dev/null || echo "backup")
 ITEMS_DELETED=0
 
-# ===== LIMPAR REDIS =====
-if [ $REDIS_KEYS_COUNT -gt 0 ]; then
-    echo "1️⃣  Limpando Redis..."
+# ===== EXECUTAR LIMPEZA BASEADO NO STORAGE =====
+
+if [ "$STORAGE_MODE" = "redis" ]; then
+    echo "🗑️  Limpando Redis..."
     echo ""
 
     # Backup das chaves
@@ -261,113 +197,49 @@ if [ $REDIS_KEYS_COUNT -gt 0 ]; then
 
     if [[ "$REDIS_CONNECTION" == socket:* ]]; then
         SOCKET_PATH="${REDIS_CONNECTION#socket:}"
-        redis-cli -s "$SOCKET_PATH" keys "sessions:${BOTID}:*" > "$BACKUP_FILE"
+        redis-cli -s "$SOCKET_PATH" keys "sessions:${BOTID}:*" > "$BACKUP_FILE" 2>/dev/null
 
-        # Script Lua para deletar rápido
-        LUA_SCRIPT='
-local pattern = ARGV[1]
-local cursor = "0"
-local deleted = 0
-repeat
-    local result = redis.call("SCAN", cursor, "MATCH", pattern, "COUNT", 1000)
-    cursor = result[1]
-    local keys = result[2]
-    if #keys > 0 then
-        deleted = deleted + redis.call("UNLINK", unpack(keys))
-    end
-until cursor == "0"
-return deleted
-'
+        # Deletar usando SCAN + UNLINK (mais seguro)
+        redis-cli -s "$SOCKET_PATH" --scan --pattern "sessions:${BOTID}:*" 2>/dev/null | while read key; do
+            redis-cli -s "$SOCKET_PATH" unlink "$key" &>/dev/null
+            ITEMS_DELETED=$((ITEMS_DELETED + 1))
+        done
 
-        DELETED=$(redis-cli -s "$SOCKET_PATH" --eval <(echo "$LUA_SCRIPT") , "sessions:${BOTID}:*" 2>/dev/null || echo "0")
-    else
-        redis-cli keys "sessions:${BOTID}:*" > "$BACKUP_FILE"
-
-        # Script Lua para deletar rápido
-        LUA_SCRIPT='
-local pattern = ARGV[1]
-local cursor = "0"
-local deleted = 0
-repeat
-    local result = redis.call("SCAN", cursor, "MATCH", pattern, "COUNT", 1000)
-    cursor = result[1]
-    local keys = result[2]
-    if #keys > 0 then
-        deleted = deleted + redis.call("UNLINK", unpack(keys))
-    end
-until cursor == "0"
-return deleted
-'
-
-        DELETED=$(redis-cli --eval <(echo "$LUA_SCRIPT") , "sessions:${BOTID}:*" 2>/dev/null || echo "0")
-    fi
-
-    if [ -z "$DELETED" ] || [ "$DELETED" = "(nil)" ]; then
-        DELETED=0
-    fi
-
-    echo "   ✅ Redis limpo: $DELETED chaves deletadas"
-    echo "   📦 Backup: $BACKUP_FILE"
-
-    # Remover registro de bot ativo
-    if [[ "$REDIS_CONNECTION" == socket:* ]]; then
+        # Remover registro de bot ativo
         redis-cli -s "$SOCKET_PATH" del "active-bot:${BOTID}" &>/dev/null || true
     else
+        redis-cli keys "sessions:${BOTID}:*" > "$BACKUP_FILE" 2>/dev/null
+
+        # Deletar usando SCAN + UNLINK
+        redis-cli --scan --pattern "sessions:${BOTID}:*" 2>/dev/null | while read key; do
+            redis-cli unlink "$key" &>/dev/null
+            ITEMS_DELETED=$((ITEMS_DELETED + 1))
+        done
+
+        # Remover registro de bot ativo
         redis-cli del "active-bot:${BOTID}" &>/dev/null || true
     fi
 
-    ITEMS_DELETED=$((ITEMS_DELETED + DELETED))
-    echo ""
-fi
+    echo "   ✅ Redis limpo"
+    [ -f "$BACKUP_FILE" ] && echo "   📦 Backup: $BACKUP_FILE"
 
-# ===== LIMPAR SQLITE =====
-if [ $SQLITE_FILE_EXISTS -eq 1 ]; then
-    echo "2️⃣  Limpando SQLite..."
+else
+    echo "🗑️  Limpando SQLite..."
     echo ""
 
     # Backup do arquivo
     SQLITE_BACKUP="./backups/sqlite-${BOTID}-${BACKUP_TIMESTAMP}.db"
-    cp "$SQLITE_DB_PATH" "$SQLITE_BACKUP" 2>/dev/null || true
+    cp "$SQLITE_DB_PATH" "$SQLITE_BACKUP" 2>/dev/null && echo "   📦 Backup: $SQLITE_BACKUP"
 
     # Deletar arquivo
-    rm -f "$SQLITE_DB_PATH"
+    rm -f "$SQLITE_DB_PATH" 2>/dev/null
 
     if [ ! -f "$SQLITE_DB_PATH" ]; then
-        echo "   ✅ SQLite limpo: arquivo deletado"
-        echo "   📦 Backup: $SQLITE_BACKUP"
-        ITEMS_DELETED=$((ITEMS_DELETED + 1))
+        echo "   ✅ SQLite limpo"
+        ITEMS_DELETED=1
     else
-        echo "   ⚠️  Erro ao deletar arquivo SQLite"
+        echo "   ⚠️  Erro ao deletar arquivo"
     fi
-
-    echo ""
-fi
-
-# ===== VERIFICAÇÃO FINAL =====
-echo "3️⃣  Verificando limpeza..."
-echo ""
-
-# Verificar Redis
-if [ $REDIS_AVAILABLE -eq 0 ]; then
-    if [[ "$REDIS_CONNECTION" == socket:* ]]; then
-        SOCKET_PATH="${REDIS_CONNECTION#socket:}"
-        REMAINING_REDIS=$(redis-cli -s "$SOCKET_PATH" keys "sessions:${BOTID}:*" 2>/dev/null | wc -l)
-    else
-        REMAINING_REDIS=$(redis-cli keys "sessions:${BOTID}:*" 2>/dev/null | wc -l)
-    fi
-
-    if [ "$REMAINING_REDIS" -eq 0 ]; then
-        echo "   ✅ Redis: todas as chaves removidas"
-    else
-        echo "   ⚠️  Redis: ainda restam $REMAINING_REDIS chaves"
-    fi
-fi
-
-# Verificar SQLite
-if [ -f "$SQLITE_DB_PATH" ]; then
-    echo "   ⚠️  SQLite: arquivo ainda existe"
-else
-    echo "   ✅ SQLite: arquivo removido"
 fi
 
 echo ""
@@ -376,26 +248,15 @@ echo "║             ✅ RESET CONCLUÍDO COM SUCESSO!           ║"
 echo "╚═══════════════════════════════════════════════════════╝"
 echo ""
 echo "📊 Resumo:"
-echo "   • BotId: $BOTID"
-echo "   • Storage usado: $STORAGE_MODE"
-echo "   • Itens removidos: $ITEMS_DELETED"
-echo "   • Backups: ./backups/*${BACKUP_TIMESTAMP}*"
+if [ "$STORAGE_MODE" = "redis" ]; then
+    echo "   • BotId: $BOTID"
+fi
+echo "   • Storage: $STORAGE_MODE"
 echo ""
 echo "🔄 Próximos passos:"
 echo ""
-echo "   1. Inicie o bot novamente:"
-echo "      node iniciar.js"
-echo ""
-echo "   2. O bot pedirá para escanear QR code ou código"
-echo ""
-echo "   3. Autentique novamente com o WhatsApp"
-echo ""
-echo "   4. Aguarde sincronização de contatos/grupos"
-echo ""
-echo "💡 Dica:"
-echo "   • O botId permanece o mesmo: $BOTID"
-echo "   • Apenas a sessão WhatsApp foi resetada"
-echo "   • Para mudar o botId também, delete: .bot-session-id"
+echo "   1. Inicie o bot: node iniciar.js"
+echo "   2. Escaneie o QR code novamente"
 echo ""
 echo "═══════════════════════════════════════════════════════"
 echo ""
