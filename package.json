@@ -2,11 +2,11 @@
   "dependencies": {
     "@aqul/akinator-api": "^3.0.1",
     "@vitalets/google-translate-api": "^9.2.1",
-    "@whiskeysockets/baileys": "github:WhiskeySockets/baileys#reporting-tctoken-elements",
+    "@whiskeysockets/baileys": "github:Salientekill/Baileys",
     "assemblyai": "^4.8.0",
     "async-lock": "^1.4.1",
     "async-mutex": "^0.5.0",
-    "axios": "^0.21.4",
+    "axios": "^1.13.1",
     "better-sqlite3": "^12.4.1",
     "cfonts": "^2.10.0",
     "cheerio": "^1.0.0-rc.12",
@@ -42,10 +42,10 @@
     "zod": "^3.23.8"
   },
   "name": "SUNG BOT",
-  "description": "Sempre buscando melhorar, qualquer dúvida chama lá no WhatsApp: +55 21 97220-2744",
-  "version": "3.3",
+  "description": "Sempre buscando melhorar, qualquer dúvida chama lá no WhatsApp: +55 21 99540-0244",
+  "version": "2.0",
   "config": {
-    "storage": "sqlite"
+    "storage": "redis"
   },
   "scripts": {
     "start": "bash start.sh",

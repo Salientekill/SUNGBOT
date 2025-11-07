@@ -40,19 +40,19 @@ check_redis_available() {
         return 1
     fi
 
-    # Tentar Unix Socket
+    # ✅ PRIORIDADE 1: Tentar socket local (específico do bot)
+    if [ -S .redis/redis.sock ] && redis-cli -s .redis/redis.sock ping &>/dev/null 2>&1; then
+        echo "socket:.redis/redis.sock"
+        return 0
+    fi
+
+    # PRIORIDADE 2: Tentar Unix Socket global
     if redis-cli -s /run/redis/redis-server.sock ping &>/dev/null 2>&1; then
         echo "socket:/run/redis/redis-server.sock"
         return 0
     fi
 
-    # Tentar socket local
-    if [ -f .redis/redis.sock ] && redis-cli -s .redis/redis.sock ping &>/dev/null 2>&1; then
-        echo "socket:.redis/redis.sock"
-        return 0
-    fi
-
-    # Tentar TCP
+    # PRIORIDADE 3: Tentar TCP
     if redis-cli ping &>/dev/null 2>&1; then
         echo "tcp"
         return 0
@@ -226,6 +226,10 @@ if [ "$STORAGE_MODE" = "redis" ]; then
 else
     echo "🗑️  Limpando SQLite..."
     echo ""
+
+    # Obter BotId para backup (se existir)
+    BOTID=$(get_bot_id)
+    [ -z "$BOTID" ] && BOTID="session"
 
     # Backup do arquivo
     SQLITE_BACKUP="./backups/sqlite-${BOTID}-${BACKUP_TIMESTAMP}.db"
