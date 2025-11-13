@@ -138,8 +138,8 @@ ok "Repositório atualizado"
 # 5. Restauração
 info "Restaurando dados..."
 
-[ -d "dados" ] && rm -rf dados
-
+# Extrai backup por cima da pasta dados do GitHub
+# Arquivos antigos sobrescrevem, arquivos novos do GitHub são mantidos
 unzip -o -q "$DADOS_BACKUP" -d . >> "$LOG_FILE" 2>&1 || fatal "Falha na restauração"
 
 [ ! -d "dados" ] && fatal "Dados não restaurados"
