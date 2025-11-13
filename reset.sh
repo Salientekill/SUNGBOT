@@ -199,22 +199,16 @@ if [ "$STORAGE_MODE" = "redis" ]; then
         SOCKET_PATH="${REDIS_CONNECTION#socket:}"
         redis-cli -s "$SOCKET_PATH" keys "sessions:${BOTID}:*" > "$BACKUP_FILE" 2>/dev/null
 
-        # Deletar usando SCAN + UNLINK (mais seguro)
-        redis-cli -s "$SOCKET_PATH" --scan --pattern "sessions:${BOTID}:*" 2>/dev/null | while read key; do
-            redis-cli -s "$SOCKET_PATH" unlink "$key" &>/dev/null
-            ITEMS_DELETED=$((ITEMS_DELETED + 1))
-        done
+        # Deletar usando SCAN + UNLINK com pipeline (otimizado)
+        ITEMS_DELETED=$(redis-cli -s "$SOCKET_PATH" --scan --pattern "sessions:${BOTID}:*" 2>/dev/null | xargs -r -n 100 redis-cli -s "$SOCKET_PATH" unlink 2>/dev/null | awk '{s+=$1} END {print s+0}')
 
         # Remover registro de bot ativo
         redis-cli -s "$SOCKET_PATH" del "active-bot:${BOTID}" &>/dev/null || true
     else
         redis-cli keys "sessions:${BOTID}:*" > "$BACKUP_FILE" 2>/dev/null
 
-        # Deletar usando SCAN + UNLINK
-        redis-cli --scan --pattern "sessions:${BOTID}:*" 2>/dev/null | while read key; do
-            redis-cli unlink "$key" &>/dev/null
-            ITEMS_DELETED=$((ITEMS_DELETED + 1))
-        done
+        # Deletar usando SCAN + UNLINK com pipeline (otimizado)
+        ITEMS_DELETED=$(redis-cli --scan --pattern "sessions:${BOTID}:*" 2>/dev/null | xargs -r -n 100 redis-cli unlink 2>/dev/null | awk '{s+=$1} END {print s+0}')
 
         # Remover registro de bot ativo
         redis-cli del "active-bot:${BOTID}" &>/dev/null || true
@@ -231,18 +225,23 @@ else
     BOTID=$(get_bot_id)
     [ -z "$BOTID" ] && BOTID="session"
 
-    # Backup do arquivo
+    # Backup dos 3 arquivos SQLite (db, shm, wal)
     SQLITE_BACKUP="./backups/sqlite-${BOTID}-${BACKUP_TIMESTAMP}.db"
     cp "$SQLITE_DB_PATH" "$SQLITE_BACKUP" 2>/dev/null && echo "   📦 Backup: $SQLITE_BACKUP"
 
-    # Deletar arquivo
-    rm -f "$SQLITE_DB_PATH" 2>/dev/null
+    # Deletar os 3 arquivos do SQLite (WAL mode)
+    ITEMS_DELETED=0
+    for ext in "" "-shm" "-wal"; do
+        if [ -f "${SQLITE_DB_PATH}${ext}" ]; then
+            rm -f "${SQLITE_DB_PATH}${ext}" 2>/dev/null
+            [ ! -f "${SQLITE_DB_PATH}${ext}" ] && ITEMS_DELETED=$((ITEMS_DELETED + 1))
+        fi
+    done
 
-    if [ ! -f "$SQLITE_DB_PATH" ]; then
-        echo "   ✅ SQLite limpo"
-        ITEMS_DELETED=1
+    if [ $ITEMS_DELETED -gt 0 ]; then
+        echo "   ✅ SQLite limpo ($ITEMS_DELETED arquivos deletados)"
     else
-        echo "   ⚠️  Erro ao deletar arquivo"
+        echo "   ⚠️  Nenhum arquivo foi deletado"
     fi
 fi
 

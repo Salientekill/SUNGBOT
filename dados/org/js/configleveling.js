@@ -48,6 +48,18 @@ maxXP: 150, // Máximo de XP recebido no comando daily
 cooldown: 24// Horas de espera entre usos do comando
 },
 
+// 🆕 Recompensas de XP para o jogo da forca
+forca: {
+base: 30, // XP base por vitória
+porTamanho: 3, // XP adicional por letra da palavra
+maxXP: 150, // Máximo de XP que pode ganhar em uma partida
+bonusVelocidade: {
+rapido: 1.5, // < 60 segundos (150%)
+medio: 1.2, // < 120 segundos (120%)
+normal: 1.0 // > 120 segundos (100%)
+}
+},
+
 // Temas disponíveis e suas patentes
 themes: {
 espacial: {

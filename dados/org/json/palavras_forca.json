@@ -1,1696 +1,1343 @@
 [
-{
-"plvr": "gato",
-"tema": "animal",
-"dica": "ele tem 4 patas, e o rugido dele começa com m 😉"
-},
-{
-"plvr": "cachorro",
-"tema": "animal",
-"dica": "ele tem 4 patas, e é considerado o melhor um amigo fiel"
-},
-{
-"plvr": "brasil",
-"tema": "países",
-"dica": "já perdeu de 7x1 na copa"
-},
-{
-"plvr": "eletrônica",
-"tema": "gênero musical",
-"dica": "tem dj"
-},
-{
-"plvr": "basquete",
-"tema": "Esporte",
-"dica": "a maioria que pratica usa jordan"
-},
-{
-"plvr": "repórter",
-"tema": "profissão",
-"dica": "costuma passar na televisão"
-},
-{
-"plvr": "esfirra",
-"tema": "comida",
-"dica": "costuma ser vendido em pizzaria "
-},
-{
-"plvr": "girafa",
-"tema": "animal",
-"dica": "existe um restaurante com seu símbolo"
-},
-{
-"plvr": "covid-19",
-"tema": "doenças",
-"dica": "foi obrigatório usar máscaras durante a pandemia"
-},
-{
-"plvr": "pneumonia",
-"tema": "doenças",
-"dica": "um tipo de inflamação que afeta os pulmões"
-},
-{
-"plvr": "vingadores",
-"tema": "cinema",
-"dica": "um filme da companhia marvel"
-},
-{
-"plvr": "pirulito",
-"tema": "doces",
-"dica": "é de chupar 😳 "
-},
-{
-"plvr": "dragão",
-"tema": "lendas e mitologia",
-"dica": "são jorge é retratado derrotando um"
-},
-{
-"plvr": "flores",
-"tema": "natureza",
-"dica": "as pessoas costumam levar em velórios"
-},
-{
-"plvr": "flamingo",
-"tema": "animal",
-"dica": "é uma ave de bico encurvado,e cuja plumagem pode ser bastante colorida em tons de rosa vivo."
-},
-{
-"plvr": "guilhotina",
-"tema": "instrumento",
-"dica": "foi um instrumento utilizado durante a revolução francesa para aplicar a pena de morte por decapitação."
-},
-{
-"plvr": "jabuticaba",
-"tema": "frutas",
-"dica": "é uma fruta de cor escura"
-},
-{
-"plvr": "kratos",
-"tema": "personagem de um Jogo",
-"dica": "personagem principal de um jogo baseado em distintas mitologias "
-},
-{
-"plvr": "laranja",
-"tema": "fruta",
-"dica": "pode ser uma cor também"
-},
-{
-"plvr": "pinça",
-"tema": "utensílio",
-"dica": "utilizado para pegar objetos sem que a mão lhes toque diretamente"
-},
-{
-"plvr": "tucano",
-"tema": "animal",
-"dica": "uma ave que tem um grande bico"
-},
-{
-"plvr": "xícara",
-"tema": "utensílios",
-"dica": "bom para tomar um chá"
-},
-{
-"plvr": "amarelo",
-"tema": "Cores",
-"dica": "tem no arco íris"
-},
-{
-"plvr": "viajar",
-"tema": "entretenimento",
-"dica": "algo que fazemos ou temos vontade de fazer de acordo com a situação ou condição"
-},
-{
-"plvr": "ônibus",
-"tema": "transporte",
-"dica": "é ultilizado para chegar em algum local"
-},
-{
-"plvr": "lápis",
-"tema": "ultilidade publica",
-"dica": "tem na escola"
-},
-{
-"plvr": "relógio",
-"tema": "ultidade publica",
-"dica": "tem no celular"
-},
-{
-"plvr": "praia",
-"tema": "lugares",
-"dica": "tem muita areia"
-},
-{
-"plvr": "cozinha",
-"tema": "compartimento de uma residência",
-"dica": "o lugar que tu vai quando está com fome"
-},
-{
-"plvr": "chocolate",
-"tema": "doces",
-"dica": "é ótimo para acalmar mulher com tpm 😂"
-},
-{
-"plvr": "limão",
-"tema": "frutas",
-"dica": "é azeda"
-},
-{
-"plvr": "mãe",
-"tema": "familia",
-"dica": "tem um dia dedicado em sua homenagem no mês de maio "
-},
-{
-"plvr": "dormir",
-"tema": "dia a dia",
-"dica": "algo que todo mundo faz mesmo que seja um pouco"
-},
-{
-"plvr": "avião",
-"tema": "modo de transporte",
-"dica": "é algo que voa"
-},
-{
-"plvr": "pão",
-"tema": "alimentos",
-"dica": "é algo que geralmente comemos no café da manhã"
-},
-{
-"plvr": "formiga",
-"tema": "insetos",
-"dica": "é um inseto que não tem pulmões"
-},
-{
-"plvr": "bolo",
-"tema": "confeitaria",
-"dica": "costuma a ser servido em aniversários"
-},
-{
-"plvr": "adolescência",
-"tema": "fases da vida",
-"dica": "é algo que começa aos 10 anos e termina aos 19 anos completos"
-},
-{
-"plvr": "russia",
-"tema": "pais",
-"dica": "pais com o maior território do mundo"
-},
-{
-"plvr": "falcão",
-"tema": "natureza",
-"dica": "tem um cantor brasileiro conhecido com o mesmo nome"
-},
-{
-"plvr": "azul",
-"tema": "cores",
-"dica": "tem em uma musica do manoel gomes"
-},
-{
-"plvr": "vulcão",
-"tema": "montanhas",
-"dica": "existem aproximadamente 1.500 ativos em todo planeta terra"
-},
-{
-"plvr": "sul",
-"tema": "geografia",
-"dica": "direção oposta ao norte"
-},
-{
-"plvr": "megamente",
-"tema": "filmes",
-"dica": "é personagem de um filme e tem uma cabeça enorme"
-},
-{
-"plvr": "chuchu",
-"tema": "alimento",
-"dica": "é uma verdura e dua cor é verde"
-},
-{
-"plvr": "vermelho",
-"tema": "cores",
-"dica": "tem a mesma cor que tem o sangue"
-},
-{
-"plvr": "carinho",
-"tema": "gestos",
-"dica": "algo que muitos fazem principalmente com os animais"
-},
-{
-"plvr": "titanic",
-"tema": "filmes",
-"dica": "afundou"
-},
-{
-"plvr": "borboleta",
-"tema": "natureza",
-"dica": "é um inseto polinizador"
-},
-{
-"plvr": "amazônia",
-"tema": "lugares",
-"dica": "a maior floresta tropical do mundo "
-},
-{
-"plvr": "sherek",
-"tema": "filme",
-"dica": "nesse filme tem um burro falante"
-},
-{
-"plvr": "banheiro",
-"tema": "compartimento de uma residência",
-"dica": "lugar que você vai bastante quando toma aquela cervejinha 😂🍻"
-},
-{
-"plvr": "bahia",
-"tema": "lugares",
-"dica": "é um estado brasileiro e uma de suas cidades se chama salvador"
-},
-{
-"plvr": "salvador",
-"tema": "lugares",
-"dica": "umadas 10 maiores cidades da bahia"
-},
-{
-"plvr": "manga",
-"tema": "frutas",
-"dica": "uma fruta que como mito se dizia que se tomar com leite morre 🙃"
-},
-{
-"plvr": "sophia",
-"tema": "nome de pessoa",
-"dica": "nome feminino"
-},
-{
-"plvr": "barbie",
-"tema": "brinquedos",
-"dica": "faz parte de filmes infantis"
-},
-{
-"plvr": "redbull",
-"tema": "bebidas",
-"dica": "é uma marca de um energético"
-},
-{
-"plvr": "goiabada",
-"tema": "doces",
-"dica": "um doce típico de portugal que veio através de uma fruta"
-},
-{
-"plvr": "tomada",
-"tema": "dispositivos",
-"dica": "onde você coloca seu carregador do celular "
-},
-{
-"plvr": "amora",
-"tema": "frutas",
-"dica": "mancha os dedos e até mesmo a roupa ao pegar da arvore"
-},
-{
-"plvr": "acerola",
-"tema": "frutas",
-"dica": "quando está madura tem uma variação de cor que vai do vermelho ao vinho, passando pelo alaranjado"
-},
-{
-"plvr": "strogonoff",
-"tema": "comidas",
-"dica": "um prato que era servido para a nobreza russa"
-},
-{
-"plvr": "macarrão",
-"tema": "comidas",
-"dica": "é um tipo de massa alimentícia"
-},
-{
-"plvr": "natal",
-"tema": "lugares",
-"dica": "tem o mesmo nome de um feriado do mês de dezembro"
-},
-{
-"plvr": "vaticano",
-"tema": "paises",
-"dica": "menor pais no mundo"
-},
-{
-"plvr": "primavera",
-"tema": "estação do ano",
-"dica": "vem depois de inverno"
-},
-{
-"plvr": "handebol",
-"tema": "esporte",
-"dica": "envolve as mãos"
-},
-{
-"plvr": "outono",
-"tema": "estação do ano",
-"dica": "vem depois do verão"
-},
-{
-"plvr": "twitter",
-"tema": "rede sociais",
-"dica": "elon musk comprou"
-},
-{
-"plvr": "whisky",
-"tema": "bebida alcoólica",
-"dica": "algumas pessoas mistura com energético"
-},
-{"plvr": "cartas",
-"tema": "jogo",
-"dica": "tem no baralho"
-},
-{
-"plvr": "batedeira",
-"tema": "eletro-domestico",
-"dica": "é usado para bater massas"
-},
-{
-"plvr": "lan house",
-"tema": "lugar",
-"dica": "provavelmente você ja foi nesse lugar tirar xerox ou jogar"
-},
-{
-"plvr": "pastel",
-"tema": "alimentos",
-"dica": "bom de comer na feira"
-},
-{
-"plvr": "carro",
-"tema": "automóveis",
-"dica": "tem 4 rodas"
-},
-{
-"plvr": "cavalo",
-"tema": "animais",
-"dica": "tem 4 patas e pode te levar para passear montado nele"
-},
-{
-"plvr": "uva",
-"tema": "frutas",
-"dica": "tem roxa e tem verde"
-},
-{
-"plvr": "sucrilhos",
-"tema": "alimentos",
-"dica": "alguns tem um tigre na embalagem e é bom para acompanhar com leite ou danone"
-},
-{
-"plvr": "cemitério",
-"tema": "lugar",
-"dica": "onde a maioria vai quando perde alguem próximo a ela"
-},
-{
-"plvr": "professor",
-"tema": "profissão",
-"dica": "ja te deu aula"
-},
-{
-"plvr": "boné",
-"tema": "acessório de uso pessoal",
-"dica": "serve para proreger o rosto do sol"
-},
-{
-"plvr": "nestlé",
-"tema": "doces",
-"dica": "marca de chocolate"
-},
-{
-"plvr": "idolomantis diabólica",
-"tema": "inseto",
-"dica": "é uma das maiores espécies de louva-a-deus que existe"
-},
-{
-"plvr": "xadrez",
-"tema": "jogo",
-"dica": "jogo de tabuleiro de estratégia para 2 jogadores "
-},
-{
-"plvr": "balaústre",
-"tema": "construção",
-"dica": "é uma peça ornamental usada na arquitetura que consiste em uma pequena coluna ou pilar"
-},
-{
-"plvr": "ampulheta",
-"tema": "objeto",
-"dica": "é um artefato antigo que costumava a ser usado para medir o tempo"
-},
-{
-"plvr": "daguerreótipo",
-"tema": "objeto",
-"dica": "nome dado ao antigo aparelho fotográfico inventado por Daguerre 1787-1851"
-},
-{
-"plvr": "orycteropus",
-"tema": "animal",
-"dica": "conhecido como o porco-formigueiro ou da-terra"
-},
-{
-"plvr": "elefante",
-"tema": "animal",
-"dica": "tem uma tromba longa"
-},
-{
-"plvr": "banana",
-"tema": "frutas",
-"dica": "amarela por fora"
-},
-{
-"plvr": "aviador",
-"tema": "profissão",
-"dica": "piloto de avião"
-},
-{
-"plvr": "chaveiro",
-"tema": "objeto",
-"dica": "guarda chaves"
-},
-{
-"plvr": "guitarra",
-"tema": "instrumento musical",
-"dica": "possui cordas"
-},
-{
-"plvr": "montanha",
-"tema": "geografia",
-"dica": "pode ser escalada"
-},
-{
-"plvr": "rosa",
-"tema": "flores",
-"dica": "tem espinhos"
-},
-{
-"plvr": "futebol",
-"tema": "esporte",
-"dica": "jogado com os pés"
-},
-{
-"plvr": "computador",
-"tema": "tecnologia",
-"dica": "usado para trabalhar e se divertir"
-},
-{
-"plvr": "óculos",
-"tema": "acessório",
-"dica": "usado para melhorar a visão"
-},
-{
-"plvr": "aranha",
-"tema": "animal",
-"dica": "tece teias"
-},
-{
-"plvr": "pizza",
-"tema": "comida",
-"dica": "massa com recheio variado"
-},
-{
-"plvr": "teclado",
-"tema": "tecnologia",
-"dica": "usado para digitar"
-},
-{
-"plvr": "rio",
-"tema": "geografia",
-"dica": "fluxo de água natural"
-},
-{
-"plvr": "girassol",
-"tema": "flores",
-"dica": "segue o sol"
-},
-{
-"plvr": "nadador",
-"tema": "profissão",
-"dica": "nada profissionalmente"
-},
-{
-"plvr": "bateria",
-"tema": "instrumento musical",
-"dica": "produz som com batidas"
-},
-{
-"plvr": "deserto",
-"tema": "geografia",
-"dica": "área árida e seca"
-},
-{
-"plvr": "astrônomo",
-"tema": "profissão",
-"dica": "estuda o espaço"
-},
-{
-"plvr": "chocolate",
-"tema": "comida",
-"dica": "doce derivado do cacau"
-},
-{
-"plvr": "óleo",
-"tema": "produto",
-"dica": "usado na culinária e em motores"
-},
-{
-"plvr": "pintor",
-"tema": "profissão",
-"dica": "cria arte visual"
-},
-{
-"plvr": "espada",
-"tema": "objeto",
-"dica": "arma de lâmina longa"
-},
-{
-"plvr": "violino",
-"tema": "instrumento musical",
-"dica": "tocado com arco"
-},
-{
-"plvr": "oceano",
-"tema": "geografia",
-"dica": "grande corpo de água"
-},
-{
-"plvr": "abelha",
-"tema": "animal",
-"dica": "produz mel"
-},
-{
-"plvr": "escritor",
-"tema": "profissão",
-"dica": "cria histórias e livros"
-},
-{
-"plvr": "bicicleta",
-"tema": "meio de transporte",
-"dica": "movida a pedaladas"
-},
-{
-"plvr": "espelho",
-"tema": "objeto",
-"dica": "reflete a imagem"
-},
-{
-"plvr": "estrela",
-"tema": "astronomia",
-"dica": "brilha no céu noturno"
-},
-{
-"plvr": "anjo",
-"tema": "seres mitológicos",
-"dica": "guardião celestial"
-},
-{
-"plvr": "piano",
-"tema": "instrumento musical",
-"dica": "possui teclas"
-},
-{
-"plvr": "jardineiro",
-"tema": "profissão",
-"dica": "cuida de plantas e jardins"
-},
-{
-"plvr": "trem",
-"tema": "meio de transporte",
-"dica": "circula sobre trilhos"
-},
-{
-"plvr": "abacaxi",
-"tema": "frutas",
-"dica": "tem casca áspera"
-},
-{
-"plvr": "engenheiro",
-"tema": "profissão",
-"dica": "projeta e constrói"
-},
-{
-"plvr": "lápis",
-"tema": "objeto",
-"dica": "usado para escrever e desenhar"
-},
-{
-"plvr": "lago",
-"tema": "geografia",
-"dica": "pequena extensão de água"
-},
-{
-"plvr": "papagaio",
-"tema": "animal",
-"dica": "imita sons"
-},
-{
-"plvr": "médico",
-"tema": "profissão",
-"dica": "cuida da saúde"
-},
-{
-"plvr": "telefone",
-"tema": "tecnologia",
-"dica": "usado para comunicação"
-},
-{
-"plvr": "caverna",
-"tema": "geografia",
-"dica": "cavidade natural"
-},
-{
-"plvr": "hamburguer",
-"tema": "comida",
-"dica": "sanduíche de carne"
-},
-{
-"plvr": "pintura",
-"tema": "arte",
-"dica": "expressão visual"
-},
-{
-"plvr": "costureira",
-"tema": "profissão",
-"dica": "confecciona roupas"
-},
-{
-"plvr": "barco",
-"tema": "meio de transporte",
-"dica": "navega na água"
-},
-{
-"plvr": "melancia",
-"tema": "frutas",
-"dica": "fruta suculenta"
-},
-{
-"plvr": "piloto",
-"tema": "profissão",
-"dica": "controla veículos"
-},
-{
-"plvr": "fotografia",
-"tema": "arte",
-"dica": "captura imagens"
-},
-{
-"plvr": "fotossíntese",
-"tema": "Biologia",
-"dica": "Processo em que as plantas convertem luz solar em energia."
-},
-{
-"plvr": "álcali",
-"tema": "Química",
-"dica": "Substância química básica, com pH maior que 7."
-},
-{
-"plvr": "quantum",
-"tema": "Física",
-"dica": "A menor quantidade de energia possível."
-},
-{
-"plvr": "onomatopeia",
-"tema": "Linguagem Portuguesa",
-"dica": "Figura de linguagem que imita sons da natureza ou ações."
-},
-{
-"plvr": "mutação",
-"tema": "Biologia",
-"dica": "Mudança na sequência de DNA de um organismo."
-},
-{
-"plvr": "oxidação",
-"tema": "Química",
-"dica": "Reação química onde um composto perde elétrons."
-},
-{
-"plvr": "relatividade",
-"tema": "Física",
-"dica": "Teoria de Einstein que descreve as relações entre espaço, tempo e gravidade."
-},
-{
-"plvr": "metáfora",
-"tema": "Linguagem Portuguesa",
-"dica": "Figura de linguagem que faz comparações implícitas."
-},
-{
-"plvr": "mitocôndria",
-"tema": "Biologia",
-"dica": "Organelo celular responsável pela produção de energia."
-},
-{
-"plvr": "catalisador",
-"tema": "Química",
-"dica": "Substância que acelera uma reação química sem ser consumida."
-},
-{
-"plvr": "gravidade",
-"tema": "Física",
-"dica": "Força de atração entre objetos com massa."
-},
-{
-"plvr": "gramática",
-"tema": "Linguagem Portuguesa",
-"dica": "Conjunto de regras que regem a estrutura das frases em um idioma."
-},
-{
-"plvr": "plasma",
-"tema": "Física",
-"dica": "Um estado da matéria composto por partículas carregadas."
-},
-{
-"plvr": "enzima",
-"tema": "Biologia",
-"dica": "Proteínas que atuam como catalisadores em reações químicas."
-},
-{
-"plvr": "polimerização",
-"tema": "Química",
-"dica": "Processo de formação de polímeros a partir de unidades menores."
-},
-{
-"plvr": "sintaxe",
-"tema": "Linguagem Portuguesa",
-"dica": "O estudo das regras que governam a estrutura das frases em um idioma."
-},
-{
-"plvr": "bioluminescência",
-"tema": "Biologia",
-"dica": "Emissão de luz por organismos vivos, como vaga-lumes e alguns peixes."
-},
-{
-"plvr": "átomo",
-"tema": "Química",
-"dica": "A menor unidade de um elemento químico, composta por prótons, nêutrons e elétrons."
-},
-{
-"plvr": "eletricidade",
-"tema": "Física",
-"dica": "Forma de energia resultante do movimento de elétrons."
-},
-{
-"plvr": "metonímia",
-"tema": "Linguagem Portuguesa",
-"dica": "Figura de linguagem que substitui um termo por outro com o qual tem uma relação próxima."
-},
-{
-"plvr": "genética",
-"tema": "Biologia",
-"dica": "O estudo dos genes e da hereditariedade."
-},
-{
-"plvr": "isótopo",
-"tema": "Química",
-"dica": "Átomos do mesmo elemento químico com diferentes números de nêutrons."
-},
-{
-"plvr": "mecânica quântica",
-"tema": "Física",
-"dica": "Teoria que descreve o comportamento de partículas subatômicas."
-},
-{
-"plvr": "símile",
-"tema": "Linguagem Portuguesa",
-"dica": "Figura de linguagem que faz comparações usando *como* ou *parece*."
-},
-{
-"plvr": "célula",
-"tema": "Biologia",
-"dica": "A unidade fundamental da vida, a menor parte de um organismo."
-},
-{
-"plvr": "ácido nucleico",
-"tema": "Química",
-"dica": "Moléculas como DNA e RNA, que carregam informações genéticas."
-},
-{
-"plvr": "mecânica clássica",
-"tema": "Física",
-"dica": "Teoria que descreve o movimento de objetos macroscópicos."
-},
-{
-"plvr": "elipse",
-"tema": "Linguagem Portuguesa",
-"dica": "Figura de linguagem que omite um termo facilmente entendido no contexto."
-},
-{
-"plvr": "evolução",
-"tema": "Biologia",
-"dica": "O processo pelo qual as espécies mudam ao longo do tempo."
-},
-{
-"plvr": "reação química",
-"tema": "Química",
-"dica": "Processo no qual substâncias são transformadas em outras."
-},
-{
-"plvr": "óptica",
-"tema": "Física",
-"dica": "O estudo da luz e como ela interage com objetos."
-},
-{
-"plvr": "paradoxo",
-"tema": "Linguagem Portuguesa",
-"dica": "Uma afirmação que parece contraditória, mas pode ser verdadeira."
-},
-{
-"plvr": "adaptabilidade",
-"tema": "Biologia",
-"dica": "A capacidade de um organismo se ajustar às mudanças em seu ambiente."
-},
-{
-"plvr": "tabela periódica",
-"tema": "Química",
-"dica": "Tabela que organiza os elementos químicos por suas propriedades."
-},
-{
-"plvr": "energia",
-"tema": "Física",
-"dica": "A capacidade de realizar trabalho ou causar mudanças."
-},
-{
-"plvr": "pleonasmo",
-"tema": "Linguagem Portuguesa",
-"dica": "Uso redundante de palavras, muitas vezes por ênfase."
-},
-{
-"plvr": "genoma",
-"tema": "Biologia",
-"dica": "O conjunto completo de genes de um organismo."
-},
-{
-"plvr": "solução",
-"tema": "Química",
-"dica": "Mistura homogênea de substâncias em um solvente."
-},
-{
-"plvr": "eletrônica",
-"tema": "Física",
-"dica": "Ramo da física que lida com o fluxo de elétrons."
-},
-{
-"plvr": "aliteração",
-"tema": "Linguagem Portuguesa",
-"dica": "Repetição de sons consonantais em palavras próximas."
-},
-{
-"plvr": "hereditariedade",
-"tema": "Biologia",
-"dica": "Transmissão de características genéticas de geração para geração."
-},
-{
-"plvr": "equação química",
-"tema": "Química",
-"dica": "Representação simbólica de uma reação química."
-},
-{
-"plvr": "magnetismo",
-"tema": "Física",
-"dica": "Força de atração ou repulsão entre objetos magnéticos."
-},
-{
-"plvr": "ambiguidade",
-"tema": "Linguagem Portuguesa",
-"dica": "Situação em que uma frase pode ser interpretada de várias maneiras."
-},
-{
-"plvr": "genótipo",
-"tema": "Biologia",
-"dica": "A composição genética de um organismo."
-},
-{
-"plvr": "reação de síntese",
-"tema": "Química",
-"dica": "Uma reação química em que substâncias se combinam para formar um composto."
-},
-{
-"plvr": "aceleração",
-"tema": "Física",
-"dica": "Taxa de variação da velocidade de um objeto."
-},
-{
-"plvr": "hipérbole",
-"tema": "Linguagem Portuguesa",
-"dica": "Exagero intencional para enfatizar uma ideia."
-},
-{
-"plvr": "classificação",
-"tema": "Biologia",
-"dica": "Organização de seres vivos em categorias com base em suas características."
-},
-{
-"plvr": "reagente",
-"tema": "Química",
-"dica": "Substância que participa de uma reação química."
-},
-{
-"plvr": "ecossistema",
-"tema": "Biologia",
-"dica": "Comunidade de organismos interagindo com seu ambiente físico."
-},
-{
-"plvr": "cromatografia",
-"tema": "Química",
-"dica": "Técnica para separar componentes de uma mistura com base em suas afinidades."
-},
-{
-"plvr": "quark",
-"tema": "Física",
-"dica": "Partícula subatômica que compõe os prótons e nêutrons."
-},
-{
-"plvr": "elipse",
-"tema": "Matemática",
-"dica": "Uma curva plana em forma de oval."
-},
-{
-"plvr": "interferência",
-"tema": "Física",
-"dica": "Fenômeno em que duas ou mais ondas se encontram e se combinam."
-},
-{
-"plvr": "sintaxe",
-"tema": "Linguística",
-"dica": "O estudo da estrutura gramatical das frases e como elas se relacionam."
-},
-{
-"plvr": "bioluminescência",
-"tema": "Biologia",
-"dica": "Emissão de luz por organismos vivos, como vaga-lumes e águas-vivas."
-},
-{
-"plvr": "oxidação",
-"tema": "Química",
-"dica": "Processo de perda de elétrons por um átomo ou molécula."
-},
-{
-"plvr": "relatividade",
-"tema": "Física",
-"dica": "Teoria de Einstein sobre espaço, tempo e gravidade."
-},
-{
-"plvr": "sinestesia",
-"tema": "Psicologia",
-"dica": "Percepção misturada de sentidos diferentes, como ver cores ao ouvir sons."
-},
-{
-"plvr": "ambiguidade",
-"tema": "Linguagem",
-"dica": "Situação em que algo pode ser interpretado de diferentes maneiras."
-},
-{
-"plvr": "acidez",
-"tema": "Química",
-"dica": "Nível de pH menor que 7, indicando uma substância ácida."
-},
-{
-"plvr": "gravitação",
-"tema": "Física",
-"dica": "Força de atração entre massas devido à gravidade."
-},
-{
-"plvr": "protagonista",
-"tema": "Literatura",
-"dica": "Personagem principal de uma obra literária."
-},
-{
-"plvr": "domínio",
-"tema": "Biologia",
-"dica": "Categoria taxonômica acima do reino no sistema de classificação biológica."
-},
-{
-"plvr": "ligação covalente",
-"tema": "Química",
-"dica": "Tipo de ligação química onde átomos compartilham elétrons."
-},
-{
-"plvr": "equação de Schrödinger",
-"tema": "Física",
-"dica": "Equação fundamental na mecânica quântica que descreve o comportamento das partículas subatômicas."
-},
-{
-"plvr": "metáfora",
-"tema": "Linguagem",
-"dica": "Figura de linguagem que faz comparações implícitas entre coisas diferentes."
-},
-{
-"plvr": "ósmose",
-"tema": "Biologia",
-"dica": "Movimento de solvente através de uma membrana permeável para igualar concentrações."
-},
-{
-"plvr": "histerese",
-"tema": "Física",
-"dica": "Fenômeno em que um sistema não segue o mesmo caminho ao ser levado de volta ao seu estado inicial."
-},
-{
-"plvr": "onomatopeia",
-"tema": "Linguagem",
-"dica": "Palavra que imita o som que representa."
-},
-{
-"plvr": "hipótese",
-"tema": "Ciência",
-"dica": "Suposição inicial que pode ser testada e verificada."
-},
-{
-"plvr": "crescimento exponencial",
-"tema": "Matemática",
-"dica": "Crescimento em uma taxa constante proporcional ao valor atual."
-},
-{
-"plvr": "organismo multicelular",
-"tema": "Biologia",
-"dica": "Um organismo composto por várias células."
-},
-{
-"plvr": "isótopo",
-"tema": "Química",
-"dica": "Átomos do mesmo elemento com diferentes números de nêutrons."
-},
-{
-"plvr": "fóton",
-"tema": "Física",
-"dica": "Partícula elementar de luz."
-},
-{
-"plvr": "metonímia",
-"tema": "Linguagem",
-"dica": "Figura de linguagem em que um termo é substituído por outro relacionado."
-},
-{
-"plvr": "genética",
-"tema": "Biologia",
-"dica": "Estudo dos genes e hereditariedade."
-},
-{
-"plvr": "reagentes",
-"tema": "Química",
-"dica": "Substâncias que participam de uma reação química."
-},
-{
-"plvr": "partícula elementar",
-"tema": "Física",
-"dica": "Uma partícula indivisível que compõe a matéria."
-},
-{
-"plvr": "língua vernácula",
-"tema": "Linguística",
-"dica": "A língua nativa de um grupo ou região específica."
-},
-{
-"plvr": "mutação",
-"tema": "Biologia",
-"dica": "Mudança permanente na sequência de DNA de um organismo."
-},
-{
-"plvr": "tabela periódica",
-"tema": "Química",
-"dica": "Tabela que organiza elementos químicos por propriedades e número atômico."
-},
-{
-"plvr": "teoria da relatividade",
-"tema": "Física",
-"dica": "Teoria de Einstein que descreve a gravidade em relação ao espaço-tempo."
-},
-{
-"plvr": "paradoxo",
-"tema": "Linguagem",
-"dica": "Declaração que parece contraditória, mas pode ser verdadeira em contexto."
-},
-{
-"plvr": "seleção natural",
-"tema": "Biologia",
-"dica": "Processo pelo qual características vantajosas se tornam mais comuns em uma população."
-},
-{
-"plvr": "solubilidade",
-"tema": "Química",
-"dica": "Quantidade máxima de uma substância que pode se dissolver em outra."
-},
-{
-"plvr": "fusão nuclear",
-"tema": "Física",
-"dica": "Processo em que núcleos atômicos se combinam para liberar energia."
-},
-{
-"plvr": "paronomásia",
-"tema": "Linguagem",
-"dica": "Figura de linguagem que explora semelhanças sonoras entre palavras."
-},
-{
-"plvr": "bioquímica",
-"tema": "Biologia",
-"dica": "Estudo das reações químicas que ocorrem nos seres vivos."
-},
-{
-"plvr": "cinemática",
-"tema": "Física",
-"dica": "Estudo do movimento de objetos sem considerar as forças envolvidas."
-},
-{
-"plvr": "dêitico",
-"tema": "Linguística",
-"dica": "Palavra ou expressão que só tem significado em relação a um contexto específico."
-},
-{
-"plvr": "genótipo",
-"tema": "Genética",
-"dica": "Constituição genética de um indivíduo."
-},
-{
-"plvr": "reagente",
-"tema": "Química",
-"dica": "Substância que participa de uma reação química."
-},
-{
-"plvr": "dualidade",
-"tema": "Física",
-"dica": "Conceito em que uma partícula pode exibir características de onda e partícula."
-},
-{
-"plvr": "estilística",
-"tema": "Linguística",
-"dica": "Estudo das características estilísticas da linguagem."
-},
-{
-"plvr": "célula eucariótica",
-"tema": "Biologia",
-"dica": "Tipo de célula com núcleo definido e organelos membranosos."
-},
-{
-"plvr": "álgebra linear",
-"tema": "Matemática",
-"dica": "Ramo da matemática que lida com espaços vetoriais e transformações lineares."
-},
-{
-"plvr": "correlação",
-"tema": "Estatística",
-"dica": "Relação estatística entre duas variáveis que podem estar interligadas."
-},
-{
-"plvr": "proteína",
-"tema": "Biologia",
-"dica": "Molécula composta por aminoácidos, essencial para a vida."
-},
-{
-"plvr": "dialética",
-"tema": "Filosofia",
-"dica": "Método de argumentação para chegar à verdade"
-},
-{
-"plvr": "subconsciente",
-"tema": "Psicologia",
-"dica": "Parte da mente fora da consciência imediata"
-},
-{
-"plvr": "solipsismo",
-"tema": "Filosofia",
-"dica": "Crença de que só a própria mente é certa"
-},
-{
-"plvr": "inconsciente",
-"tema": "Psicologia",
-"dica": "Parte não acessível da mente, segundo Freud"
-},
-{
-"plvr": "ética",
-"tema": "Filosofia",
-"dica": "Estudo dos valores e moralidade"
-},
-{
-"plvr": "psicanálise",
-"tema": "Psicologia",
-"dica": "Método de análise da mente proposto por Freud"
-},
-{
-"plvr": "existencialismo",
-"tema": "Filosofia",
-"dica": "Doutrina que enfatiza a existência individual"
-},
-{
-"plvr": "empatia",
-"tema": "Psicologia",
-"dica": "Capacidade de se colocar no lugar do outro"
-},
-{
-"plvr": "absurdo",
-"tema": "Filosofia",
-"dica": "Situação que parece sem sentido ou irracional"
-},
-{
-"plvr": "introspecção",
-"tema": "Psicologia",
-"dica": "Análise dos próprios pensamentos e sentimentos"
-},
-{
-"plvr": "sofismo",
-"tema": "Filosofia",
-"dica": "Argumento falso que parece verdadeiro"
-},
-{
-"plvr": "condicionamento",
-"tema": "Psicologia",
-"dica": "Aprendizado associativo de respostas"
-},
-{
-"plvr": "epistemologia",
-"tema": "Filosofia",
-"dica": "Estudo do conhecimento e suas origens"
-},
-{
-"plvr": "personalidade",
-"tema": "Psicologia",
-"dica": "Padrões de pensamentos, emoções e comportamentos"
-},
-{
-"plvr": "nihilismo",
-"tema": "Filosofia",
-"dica": "Crença na falta de significado ou valor na vida"
-},
-{
-"plvr": "cognição",
-"tema": "Psicologia",
-"dica": "Processo de adquirir conhecimento"
-},
-{
-"plvr": "utilitarismo",
-"tema": "Filosofia",
-"dica": "Doutrina que valoriza a busca pela felicidade"
-},
-{
-"plvr": "terapia",
-"tema": "Psicologia",
-"dica": "Tratamento para distúrbios mentais"
-},
-{
-"plvr": "racionalismo",
-"tema": "Filosofia",
-"dica": "Crença na razão como fonte primária de conhecimento"
-},
-{
-"plvr": "psicossomático",
-"tema": "Psicologia",
-"dica": "Relativo à influência da mente no corpo"
-},
-{
-"plvr": "fenomenologia",
-"tema": "Filosofia",
-"dica": "Estudo da experiência consciente direta"
-},
-{
-"plvr": "psicopatologia",
-"tema": "Psicologia",
-"dica": "Estudo dos transtornos mentais"
-},
-{
-"plvr": "hedonismo",
-"tema": "Filosofia",
-"dica": "Busca pelo prazer e felicidade"
-},
-{
-"plvr": "neurociência",
-"tema": "Psicologia",
-"dica": "Estudo do sistema nervoso e do cérebro"
-},
-{
-"plvr": "sofrimento",
-"tema": "Filosofia",
-"dica": "Experiência que gera angústia"
-},
-{
-"plvr": "inconsciente",
-"tema": "Psicologia",
-"dica": "Parte oculta da mente segundo Jung"
-},
-{
-"plvr": "ética",
-"tema": "Filosofia",
-"dica": "Estudo dos princípios morais"
-},
-{
-"plvr": "psicoterapia",
-"tema": "Psicologia",
-"dica": "Tratamento para problemas emocionais"
-},
-{
-"plvr": "nihilismo",
-"tema": "Filosofia",
-"dica": "Rejeição de valores e crenças"
-},
-{
-"plvr": "psicologia",
-"tema": "Psicologia",
-"dica": "Estudo da mente e do comportamento"
-},
-{
-"plvr": "epifania",
-"tema": "Filosofia",
-"dica": "Revelação súbita de conhecimento"
-},
-{
-"plvr": "identidade",
-"tema": "Psicologia",
-"dica": "Senso de quem somos"
-},
-{
-"plvr": "absolutismo",
-"tema": "Filosofia",
-"dica": "Crença em autoridade absoluta"
-},
-{
-"plvr": "psicodinâmica",
-"tema": "Psicologia",
-"dica": "Abordagem que explora o inconsciente"
-},
-{
-"plvr": "cosmologia",
-"tema": "Filosofia",
-"dica": "Estudo da origem e estrutura do universo"
-},
-{
-"plvr": "resiliência",
-"tema": "Psicologia",
-"dica": "Capacidade de superar adversidades"
-},
-{
-"plvr": "empirismo",
-"tema": "Filosofia",
-"dica": "Conhecimento baseado em experiência"
-},
-{
-"plvr": "psicopatia",
-"tema": "Psicologia",
-"dica": "Transtorno de personalidade antissocial"
-},
-{
-"plvr": "existência",
-"tema": "Filosofia",
-"dica": "Estado de estar no mundo"
-},
-{
-"plvr": "neuroplasticidade",
-"tema": "Psicologia",
-"dica": "Capacidade do cérebro de se reorganizar"
-},
-{
-"plvr": "ética",
-"tema": "Filosofia",
-"dica": "Estudo dos valores e conduta moral"
-},
-{
-"plvr": "inteligência",
-"tema": "Psicologia",
-"dica": "Capacidade de aprender e raciocinar"
-},
-{
-"plvr": "sofisma",
-"tema": "Filosofia",
-"dica": "Argumento enganoso que parece verdadeiro"
-},
-{
-"plvr": "autoestima",
-"tema": "Psicologia",
-"dica": "Valorização de si mesmo"
-},
-{
-"plvr": "epistemologia",
-"tema": "Filosofia",
-"dica": "Estudo da natureza do conhecimento"
-},
-{
-"plvr": "psicossocial",
-"tema": "Psicologia",
-"dica": "Relativo à interação entre mente e sociedade"
-},
-{
-"plvr": "metafísica",
-"tema": "Filosofia",
-"dica": "Estudo da natureza da realidade"
-},
-{
-"plvr": "psicoterapeuta",
-"tema": "Psicologia",
-"dica": "Profissional que oferece terapia"
-},
-{
-"plvr": "hedonismo",
-"tema": "Filosofia",
-"dica": "Busca pelo prazer como objetivo"
-},
-{
-"plvr": "introspecção",
-"tema": "Psicologia",
-"dica": "Análise dos próprios pensamentos"
-},
-{
-"plvr": "altruísmo",
-"tema": "Filosofia",
-"dica": "Comportamento voltado para o bem dos outros"
-},
-{
-"plvr": "psicologia",
-"tema": "Psicologia",
-"dica": "Estudo do comportamento e processos mentais"
-},
-{
-"plvr": "inovação",
-"tema": "Empreendedorismo",
-"dica": "Introdução de algo novo no mercado"
-},
-{
-"plvr": "aprendizado",
-"tema": "Educação",
-"dica": "Processo de adquirir conhecimento"
-},
-{
-"plvr": "ginástica",
-"tema": "Educação Física",
-"dica": "Atividade que trabalha o condicionamento físico"
-},
-{
-"plvr": "homeostase",
-"tema": "Fisiologia",
-"dica": "Equilíbrio interno do corpo"
-},
-{
-"plvr": "autoconsciência",
-"tema": "Consciência",
-"dica": "Conhecimento sobre si mesmo"
-},
-{
-"plvr": "sonho",
-"tema": "Subconsciente",
-"dica": "Experiência mental durante o sono"
-},
-{
-"plvr": "CEO",
-"tema": "Cargos",
-"dica": "Sigla de um alto cargo executivo"
-},
-{
-"plvr": "cabeça",
-"tema": "Curiosidades",
-"dica": "Parte do corpo onde fica o cérebro"
-},
-{
-"plvr": "empreendedor",
-"tema": "Empreendedorismo",
-"dica": "Pessoa que cria e gerencia negócios"
-},
-{
-"plvr": "professor",
-"tema": "Educação",
-"dica": "Indivíduo que ensina e orienta"
-},
-{
-"plvr": "corrida",
-"tema": "Educação Física",
-"dica": "Atividade aeróbica de alta intensidade"
-},
-{
-"plvr": "anatomia",
-"tema": "Fisiologia",
-"dica": "Estudo das estruturas do corpo"
-},
-{
-"plvr": "consciência",
-"tema": "Consciência",
-"dica": "Estado de estar ciente e alerta"
-},
-{
-"plvr": "hipnose",
-"tema": "Subconsciente",
-"dica": "Estado de transe induzido"
-},
-{
-"plvr": "gerente",
-"tema": "Cargos",
-"dica": "Responsável pela gestão de equipe"
-},
-{
-"plvr": "curiosidade",
-"tema": "Curiosidades",
-"dica": "Desejo de aprender e explorar o desconhecido"
-},
-{
-"plvr": "startups",
-"tema": "Empreendedorismo",
-"dica": "Empresas emergentes e inovadoras"
-},
-{
-"plvr": "educação",
-"tema": "Educação",
-"dica": "Processo de instrução e aprendizado"
-},
-{
-"plvr": "alongamento",
-"tema": "Educação Física",
-"dica": "Exercício para aumentar flexibilidade"
-},
-{
-"plvr": "respiração",
-"tema": "Fisiologia",
-"dica": "Processo de obtenção de oxigênio"
-},
-{
-"plvr": "mente",
-"tema": "Consciência",
-"dica": "Sede dos processos mentais"
-},
-{
-"plvr": "freud",
-"tema": "Subconsciente",
-"dica": "Psicanalista famoso por suas teorias"
-},
-{
-"plvr": "presidente",
-"tema": "Cargos",
-"dica": "Chefe de Estado ou organização"
-},
-{
-"plvr": "fatos",
-"tema": "Curiosidades",
-"dica": "Informações verdadeiras sobre algo"
-},
-{
-"plvr": "inovação",
-"tema": "Empreendedorismo",
-"dica": "Mudança que cria valor"
-},
-{
-"plvr": "ensino",
-"tema": "Educação",
-"dica": "Processo de transmitir conhecimento"
-},
-{
-"plvr": "aquecimento",
-"tema": "Educação Física",
-"dica": "Atividade preparatória para o exercício"
-},
-{
-"plvr": "sistema circulatório",
-"tema": "Fisiologia",
-"dica": "Transporta sangue pelo corpo"
-},
-{
-"plvr": "percepção",
-"tema": "Consciência",
-"dica": "Interpretação dos sentidos"
-},
-{
-"plvr": "psicoterapia",
-"tema": "Subconsciente",
-"dica": "Tratamento da mente para distúrbios"
-},
-{
-"plvr": "gerente de projetos",
-"tema": "Cargos",
-"dica": "Supervisiona execução de projetos"
-},
-{
-"plvr": "curiosidades",
-"tema": "Curiosidades",
-"dica": "Fatos interessantes e incomuns"
-},
-{
-"plvr": "empreendedorismo",
-"tema": "Empreendedorismo",
-"dica": "Atividade de criação de negócios"
-},
-{
-"plvr": "aprendizagem",
-"tema": "Educação",
-"dica": "Processo de adquirir habilidades"
-},
-{
-"plvr": "musculação",
-"tema": "Educação Física",
-"dica": "Treino para fortalecer os músculos"
-},
-{
-"plvr": "digestão",
-"tema": "Fisiologia",
-"dica": "Processo de quebra de alimentos"
-},
-{
-"plvr": "mente",
-"tema": "Consciência",
-"dica": "Centro de pensamentos e emoções"
-},
-{
-"plvr": "subconsciente",
-"tema": "Subconsciente",
-"dica": "Parte da mente fora da consciência"
-},
-{
-"plvr": "CEO",
-"tema": "Cargos",
-"dica": "Líder máximo de uma empresa"
-},
-{
-"plvr": "curiosidade",
-"tema": "Curiosidades",
-"dica": "Desejo de descobrir novidades"
-},
-{
-"plvr": "startups",
-"tema": "Empreendedorismo",
-"dica": "Pequenas empresas inovadoras"
-},
-{
-"plvr": "ensino",
-"tema": "Educação",
-"dica": "Transmissão de conhecimento"
-},
-{
-"plvr": "resistência",
-"tema": "Educação Física",
-"dica": "Capacidade de suportar esforço"
-},
-{
-"plvr": "homeostase",
-"tema": "Fisiologia",
-"dica": "Equilíbrio interno do corpo"
-},
-{
-"plvr": "autoconsciência",
-"tema": "Consciência",
-"dica": "Conhecimento sobre si mesmo"
-},
-{
-"plvr": "hipnose",
-"tema": "Subconsciente",
-"dica": "Estado de transe induzido"
-},
-{
-"plvr": "diretor",
-"tema": "Cargos",
-"dica": "Responsável por uma organização"
-},
-{
-"plvr": "curiosidades",
-"tema": "Curiosidades",
-"dica": "Fatos interessantes e incomuns"
-},
-{
-"plvr": "educação",
-"tema": "Educação",
-"dica": "Processo de instrução e aprendizado"
-}
+  {
+    "explicacao": "SISTEMA DE DIFICULDADE DINÂMICA - A quantidade de erros permitidos é calculada automaticamente com base no tamanho da palavra:",
+    "dificuldades": {
+      "muito_facil": "3-4 letras → Solo: 4 erros | Grupo: 3 erros",
+      "facil": "5-6 letras → Solo: 6 erros | Grupo: 4 erros",
+      "media": "7-8 letras → Solo: 8 erros | Grupo: 6 erros",
+      "dificil": "9-10 letras → Solo: 10 erros | Grupo: 7 erros",
+      "muito_dificil": "11+ letras → Solo: 12 erros | Grupo: 9 erros"
+    },
+    "observacao": "Quanto maior a palavra, mais chances de erro o jogador terá. Este primeiro objeto é apenas informativo e será ignorado pelo sistema."
+  },
+  {
+    "palavra": "elefante",
+    "tema": "Animais",
+    "dica": "Maior mamífero terrestre, tem uma tromba longa"
+  },
+  {
+    "palavra": "computador",
+    "tema": "Tecnologia",
+    "dica": "Equipamento eletrônico usado para trabalhar e navegar na internet"
+  },
+  {
+    "palavra": "pizza",
+    "tema": "Comidas",
+    "dica": "Comida italiana redonda com queijo e molho de tomate"
+  },
+  {
+    "palavra": "futebol",
+    "tema": "Esportes",
+    "dica": "Esporte mais popular do Brasil, joga-se com os pés"
+  },
+  {
+    "palavra": "violão",
+    "tema": "Instrumentos",
+    "dica": "Instrumento musical de cordas muito usado no samba"
+  },
+  {
+    "palavra": "chocolate",
+    "tema": "Doces",
+    "dica": "Doce feito de cacau, muito popular no mundo todo"
+  },
+  {
+    "palavra": "praia",
+    "tema": "Lugares",
+    "dica": "Lugar com areia e mar, muito visitado no verão"
+  },
+  {
+    "palavra": "livro",
+    "tema": "Objetos",
+    "dica": "Objeto com páginas que contém histórias ou informações"
+  },
+  {
+    "palavra": "brasil",
+    "tema": "Geografia",
+    "dica": "Maior país da América do Sul, famoso pelo futebol"
+  },
+  {
+    "palavra": "telefone",
+    "tema": "Tecnologia",
+    "dica": "Aparelho usado para fazer ligações e enviar mensagens"
+  },
+  {
+    "palavra": "bicicleta",
+    "tema": "Transportes",
+    "dica": "Meio de transporte com duas rodas movido por pedais"
+  },
+  {
+    "palavra": "cachorro",
+    "tema": "Animais",
+    "dica": "Melhor amigo do homem, late e abana o rabo"
+  },
+  {
+    "palavra": "banana",
+    "tema": "Frutas",
+    "dica": "Fruta amarela alongada, muito nutritiva"
+  },
+  {
+    "palavra": "professor",
+    "tema": "Profissões",
+    "dica": "Pessoa que ensina em escolas e universidades"
+  },
+  {
+    "palavra": "montanha",
+    "tema": "Natureza",
+    "dica": "Elevação muito alta de terra, maior que uma colina"
+  },
+  {
+    "palavra": "carro",
+    "tema": "Transportes",
+    "dica": "Veículo de quatro rodas usado para transporte"
+  },
+  {
+    "palavra": "estrela",
+    "tema": "Astronomia",
+    "dica": "Corpo celeste que brilha no céu à noite"
+  },
+  {
+    "palavra": "violino",
+    "tema": "Instrumentos",
+    "dica": "Instrumento de cordas tocado com arco"
+  },
+  {
+    "palavra": "hospital",
+    "tema": "Lugares",
+    "dica": "Local onde as pessoas são tratadas quando ficam doentes"
+  },
+  {
+    "palavra": "borboleta",
+    "tema": "Animais",
+    "dica": "Inseto colorido que voa de flor em flor"
+  },
+  {
+    "palavra": "oceano",
+    "tema": "Geografia",
+    "dica": "Grande massa de água salgada que cobre a Terra"
+  },
+  {
+    "palavra": "fotografia",
+    "tema": "Arte",
+    "dica": "Imagem capturada por uma câmera"
+  },
+  {
+    "palavra": "guitarra",
+    "tema": "Instrumentos",
+    "dica": "Instrumento de cordas muito usado no rock"
+  },
+  {
+    "palavra": "floresta",
+    "tema": "Natureza",
+    "dica": "Grande área coberta de árvores e vegetação"
+  },
+  {
+    "palavra": "dentista",
+    "tema": "Profissões",
+    "dica": "Profissional que cuida da saúde dos dentes"
+  },
+  {
+    "palavra": "refrigerante",
+    "tema": "Bebidas",
+    "dica": "Bebida gaseificada e doce muito consumida"
+  },
+  {
+    "palavra": "tigre",
+    "tema": "Animais",
+    "dica": "Grande felino com listras alaranjadas e pretas"
+  },
+  {
+    "palavra": "cinema",
+    "tema": "Entretenimento",
+    "dica": "Local onde assistimos filmes em tela grande"
+  },
+  {
+    "palavra": "teclado",
+    "tema": "Tecnologia",
+    "dica": "Periférico usado para digitar no computador"
+  },
+  {
+    "palavra": "laranja",
+    "tema": "Frutas",
+    "dica": "Fruta cítrica de cor alaranjada, rica em vitamina C"
+  },
+  {
+    "palavra": "arquiteto",
+    "tema": "Profissões",
+    "dica": "Profissional que projeta e planeja construções"
+  },
+  {
+    "palavra": "relâmpago",
+    "tema": "Natureza",
+    "dica": "Descarga elétrica que ocorre durante tempestades"
+  },
+  {
+    "palavra": "basquete",
+    "tema": "Esportes",
+    "dica": "Esporte jogado com as mãos onde se arremessa bola na cesta"
+  },
+  {
+    "palavra": "hamburguer",
+    "tema": "Comidas",
+    "dica": "Sanduíche com carne, muito popular em lanchonetes"
+  },
+  {
+    "palavra": "girassol",
+    "tema": "Plantas",
+    "dica": "Flor amarela grande que acompanha o movimento do sol"
+  },
+  {
+    "palavra": "avião",
+    "tema": "Transportes",
+    "dica": "Meio de transporte que voa nas alturas"
+  },
+  {
+    "palavra": "tartaruga",
+    "tema": "Animais",
+    "dica": "Réptil que carrega sua casa nas costas e anda devagar"
+  },
+  {
+    "palavra": "vulcão",
+    "tema": "Geografia",
+    "dica": "Montanha que pode expelir lava, cinzas e gases"
+  },
+  {
+    "palavra": "engenheiro",
+    "tema": "Profissões",
+    "dica": "Profissional que projeta e constrói obras e máquinas"
+  },
+  {
+    "palavra": "melancia",
+    "tema": "Frutas",
+    "dica": "Fruta grande, verde por fora e vermelha por dentro"
+  },
+  {
+    "palavra": "sanduíche",
+    "tema": "Comidas",
+    "dica": "Comida feita com pão e recheio no meio"
+  },
+  {
+    "palavra": "diamante",
+    "tema": "Minerais",
+    "dica": "Pedra preciosa muito valiosa e brilhante"
+  },
+  {
+    "palavra": "pinguim",
+    "tema": "Animais",
+    "dica": "Ave que não voa e vive em regiões geladas"
+  },
+  {
+    "palavra": "astronauta",
+    "tema": "Profissões",
+    "dica": "Pessoa que viaja ao espaço"
+  },
+  {
+    "palavra": "bateria",
+    "tema": "Instrumentos",
+    "dica": "Instrumento de percussão com vários tambores"
+  },
+  {
+    "palavra": "macarrão",
+    "tema": "Comidas",
+    "dica": "Massa italiana geralmente servida com molho"
+  },
+  {
+    "palavra": "arco-íris",
+    "tema": "Natureza",
+    "dica": "Fenômeno colorido que aparece no céu após a chuva"
+  },
+  {
+    "palavra": "telescópio",
+    "tema": "Ciência",
+    "dica": "Instrumento usado para observar objetos distantes no céu"
+  },
+  {
+    "palavra": "pipoca",
+    "tema": "Comidas",
+    "dica": "Grãos de milho estourados, comum em cinemas"
+  },
+  {
+    "palavra": "crocodilo",
+    "tema": "Animais",
+    "dica": "Réptil grande que vive na água e tem mandíbula forte"
+  },
+  {
+    "palavra": "sol",
+    "tema": "Astronomia",
+    "dica": "Estrela que ilumina e aquece a Terra durante o dia"
+  },
+  {
+    "palavra": "lua",
+    "tema": "Astronomia",
+    "dica": "Satélite natural da Terra que vemos à noite"
+  },
+  {
+    "palavra": "café",
+    "tema": "Bebidas",
+    "dica": "Bebida escura e amarga muito consumida pela manhã"
+  },
+  {
+    "palavra": "gato",
+    "tema": "Animais",
+    "dica": "Felino doméstico que ronrona e mia"
+  },
+  {
+    "palavra": "leão",
+    "tema": "Animais",
+    "dica": "Rei da selva, felino grande com juba"
+  },
+  {
+    "palavra": "urso",
+    "tema": "Animais",
+    "dica": "Grande mamífero peludo que hiberna no inverno"
+  },
+  {
+    "palavra": "rosa",
+    "tema": "Plantas",
+    "dica": "Flor delicada com espinhos no caule"
+  },
+  {
+    "palavra": "ventilador",
+    "tema": "Objetos",
+    "dica": "Aparelho com hélices que circula o ar"
+  },
+  {
+    "palavra": "microfone",
+    "tema": "Tecnologia",
+    "dica": "Equipamento usado para amplificar a voz"
+  },
+  {
+    "palavra": "sorvete",
+    "tema": "Doces",
+    "dica": "Sobremesa gelada muito consumida no verão"
+  },
+  {
+    "palavra": "brigadeiro",
+    "tema": "Doces",
+    "dica": "Doce brasileiro feito com chocolate e leite condensado"
+  },
+  {
+    "palavra": "pão",
+    "tema": "Comidas",
+    "dica": "Alimento básico feito de farinha e assado"
+  },
+  {
+    "palavra": "arroz",
+    "tema": "Comidas",
+    "dica": "Cereal branco muito consumido no Brasil com feijão"
+  },
+  {
+    "palavra": "feijão",
+    "tema": "Comidas",
+    "dica": "Leguminosa preta ou marrom, base da alimentação brasileira"
+  },
+  {
+    "palavra": "janela",
+    "tema": "Objetos",
+    "dica": "Abertura na parede para entrada de luz e ar"
+  },
+  {
+    "palavra": "espelho",
+    "tema": "Objetos",
+    "dica": "Superfície refletora onde vemos nossa imagem"
+  },
+  {
+    "palavra": "cadeira",
+    "tema": "Objetos",
+    "dica": "Móvel com encosto para sentar"
+  },
+  {
+    "palavra": "mesa",
+    "tema": "Objetos",
+    "dica": "Móvel com superfície plana usada para refeições ou trabalho"
+  },
+  {
+    "palavra": "skate",
+    "tema": "Esportes",
+    "dica": "Prancha com rodas usada para manobras radicais"
+  },
+  {
+    "palavra": "natação",
+    "tema": "Esportes",
+    "dica": "Esporte praticado na água usando braços e pernas"
+  },
+  {
+    "palavra": "voleibol",
+    "tema": "Esportes",
+    "dica": "Esporte de quadra onde se bate a bola por cima da rede"
+  },
+  {
+    "palavra": "xadrez",
+    "tema": "Jogos",
+    "dica": "Jogo de tabuleiro com peças como rei, rainha e torre"
+  },
+  {
+    "palavra": "dominó",
+    "tema": "Jogos",
+    "dica": "Jogo de peças retangulares com pontos numerados"
+  },
+  {
+    "palavra": "baralho",
+    "tema": "Jogos",
+    "dica": "Conjunto de cartas usado em diversos jogos"
+  },
+  {
+    "palavra": "aranha",
+    "tema": "Animais",
+    "dica": "Aracnídeo de oito patas que tece teias"
+  },
+  {
+    "palavra": "abelha",
+    "tema": "Animais",
+    "dica": "Inseto que produz mel e vive em colmeias"
+  },
+  {
+    "palavra": "formiga",
+    "tema": "Animais",
+    "dica": "Inseto pequeno que vive em colônias e carrega folhas"
+  },
+  {
+    "palavra": "mosquito",
+    "tema": "Animais",
+    "dica": "Inseto pequeno que pica e pode transmitir doenças"
+  },
+  {
+    "palavra": "jardim",
+    "tema": "Lugares",
+    "dica": "Área cultivada com plantas, flores e grama"
+  },
+  {
+    "palavra": "parque",
+    "tema": "Lugares",
+    "dica": "Área verde pública com brinquedos e árvores"
+  },
+  {
+    "palavra": "escola",
+    "tema": "Lugares",
+    "dica": "Local onde crianças e jovens estudam"
+  },
+  {
+    "palavra": "biblioteca",
+    "tema": "Lugares",
+    "dica": "Local cheio de livros para leitura e estudo"
+  },
+  {
+    "palavra": "farmácia",
+    "tema": "Lugares",
+    "dica": "Estabelecimento onde se compra remédios"
+  },
+  {
+    "palavra": "padaria",
+    "tema": "Lugares",
+    "dica": "Local onde se vende pães e bolos frescos"
+  },
+  {
+    "palavra": "açúcar",
+    "tema": "Alimentos",
+    "dica": "Substância doce branca usada em sobremesas"
+  },
+  {
+    "palavra": "sal",
+    "tema": "Alimentos",
+    "dica": "Tempero branco usado para dar sabor salgado"
+  },
+  {
+    "palavra": "pimenta",
+    "tema": "Alimentos",
+    "dica": "Condimento picante que arde na boca"
+  },
+  {
+    "palavra": "alho",
+    "tema": "Alimentos",
+    "dica": "Tempero aromático de sabor forte usado na cozinha"
+  },
+  {
+    "palavra": "cebola",
+    "tema": "Alimentos",
+    "dica": "Vegetal em camadas que faz chorar ao cortar"
+  },
+  {
+    "palavra": "tomate",
+    "tema": "Alimentos",
+    "dica": "Fruto vermelho muito usado em saladas e molhos"
+  },
+  {
+    "palavra": "alface",
+    "tema": "Alimentos",
+    "dica": "Verdura verde de folhas usada em saladas"
+  },
+  {
+    "palavra": "cenoura",
+    "tema": "Alimentos",
+    "dica": "Vegetal alaranjado comprido, favorito dos coelhos"
+  },
+  {
+    "palavra": "batata",
+    "tema": "Alimentos",
+    "dica": "Tubérculo versátil que pode ser frito ou cozido"
+  },
+  {
+    "palavra": "abacaxi",
+    "tema": "Frutas",
+    "dica": "Fruta tropical amarela com casca espinhosa e coroa"
+  },
+  {
+    "palavra": "morango",
+    "tema": "Frutas",
+    "dica": "Fruta pequena vermelha com pontinhos na superfície"
+  },
+  {
+    "palavra": "uva",
+    "tema": "Frutas",
+    "dica": "Fruta pequena que cresce em cachos, usada para fazer vinho"
+  },
+  {
+    "palavra": "manga",
+    "tema": "Frutas",
+    "dica": "Fruta tropical amarela-alaranjada de polpa suculenta"
+  },
+  {
+    "palavra": "maçã",
+    "tema": "Frutas",
+    "dica": "Fruta redonda vermelha ou verde, muito consumida no mundo"
+  },
+  {
+    "palavra": "limão",
+    "tema": "Frutas",
+    "dica": "Fruta cítrica amarela de sabor ácido"
+  },
+  {
+    "palavra": "papagaio",
+    "tema": "Animais",
+    "dica": "Ave colorida que pode aprender a falar"
+  },
+  {
+    "palavra": "cavalo",
+    "tema": "Animais",
+    "dica": "Animal de quatro patas usado para montaria e corridas"
+  },
+  {
+    "palavra": "coelho",
+    "tema": "Animais",
+    "dica": "Mamífero pequeno com orelhas longas que pula"
+  },
+  {
+    "palavra": "macaco",
+    "tema": "Animais",
+    "dica": "Primata ágil que vive em árvores"
+  },
+  {
+    "palavra": "baleia",
+    "tema": "Animais",
+    "dica": "Maior mamífero marinho do mundo"
+  },
+  {
+    "palavra": "tubarão",
+    "tema": "Animais",
+    "dica": "Predador marinho temido por seus dentes afiados"
+  },
+  {
+    "palavra": "golfinho",
+    "tema": "Animais",
+    "dica": "Mamífero marinho inteligente e amigável"
+  },
+  {
+    "palavra": "polvo",
+    "tema": "Animais",
+    "dica": "Molusco marinho com oito tentáculos"
+  },
+  {
+    "palavra": "cobra",
+    "tema": "Animais",
+    "dica": "Réptil sem patas que se arrasta pelo chão"
+  },
+  {
+    "palavra": "lagarto",
+    "tema": "Animais",
+    "dica": "Réptil de quatro patas que toma sol"
+  },
+  {
+    "palavra": "sapo",
+    "tema": "Animais",
+    "dica": "Anfíbio que pula e faz coaxo"
+  },
+  {
+    "palavra": "pato",
+    "tema": "Animais",
+    "dica": "Ave aquática que nada e faz quá-quá"
+  },
+  {
+    "palavra": "galinha",
+    "tema": "Animais",
+    "dica": "Ave doméstica que bota ovos"
+  },
+  {
+    "palavra": "porco",
+    "tema": "Animais",
+    "dica": "Animal de fazenda rosado que grunhe"
+  },
+  {
+    "palavra": "vaca",
+    "tema": "Animais",
+    "dica": "Animal que produz leite e faz muuu"
+  },
+  {
+    "palavra": "ovelha",
+    "tema": "Animais",
+    "dica": "Animal de lã que faz meee"
+  },
+  {
+    "palavra": "burro",
+    "tema": "Animais",
+    "dica": "Animal de carga parecido com cavalo mas menor"
+  },
+  {
+    "palavra": "zebra",
+    "tema": "Animais",
+    "dica": "Equino africano com listras pretas e brancas"
+  },
+  {
+    "palavra": "girafa",
+    "tema": "Animais",
+    "dica": "Animal com pescoço muito longo e manchas"
+  },
+  {
+    "palavra": "hipopótamo",
+    "tema": "Animais",
+    "dica": "Grande mamífero que vive em rios africanos"
+  },
+  {
+    "palavra": "rinoceronte",
+    "tema": "Animais",
+    "dica": "Animal grande com chifre no nariz"
+  },
+  {
+    "palavra": "canguru",
+    "tema": "Animais",
+    "dica": "Marsupial australiano que pula e tem bolsa"
+  },
+  {
+    "palavra": "camelo",
+    "tema": "Animais",
+    "dica": "Animal do deserto com corcova nas costas"
+  },
+  {
+    "palavra": "águia",
+    "tema": "Animais",
+    "dica": "Ave de rapina com visão aguçada"
+  },
+  {
+    "palavra": "coruja",
+    "tema": "Animais",
+    "dica": "Ave noturna que faz uh-uh"
+  },
+  {
+    "palavra": "mouse",
+    "tema": "Tecnologia",
+    "dica": "Periférico usado para mover cursor na tela"
+  },
+  {
+    "palavra": "monitor",
+    "tema": "Tecnologia",
+    "dica": "Tela do computador onde vemos as imagens"
+  },
+  {
+    "palavra": "tablet",
+    "tema": "Tecnologia",
+    "dica": "Dispositivo portátil com tela touch maior que celular"
+  },
+  {
+    "palavra": "notebook",
+    "tema": "Tecnologia",
+    "dica": "Computador portátil que pode ser dobrado"
+  },
+  {
+    "palavra": "pendrive",
+    "tema": "Tecnologia",
+    "dica": "Dispositivo pequeno para armazenar arquivos"
+  },
+  {
+    "palavra": "impressora",
+    "tema": "Tecnologia",
+    "dica": "Máquina que coloca documentos no papel"
+  },
+  {
+    "palavra": "scanner",
+    "tema": "Tecnologia",
+    "dica": "Aparelho que digitaliza documentos físicos"
+  },
+  {
+    "palavra": "webcam",
+    "tema": "Tecnologia",
+    "dica": "Câmera usada para videochamadas"
+  },
+  {
+    "palavra": "internet",
+    "tema": "Tecnologia",
+    "dica": "Rede mundial de computadores"
+  },
+  {
+    "palavra": "bluetooth",
+    "tema": "Tecnologia",
+    "dica": "Tecnologia de conexão sem fio de curta distância"
+  },
+  {
+    "palavra": "wifi",
+    "tema": "Tecnologia",
+    "dica": "Conexão de internet sem fio"
+  },
+  {
+    "palavra": "aplicativo",
+    "tema": "Tecnologia",
+    "dica": "Programa que roda no celular ou computador"
+  },
+  {
+    "palavra": "médico",
+    "tema": "Profissões",
+    "dica": "Profissional que cuida da saúde das pessoas"
+  },
+  {
+    "palavra": "advogado",
+    "tema": "Profissões",
+    "dica": "Profissional que defende pessoas na justiça"
+  },
+  {
+    "palavra": "enfermeiro",
+    "tema": "Profissões",
+    "dica": "Profissional que auxilia médicos e cuida de pacientes"
+  },
+  {
+    "palavra": "bombeiro",
+    "tema": "Profissões",
+    "dica": "Profissional que apaga incêndios"
+  },
+  {
+    "palavra": "policial",
+    "tema": "Profissões",
+    "dica": "Profissional que mantém a ordem e segurança"
+  },
+  {
+    "palavra": "padeiro",
+    "tema": "Profissões",
+    "dica": "Profissional que faz pães e bolos"
+  },
+  {
+    "palavra": "cozinheiro",
+    "tema": "Profissões",
+    "dica": "Profissional que prepara alimentos"
+  },
+  {
+    "palavra": "garçom",
+    "tema": "Profissões",
+    "dica": "Profissional que serve em restaurantes"
+  },
+  {
+    "palavra": "motorista",
+    "tema": "Profissões",
+    "dica": "Profissional que dirige veículos"
+  },
+  {
+    "palavra": "mecânico",
+    "tema": "Profissões",
+    "dica": "Profissional que conserta carros"
+  },
+  {
+    "palavra": "eletricista",
+    "tema": "Profissões",
+    "dica": "Profissional que trabalha com instalações elétricas"
+  },
+  {
+    "palavra": "encanador",
+    "tema": "Profissões",
+    "dica": "Profissional que conserta canos e torneiras"
+  },
+  {
+    "palavra": "carpinteiro",
+    "tema": "Profissões",
+    "dica": "Profissional que trabalha com madeira"
+  },
+  {
+    "palavra": "pintor",
+    "tema": "Profissões",
+    "dica": "Profissional que pinta paredes ou faz obras de arte"
+  },
+  {
+    "palavra": "jardineiro",
+    "tema": "Profissões",
+    "dica": "Profissional que cuida de jardins e plantas"
+  },
+  {
+    "palavra": "fotógrafo",
+    "tema": "Profissões",
+    "dica": "Profissional que tira fotos"
+  },
+  {
+    "palavra": "jornalista",
+    "tema": "Profissões",
+    "dica": "Profissional que escreve notícias"
+  },
+  {
+    "palavra": "músico",
+    "tema": "Profissões",
+    "dica": "Profissional que toca instrumentos ou canta"
+  },
+  {
+    "palavra": "ator",
+    "tema": "Profissões",
+    "dica": "Profissional que atua em filmes, novelas e teatro"
+  },
+  {
+    "palavra": "lasanha",
+    "tema": "Comidas",
+    "dica": "Prato italiano com camadas de massa e molho"
+  },
+  {
+    "palavra": "sushi",
+    "tema": "Comidas",
+    "dica": "Comida japonesa feita com arroz e peixe cru"
+  },
+  {
+    "palavra": "cachorro-quente",
+    "tema": "Comidas",
+    "dica": "Sanduíche com salsicha e molhos"
+  },
+  {
+    "palavra": "tapioca",
+    "tema": "Comidas",
+    "dica": "Iguaria nordestina feita de goma de mandioca"
+  },
+  {
+    "palavra": "coxinha",
+    "tema": "Comidas",
+    "dica": "Salgado brasileiro em forma de gota com frango"
+  },
+  {
+    "palavra": "pastel",
+    "tema": "Comidas",
+    "dica": "Massa frita recheada, popular em feiras"
+  },
+  {
+    "palavra": "esfiha",
+    "tema": "Comidas",
+    "dica": "Comida árabe em formato triangular ou redondo"
+  },
+  {
+    "palavra": "quibe",
+    "tema": "Comidas",
+    "dica": "Bolinho árabe frito feito de trigo e carne"
+  },
+  {
+    "palavra": "feijoada",
+    "tema": "Comidas",
+    "dica": "Prato brasileiro com feijão preto e carnes"
+  },
+  {
+    "palavra": "churrasco",
+    "tema": "Comidas",
+    "dica": "Carne assada na brasa ou grelha"
+  },
+  {
+    "palavra": "moqueca",
+    "tema": "Comidas",
+    "dica": "Prato brasileiro de peixe cozido com leite de coco"
+  },
+  {
+    "palavra": "vatapá",
+    "tema": "Comidas",
+    "dica": "Prato baiano cremoso e temperado"
+  },
+  {
+    "palavra": "acarajé",
+    "tema": "Comidas",
+    "dica": "Bolinho baiano frito no azeite de dendê"
+  },
+  {
+    "palavra": "açaí",
+    "tema": "Bebidas",
+    "dica": "Fruto amazônico roxo servido gelado"
+  },
+  {
+    "palavra": "guaraná",
+    "tema": "Bebidas",
+    "dica": "Refrigerante brasileiro mais popular"
+  },
+  {
+    "palavra": "limonada",
+    "tema": "Bebidas",
+    "dica": "Bebida refrescante feita com limão"
+  },
+  {
+    "palavra": "vitamina",
+    "tema": "Bebidas",
+    "dica": "Bebida cremosa feita com frutas e leite"
+  },
+  {
+    "palavra": "chá",
+    "tema": "Bebidas",
+    "dica": "Bebida quente feita com ervas ou folhas"
+  },
+  {
+    "palavra": "leite",
+    "tema": "Bebidas",
+    "dica": "Líquido branco nutritivo de origem animal"
+  },
+  {
+    "palavra": "água",
+    "tema": "Bebidas",
+    "dica": "Líquido transparente essencial para vida"
+  },
+  {
+    "palavra": "sofá",
+    "tema": "Objetos",
+    "dica": "Móvel confortável para sentar ou deitar na sala"
+  },
+  {
+    "palavra": "cama",
+    "tema": "Objetos",
+    "dica": "Móvel onde dormimos"
+  },
+  {
+    "palavra": "geladeira",
+    "tema": "Objetos",
+    "dica": "Eletrodoméstico que mantém alimentos gelados"
+  },
+  {
+    "palavra": "fogão",
+    "tema": "Objetos",
+    "dica": "Aparelho usado para cozinhar alimentos"
+  },
+  {
+    "palavra": "microondas",
+    "tema": "Objetos",
+    "dica": "Aparelho que aquece comida rapidamente"
+  },
+  {
+    "palavra": "televisão",
+    "tema": "Objetos",
+    "dica": "Aparelho que transmite programas e filmes"
+  },
+  {
+    "palavra": "rádio",
+    "tema": "Objetos",
+    "dica": "Aparelho que transmite músicas e notícias"
+  },
+  {
+    "palavra": "telefone",
+    "tema": "Objetos",
+    "dica": "Aparelho usado para fazer ligações"
+  },
+  {
+    "palavra": "relógio",
+    "tema": "Objetos",
+    "dica": "Objeto que mostra as horas"
+  },
+  {
+    "palavra": "calendário",
+    "tema": "Objetos",
+    "dica": "Objeto que mostra dias, meses e anos"
+  },
+  {
+    "palavra": "luminária",
+    "tema": "Objetos",
+    "dica": "Objeto que ilumina ambientes"
+  },
+  {
+    "palavra": "travesseiro",
+    "tema": "Objetos",
+    "dica": "Objeto macio onde apoiamos a cabeça para dormir"
+  },
+  {
+    "palavra": "cobertor",
+    "tema": "Objetos",
+    "dica": "Tecido usado para se aquecer na cama"
+  },
+  {
+    "palavra": "cortina",
+    "tema": "Objetos",
+    "dica": "Tecido que cobre janelas"
+  },
+  {
+    "palavra": "tapete",
+    "tema": "Objetos",
+    "dica": "Revestimento de tecido para o chão"
+  },
+  {
+    "palavra": "vassoura",
+    "tema": "Objetos",
+    "dica": "Utensílio usado para varrer o chão"
+  },
+  {
+    "palavra": "pá",
+    "tema": "Objetos",
+    "dica": "Utensílio usado para recolher sujeira"
+  },
+  {
+    "palavra": "balde",
+    "tema": "Objetos",
+    "dica": "Recipiente para carregar água ou lixo"
+  },
+  {
+    "palavra": "panela",
+    "tema": "Objetos",
+    "dica": "Recipiente usado para cozinhar"
+  },
+  {
+    "palavra": "frigideira",
+    "tema": "Objetos",
+    "dica": "Utensílio raso usado para fritar alimentos"
+  },
+  {
+    "palavra": "talheres",
+    "tema": "Objetos",
+    "dica": "Conjunto de garfo, faca e colher"
+  },
+  {
+    "palavra": "prato",
+    "tema": "Objetos",
+    "dica": "Utensílio onde colocamos comida"
+  },
+  {
+    "palavra": "copo",
+    "tema": "Objetos",
+    "dica": "Recipiente para beber líquidos"
+  },
+  {
+    "palavra": "garrafa",
+    "tema": "Objetos",
+    "dica": "Recipiente para guardar líquidos"
+  },
+  {
+    "palavra": "caneca",
+    "tema": "Objetos",
+    "dica": "Recipiente com alça para bebidas quentes"
+  },
+  {
+    "palavra": "chaleira",
+    "tema": "Objetos",
+    "dica": "Utensílio para ferver água"
+  },
+  {
+    "palavra": "tênis",
+    "tema": "Esportes",
+    "dica": "Esporte de raquete jogado em quadra"
+  },
+  {
+    "palavra": "golfe",
+    "tema": "Esportes",
+    "dica": "Esporte onde se acerta bola com taco em buracos"
+  },
+  {
+    "palavra": "boxe",
+    "tema": "Esportes",
+    "dica": "Esporte de luta com luvas"
+  },
+  {
+    "palavra": "judô",
+    "tema": "Esportes",
+    "dica": "Arte marcial japonesa de arremessos"
+  },
+  {
+    "palavra": "karatê",
+    "tema": "Esportes",
+    "dica": "Arte marcial japonesa de golpes"
+  },
+  {
+    "palavra": "capoeira",
+    "tema": "Esportes",
+    "dica": "Arte marcial brasileira que parece dança"
+  },
+  {
+    "palavra": "surf",
+    "tema": "Esportes",
+    "dica": "Esporte praticado nas ondas do mar"
+  },
+  {
+    "palavra": "escalada",
+    "tema": "Esportes",
+    "dica": "Esporte de subir montanhas ou paredes"
+  },
+  {
+    "palavra": "mergulho",
+    "tema": "Esportes",
+    "dica": "Atividade de explorar debaixo d'água"
+  },
+  {
+    "palavra": "ciclismo",
+    "tema": "Esportes",
+    "dica": "Esporte praticado com bicicleta"
+  },
+  {
+    "palavra": "atletismo",
+    "tema": "Esportes",
+    "dica": "Conjunto de esportes com corridas e saltos"
+  },
+  {
+    "palavra": "ginástica",
+    "tema": "Esportes",
+    "dica": "Esporte com acrobacias e movimentos flexíveis"
+  },
+  {
+    "palavra": "ballet",
+    "tema": "Arte",
+    "dica": "Dança clássica elegante e delicada"
+  },
+  {
+    "palavra": "teatro",
+    "tema": "Arte",
+    "dica": "Arte de encenar histórias no palco"
+  },
+  {
+    "palavra": "cinema",
+    "tema": "Entretenimento",
+    "dica": "Local onde assistimos filmes"
+  },
+  {
+    "palavra": "música",
+    "tema": "Arte",
+    "dica": "Arte dos sons e melodias"
+  },
+  {
+    "palavra": "pintura",
+    "tema": "Arte",
+    "dica": "Arte de criar imagens com tintas"
+  },
+  {
+    "palavra": "escultura",
+    "tema": "Arte",
+    "dica": "Arte de criar formas tridimensionais"
+  },
+  {
+    "palavra": "desenho",
+    "tema": "Arte",
+    "dica": "Arte de criar imagens com lápis ou caneta"
+  },
+  {
+    "palavra": "rio",
+    "tema": "Geografia",
+    "dica": "Curso de água que corre para o mar"
+  },
+  {
+    "palavra": "lago",
+    "tema": "Geografia",
+    "dica": "Grande quantidade de água cercada por terra"
+  },
+  {
+    "palavra": "cachoeira",
+    "tema": "Natureza",
+    "dica": "Queda d'água de um rio"
+  },
+  {
+    "palavra": "deserto",
+    "tema": "Geografia",
+    "dica": "Região muito seca com pouca vegetação"
+  },
+  {
+    "palavra": "selva",
+    "tema": "Natureza",
+    "dica": "Floresta densa e úmida tropical"
+  },
+  {
+    "palavra": "savana",
+    "tema": "Geografia",
+    "dica": "Região com gramíneas e árvores esparsas"
+  },
+  {
+    "palavra": "pântano",
+    "tema": "Natureza",
+    "dica": "Área alagada com vegetação aquática"
+  },
+  {
+    "palavra": "ilha",
+    "tema": "Geografia",
+    "dica": "Porção de terra cercada de água por todos os lados"
+  },
+  {
+    "palavra": "península",
+    "tema": "Geografia",
+    "dica": "Porção de terra cercada de água em três lados"
+  },
+  {
+    "palavra": "continente",
+    "tema": "Geografia",
+    "dica": "Grande extensão de terra no planeta"
+  },
+  {
+    "palavra": "planeta",
+    "tema": "Astronomia",
+    "dica": "Corpo celeste que orbita uma estrela"
+  },
+  {
+    "palavra": "galáxia",
+    "tema": "Astronomia",
+    "dica": "Sistema com bilhões de estrelas"
+  },
+  {
+    "palavra": "cometa",
+    "tema": "Astronomia",
+    "dica": "Corpo celeste com cauda luminosa"
+  },
+  {
+    "palavra": "meteoro",
+    "tema": "Astronomia",
+    "dica": "Estrela cadente que cruza o céu"
+  },
+  {
+    "palavra": "nuvem",
+    "tema": "Natureza",
+    "dica": "Massa de vapor d'água no céu"
+  },
+  {
+    "palavra": "chuva",
+    "tema": "Natureza",
+    "dica": "Água que cai das nuvens"
+  },
+  {
+    "palavra": "neve",
+    "tema": "Natureza",
+    "dica": "Água congelada que cai do céu"
+  },
+  {
+    "palavra": "granizo",
+    "tema": "Natureza",
+    "dica": "Pedras de gelo que caem durante tempestades"
+  },
+  {
+    "palavra": "furacão",
+    "tema": "Natureza",
+    "dica": "Tempestade violenta com ventos muito fortes"
+  },
+  {
+    "palavra": "tornado",
+    "tema": "Natureza",
+    "dica": "Coluna de ar em rotação que toca o solo"
+  },
+  {
+    "palavra": "terremoto",
+    "tema": "Natureza",
+    "dica": "Tremor violento da superfície terrestre"
+  },
+  {
+    "palavra": "tsunami",
+    "tema": "Natureza",
+    "dica": "Onda gigante causada por terremoto marinho"
+  },
+  {
+    "palavra": "aniversário",
+    "tema": "Eventos",
+    "dica": "Celebração do dia em que nascemos"
+  },
+  {
+    "palavra": "casamento",
+    "tema": "Eventos",
+    "dica": "Cerimônia de união de duas pessoas"
+  },
+  {
+    "palavra": "formatura",
+    "tema": "Eventos",
+    "dica": "Cerimônia de conclusão de curso"
+  },
+  {
+    "palavra": "páscoa",
+    "tema": "Datas",
+    "dica": "Feriado religioso com ovos de chocolate"
+  },
+  {
+    "palavra": "natal",
+    "tema": "Datas",
+    "dica": "Feriado de dezembro com Papai Noel"
+  },
+  {
+    "palavra": "carnaval",
+    "tema": "Datas",
+    "dica": "Festa popular brasileira com desfiles e fantasias"
+  },
+  {
+    "palavra": "halloween",
+    "tema": "Datas",
+    "dica": "Festa de fantasias com abóboras e doces"
+  },
+  {
+    "palavra": "reveillon",
+    "tema": "Datas",
+    "dica": "Festa de ano novo"
+  },
+  {
+    "palavra": "pirata",
+    "tema": "Personagens",
+    "dica": "Bandido que rouba navios no mar"
+  },
+  {
+    "palavra": "vampiro",
+    "tema": "Personagens",
+    "dica": "Criatura que bebe sangue e teme o sol"
+  },
+  {
+    "palavra": "bruxa",
+    "tema": "Personagens",
+    "dica": "Mulher com poderes mágicos e vassoura voadora"
+  },
+  {
+    "palavra": "fada",
+    "tema": "Personagens",
+    "dica": "Ser mágico pequeno com asas"
+  },
+  {
+    "palavra": "dragão",
+    "tema": "Personagens",
+    "dica": "Criatura mítica que cospe fogo"
+  },
+  {
+    "palavra": "unicórnio",
+    "tema": "Personagens",
+    "dica": "Cavalo mágico com chifre na testa"
+  },
+  {
+    "palavra": "sereia",
+    "tema": "Personagens",
+    "dica": "Ser metade mulher, metade peixe"
+  },
+  {
+    "palavra": "robô",
+    "tema": "Ciência",
+    "dica": "Máquina programada para realizar tarefas"
+  },
+  {
+    "palavra": "foguete",
+    "tema": "Ciência",
+    "dica": "Veículo que viaja ao espaço"
+  },
+  {
+    "palavra": "satélite",
+    "tema": "Ciência",
+    "dica": "Aparelho que orbita a Terra"
+  },
+  {
+    "palavra": "laboratório",
+    "tema": "Ciência",
+    "dica": "Local onde se fazem experimentos científicos"
+  },
+  {
+    "palavra": "microscópio",
+    "tema": "Ciência",
+    "dica": "Instrumento para ver coisas muito pequenas"
+  },
+  {
+    "palavra": "termômetro",
+    "tema": "Ciência",
+    "dica": "Instrumento que mede temperatura"
+  },
+  {
+    "palavra": "bússola",
+    "tema": "Objetos",
+    "dica": "Instrumento que indica direção norte"
+  },
+  {
+    "palavra": "mapa",
+    "tema": "Objetos",
+    "dica": "Representação de uma região geográfica"
+  },
+  {
+    "palavra": "globo",
+    "tema": "Objetos",
+    "dica": "Representação esférica da Terra"
+  }
 ]

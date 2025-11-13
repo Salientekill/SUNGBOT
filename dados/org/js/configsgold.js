@@ -16,7 +16,8 @@ doubleg: 5, // Vezes que pode jogar double gold por dia
 cassino: 5, // Vezes que pode jogar cassino por dia
 cara_coroa: 3,// Vezes que pode jogar cara ou coroa por dia
 quiz: 2, // Vezes que pode jogar quiz por dia
-caixamisteriosa: 5 // 🆕 Vezes que pode jogar caixa misteriosa por dia
+caixamisteriosa: 5, // 🆕 Vezes que pode jogar caixa misteriosa por dia
+forca: 3 // 🆕 Vezes que pode ganhar gold na forca por dia
 },
 
 // Limites de valores para apostas e transferências
@@ -48,7 +49,19 @@ max: 4.0 // Ganho máximo (400%)
 },
 
 // Gold recebido diariamente
-diaria: 50
+diaria: 50,
+
+// 🆕 Recompensas de gold para o jogo da forca
+forca: {
+base: 25, // Recompensa base de gold
+porTamanho: 2, // Gold adicional por letra da palavra
+maxRecompensa: 100, // Máximo que pode ganhar em uma partida
+bonusVelocidade: {
+rapido: 1.5, // < 60 segundos (150%)
+medio: 1.2, // < 120 segundos (120%)
+normal: 1.0 // > 120 segundos (100%)
+}
+}
 },
 
 // 🆕 Configurações para Caixa Misteriosa 
