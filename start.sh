@@ -8,6 +8,7 @@ start_node_script() {
     echo -e "\e[32m🚀 SUNG BOT ESTÁ INICIANDO AGUARDE...\e[0m"
     echo -e "\e[36m✨ Sistema de autenticação interativo ativado\e[0m"
     NODE_NO_WARNINGS=1 node --trace-deprecation iniciar.js
+    return $?
 }
 
 # ===== SCRIPT SIMPLIFICADO =====
@@ -25,10 +26,14 @@ while :
 do
     cleanup_files
     start_node_script
+    EXIT_CODE=$?
 
-    # Aguarda 3 segundos antes de reiniciar (em caso de erro)
-    echo -e "\e[93m⏳ Aguardando 3 segundos antes de reiniciar...\e[0m"
+    # Se o código de saída for 0 (Ctrl+C duplo), para tudo
+    if [ $EXIT_CODE -eq 0 ]; then
+        echo -e "\e[92m✅ Encerramento completo (Ctrl+C duplo). Parando o script.\e[0m"
+        exit 0
+    fi
+
+    # Caso contrário (código 1 = Ctrl+C simples ou erro), reinicia
     sleep 3
-
-    echo -e "\e[94m🔄 Reiniciando o bot...\e[0m"
 done
