@@ -46,13 +46,19 @@ check_redis_available() {
         return 0
     fi
 
-    # PRIORIDADE 2: Tentar Unix Socket global
+    # PRIORIDADE 2: Tentar socket em dados/.redis (backup/migração)
+    if [ -S dados/.redis/redis.sock ] && redis-cli -s dados/.redis/redis.sock ping &>/dev/null 2>&1; then
+        echo "socket:dados/.redis/redis.sock"
+        return 0
+    fi
+
+    # PRIORIDADE 3: Tentar Unix Socket global
     if redis-cli -s /run/redis/redis-server.sock ping &>/dev/null 2>&1; then
         echo "socket:/run/redis/redis-server.sock"
         return 0
     fi
 
-    # PRIORIDADE 3: Tentar TCP
+    # PRIORIDADE 4: Tentar TCP
     if redis-cli ping &>/dev/null 2>&1; then
         echo "tcp"
         return 0

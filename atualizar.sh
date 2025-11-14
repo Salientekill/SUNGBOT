@@ -104,10 +104,10 @@ done
 shopt -u dotglob
 ROLLBACK_OK=true
 
-zip -r -q "$DADOS_BACKUP" dados >> "$LOG_FILE" 2>&1 || fatal "Falha no backup principal"
+zip -r -q -y "$DADOS_BACKUP" dados -x '*.sock' -x '*.pid' >> "$LOG_FILE" 2>&1 || fatal "Falha no backup principal"
 unzip -t "$DADOS_BACKUP" >/dev/null 2>&1 || fatal "Backup corrompido"
 
-zip -r -q "$DADOS_BACKUP_SEG" dados >> "$LOG_FILE" 2>&1 || warn "Backup de segurança falhou"
+zip -r -q -y "$DADOS_BACKUP_SEG" dados -x '*.sock' -x '*.pid' >> "$LOG_FILE" 2>&1 || warn "Backup de segurança falhou"
 
 TOTAL_FILES=$(find dados -type f 2>/dev/null | wc -l)
 
