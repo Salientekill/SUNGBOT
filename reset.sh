@@ -40,36 +40,38 @@ check_redis_available() {
         return 1
     fi
 
-    # ✅ PRIORIDADE 1: Tentar socket local (específico do bot)
-    if [ -S .redis/redis.sock ] && redis-cli -s .redis/redis.sock ping &>/dev/null 2>&1; then
-        echo "socket:.redis/redis.sock"
-        return 0
-    fi
-
-    # PRIORIDADE 2: Tentar socket em dados/.redis (backup/migração)
+    # ✅ PRIORIDADE 1: Tentar socket em dados/.redis (local do bot)
     if [ -S dados/.redis/redis.sock ] && redis-cli -s dados/.redis/redis.sock ping &>/dev/null 2>&1; then
         echo "socket:dados/.redis/redis.sock"
         return 0
     fi
 
-    # PRIORIDADE 3: Tentar Unix Socket global
-    if redis-cli -s /run/redis/redis-server.sock ping &>/dev/null 2>&1; then
-        echo "socket:/run/redis/redis-server.sock"
+    # PRIORIDADE 2: Tentar socket local .redis (fallback)
+    if [ -S .redis/redis.sock ] && redis-cli -s .redis/redis.sock ping &>/dev/null 2>&1; then
+        echo "socket:.redis/redis.sock"
         return 0
     fi
 
-    # PRIORIDADE 4: Tentar TCP
+    # PRIORIDADE 3: Tentar TCP (padrão 6379)
     if redis-cli ping &>/dev/null 2>&1; then
         echo "tcp"
+        return 0
+    fi
+
+    # PRIORIDADE 4: Tentar Unix Socket global
+    if redis-cli -s /run/redis/redis-server.sock ping &>/dev/null 2>&1; then
+        echo "socket:/run/redis/redis-server.sock"
         return 0
     fi
 
     return 1
 }
 
-# Obter BotId
+# Obter BotId (prioriza dados/.bot-session-id que é o correto)
 get_bot_id() {
-    if [ -f .bot-session-id ]; then
+    if [ -f dados/.bot-session-id ]; then
+        cat dados/.bot-session-id
+    elif [ -f .bot-session-id ]; then
         cat .bot-session-id
     else
         echo ""
@@ -220,8 +222,9 @@ if [ "$STORAGE_MODE" = "redis" ]; then
         redis-cli del "active-bot:${BOTID}" &>/dev/null || true
     fi
 
-    echo "   ✅ Redis limpo"
+    echo "   ✅ Redis limpo ($ITEMS_DELETED chaves deletadas)"
     [ -f "$BACKUP_FILE" ] && echo "   📦 Backup: $BACKUP_FILE"
+    echo "   ℹ️  BotId mantido: $BOTID (arquivo dados/.bot-session-id preservado)"
 
 else
     echo "🗑️  Limpando SQLite..."
@@ -248,6 +251,11 @@ else
         echo "   ✅ SQLite limpo ($ITEMS_DELETED arquivos deletados)"
     else
         echo "   ⚠️  Nenhum arquivo foi deletado"
+    fi
+
+    BOTID=$(get_bot_id)
+    if [ -n "$BOTID" ]; then
+        echo "   ℹ️  BotId mantido: $BOTID (arquivo dados/.bot-session-id preservado)"
     fi
 fi
 
