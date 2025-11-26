@@ -11,6 +11,9 @@ start_node_script() {
     return $?
 }
 
+# Trap removido - Ctrl+Z agora suspende o processo (comportamento padrão)
+# Use Ctrl+C duplo para encerrar completamente
+
 # ===== SCRIPT SIMPLIFICADO =====
 # Redis inicia automaticamente via iniciar.js
 
