@@ -1,6 +1,6 @@
 import WebSocket from 'ws';
-import { DEFAULT_ORIGIN } from '../../Defaults/index.js';
-import { AbstractSocketClient } from './types.js';
+import { DEFAULT_ORIGIN } from '../../Defaults';
+import { AbstractSocketClient } from './types';
 export class WebSocketClient extends AbstractSocketClient {
     constructor() {
         super(...arguments);

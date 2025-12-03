@@ -1,6 +1,6 @@
-export * from './encode.js';
-export * from './decode.js';
-export * from './generic-utils.js';
-export * from './jid-utils.js';
-export * from './types.js';
+export * from './encode';
+export * from './decode';
+export * from './generic-utils';
+export * from './jid-utils';
+export * from './types';
 //# sourceMappingURL=index.d.ts.map

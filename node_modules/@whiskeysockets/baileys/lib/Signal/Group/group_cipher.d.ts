@@ -1,5 +1,5 @@
-import { SenderKeyName } from './sender-key-name.js';
-import { SenderKeyRecord } from './sender-key-record.js';
+import { SenderKeyName } from './sender-key-name';
+import { SenderKeyRecord } from './sender-key-record';
 export interface SenderKeyStore {
     loadSenderKey(senderKeyName: SenderKeyName): Promise<SenderKeyRecord>;
     storeSenderKey(senderKeyName: SenderKeyName, record: SenderKeyRecord): Promise<void>;

@@ -1,5 +1,5 @@
-import type { BinaryNode } from '../WABinary/index.js';
-import { USyncUser } from '../WAUSync/index.js';
+import type { BinaryNode } from '../WABinary';
+import { USyncUser } from '../WAUSync';
 /**
  * Defines the interface for a USyncQuery protocol
  */

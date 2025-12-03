@@ -1,5 +1,5 @@
-import { prepareWAMessageMedia } from './messages.js';
-import { extractImageThumb, getHttpStream } from './messages-media.js';
+import { prepareWAMessageMedia } from './messages';
+import { extractImageThumb, getHttpStream } from './messages-media';
 const THUMBNAIL_WIDTH_PX = 192;
 /** Fetches an image and generates a thumbnail for it */
 const getCompressedJpegThumbnail = async (url, { thumbnailWidth, fetchOpts }) => {

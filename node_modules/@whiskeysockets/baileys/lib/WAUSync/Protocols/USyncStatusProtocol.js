@@ -1,4 +1,4 @@
-import { assertNodeErrorFree } from '../../WABinary/index.js';
+import { assertNodeErrorFree } from '../../WABinary';
 export class USyncStatusProtocol {
     constructor() {
         this.name = 'status';

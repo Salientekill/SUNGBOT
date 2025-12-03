@@ -1,5 +1,5 @@
-import type { LIDMapping, SignalKeyStoreWithTransaction } from '../Types/index.js';
-import type { ILogger } from '../Utils/logger.js';
+import type { LIDMapping, SignalKeyStoreWithTransaction } from '../Types';
+import type { ILogger } from '../Utils/logger';
 export declare class LIDMappingStore {
     private readonly mappingCache;
     private readonly keys;

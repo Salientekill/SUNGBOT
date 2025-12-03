@@ -1,6 +1,6 @@
-import { SenderKeyDistributionMessage } from './sender-key-distribution-message.js';
-import { SenderKeyName } from './sender-key-name.js';
-import { SenderKeyRecord } from './sender-key-record.js';
+import { SenderKeyDistributionMessage } from './sender-key-distribution-message';
+import { SenderKeyName } from './sender-key-name';
+import { SenderKeyRecord } from './sender-key-record';
 interface SenderKeyStore {
     loadSenderKey(senderKeyName: SenderKeyName): Promise<SenderKeyRecord>;
     storeSenderKey(senderKeyName: SenderKeyName, record: SenderKeyRecord): Promise<void>;

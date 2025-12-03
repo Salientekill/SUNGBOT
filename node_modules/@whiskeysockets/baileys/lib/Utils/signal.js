@@ -1,7 +1,7 @@
-import { KEY_BUNDLE_TYPE } from '../Defaults/index.js';
-import { assertNodeErrorFree, getBinaryNodeChild, getBinaryNodeChildBuffer, getBinaryNodeChildren, getBinaryNodeChildUInt, getServerFromDomainType, jidDecode, S_WHATSAPP_NET, WAJIDDomains } from '../WABinary/index.js';
-import { Curve, generateSignalPubKey } from './crypto.js';
-import { encodeBigEndian } from './generics.js';
+import { KEY_BUNDLE_TYPE } from '../Defaults';
+import { assertNodeErrorFree, getBinaryNodeChild, getBinaryNodeChildBuffer, getBinaryNodeChildren, getBinaryNodeChildUInt, getServerFromDomainType, jidDecode, S_WHATSAPP_NET, WAJIDDomains } from '../WABinary';
+import { Curve, generateSignalPubKey } from './crypto';
+import { encodeBigEndian } from './generics';
 function chunk(array, size) {
     const chunks = [];
     for (let i = 0; i < array.length; i += size) {

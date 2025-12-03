@@ -1,2 +1,2 @@
-import * as constants from './constants.js';
+import * as constants from './constants';
 //# sourceMappingURL=types.js.map

@@ -1,7 +1,7 @@
 import { promisify } from 'util';
 import { inflate } from 'zlib';
-import * as constants from './constants.js';
-import { jidEncode, WAJIDDomains } from './jid-utils.js';
+import * as constants from './constants';
+import { jidEncode, WAJIDDomains } from './jid-utils';
 const inflatePromise = promisify(inflate);
 export const decompressingIfRequired = async (buffer) => {
     if (2 & buffer.readUInt8()) {

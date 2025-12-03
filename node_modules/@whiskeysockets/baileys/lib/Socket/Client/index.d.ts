@@ -1,3 +1,3 @@
-export * from './types.js';
-export * from './websocket.js';
+export * from './types';
+export * from './websocket';
 //# sourceMappingURL=index.d.ts.map

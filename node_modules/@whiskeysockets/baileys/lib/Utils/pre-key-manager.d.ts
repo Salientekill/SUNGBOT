@@ -1,5 +1,5 @@
-import type { SignalDataSet, SignalDataTypeMap, SignalKeyStore } from '../Types/index.js';
-import type { ILogger } from './logger.js';
+import type { SignalDataSet, SignalDataTypeMap, SignalKeyStore } from '../Types';
+import type { ILogger } from './logger';
 /**
  * Manages pre-key operations with proper concurrency control
  */

@@ -1,4 +1,4 @@
-import { assertNodeErrorFree, getBinaryNodeChild } from '../../WABinary/index.js';
+import { assertNodeErrorFree, getBinaryNodeChild } from '../../WABinary';
 export class USyncDeviceProtocol {
     constructor() {
         this.name = 'devices';

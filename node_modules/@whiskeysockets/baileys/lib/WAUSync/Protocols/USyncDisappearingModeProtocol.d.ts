@@ -1,5 +1,5 @@
-import type { USyncQueryProtocol } from '../../Types/USync.js';
-import { type BinaryNode } from '../../WABinary/index.js';
+import type { USyncQueryProtocol } from '../../Types/USync';
+import { type BinaryNode } from '../../WABinary';
 export type DisappearingModeData = {
     duration: number;
     setAt?: Date;

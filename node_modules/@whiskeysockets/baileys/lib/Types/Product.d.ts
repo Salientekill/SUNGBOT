@@ -1,4 +1,4 @@
-import type { WAMediaUpload } from './Message.js';
+import type { WAMediaUpload } from './Message';
 export type CatalogResult = {
     data: {
         paging: {

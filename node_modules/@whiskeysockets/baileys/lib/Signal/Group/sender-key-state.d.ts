@@ -1,5 +1,5 @@
-import { SenderChainKey } from './sender-chain-key.js';
-import { SenderMessageKey } from './sender-message-key.js';
+import { SenderChainKey } from './sender-chain-key';
+import { SenderMessageKey } from './sender-message-key';
 interface SenderChainKeyStructure {
     iteration: number;
     seed: Uint8Array;

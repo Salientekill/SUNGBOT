@@ -1,5 +1,5 @@
-import type { Contact } from './Contact.js';
-import type { WAMessageAddressingMode } from './Message.js';
+import type { Contact } from './Contact';
+import type { WAMessageAddressingMode } from './Message';
 export type GroupParticipant = Contact & {
     isAdmin?: boolean;
     isSuperAdmin?: boolean;

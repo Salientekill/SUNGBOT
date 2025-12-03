@@ -1,4 +1,4 @@
-import type { BaileysEventEmitter } from '../Types/index.js';
+import type { BaileysEventEmitter } from '../Types';
 /**
  * Captures events from a baileys event emitter & stores them in a file
  * @param ev The event emitter to read events from

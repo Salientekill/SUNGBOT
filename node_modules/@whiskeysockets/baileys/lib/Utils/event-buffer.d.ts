@@ -1,5 +1,5 @@
-import type { BaileysEventEmitter, BaileysEventMap } from '../Types/index.js';
-import type { ILogger } from './logger.js';
+import type { BaileysEventEmitter, BaileysEventMap } from '../Types';
+import type { ILogger } from './logger';
 /**
  * A map that contains a list of all events that have been triggered
  *

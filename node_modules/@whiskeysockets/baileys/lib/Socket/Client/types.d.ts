@@ -1,6 +1,6 @@
 import { EventEmitter } from 'events';
 import { URL } from 'url';
-import type { SocketConfig } from '../../Types/index.js';
+import type { SocketConfig } from '../../Types';
 export declare abstract class AbstractSocketClient extends EventEmitter {
     url: URL;
     config: SocketConfig;

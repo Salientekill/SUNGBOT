@@ -1,4 +1,4 @@
-export * from './Protocols/index.js';
-export * from './USyncQuery.js';
-export * from './USyncUser.js';
+export * from './Protocols/index';
+export * from './USyncQuery';
+export * from './USyncUser';
 //# sourceMappingURL=index.js.map

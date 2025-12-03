@@ -1,4 +1,4 @@
-import { hkdf } from './crypto.js';
+import { hkdf } from './crypto';
 /**
  * LT Hash is a summation based hash algorithm that maintains the integrity of a piece of data
  * over a series of mutations. You can add/remove mutations and it'll return a hash equal to
