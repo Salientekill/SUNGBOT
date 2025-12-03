@@ -1,5 +1,5 @@
 import WebSocket from 'ws';
-import { AbstractSocketClient } from './types';
+import { AbstractSocketClient } from './types.js';
 export declare class WebSocketClient extends AbstractSocketClient {
     protected socket: WebSocket | null;
     get isOpen(): boolean;

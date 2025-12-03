@@ -1,5 +1,5 @@
-import type { CatalogCollection, OrderDetails, Product, ProductCreate, ProductUpdate, WAMediaUpload, WAMediaUploadFunction } from '../Types';
-import { type BinaryNode } from '../WABinary';
+import type { CatalogCollection, OrderDetails, Product, ProductCreate, ProductUpdate, WAMediaUpload, WAMediaUploadFunction } from '../Types/index.js';
+import { type BinaryNode } from '../WABinary/index.js';
 export declare const parseCatalogNode: (node: BinaryNode) => {
     products: Product[];
     nextPageCursor: string | undefined;

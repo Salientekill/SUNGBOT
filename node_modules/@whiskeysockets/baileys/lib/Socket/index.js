@@ -1,5 +1,5 @@
-import { DEFAULT_CONNECTION_CONFIG } from '../Defaults';
-import { makeCommunitiesSocket } from './communities';
+import { DEFAULT_CONNECTION_CONFIG } from '../Defaults/index.js';
+import { makeCommunitiesSocket } from './communities.js';
 // export the last socket layer
 const makeWASocket = (config) => {
     const newConfig = {

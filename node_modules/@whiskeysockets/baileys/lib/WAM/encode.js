@@ -1,5 +1,5 @@
-import { BinaryInfo } from './BinaryInfo';
-import { FLAG_BYTE, FLAG_EVENT, FLAG_EXTENDED, FLAG_FIELD, FLAG_GLOBAL, WEB_EVENTS, WEB_GLOBALS } from './constants';
+import { BinaryInfo } from './BinaryInfo.js';
+import { FLAG_BYTE, FLAG_EVENT, FLAG_EXTENDED, FLAG_FIELD, FLAG_GLOBAL, WEB_EVENTS, WEB_GLOBALS } from './constants.js';
 const getHeaderBitLength = (key) => (key < 256 ? 2 : 3);
 export const encodeWAM = (binaryInfo) => {
     binaryInfo.buffer = [];

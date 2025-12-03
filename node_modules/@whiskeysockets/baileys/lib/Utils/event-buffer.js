@@ -1,8 +1,8 @@
 import EventEmitter from 'events';
-import { WAMessageStatus } from '../Types';
-import { trimUndefined } from './generics';
-import { updateMessageWithReaction, updateMessageWithReceipt } from './messages';
-import { isRealMessage, shouldIncrementChatUnread } from './process-message';
+import { WAMessageStatus } from '../Types/index.js';
+import { trimUndefined } from './generics.js';
+import { updateMessageWithReaction, updateMessageWithReceipt } from './messages.js';
+import { isRealMessage, shouldIncrementChatUnread } from './process-message.js';
 const BUFFERABLE_EVENT = [
     'messaging-history.set',
     'chats.upsert',

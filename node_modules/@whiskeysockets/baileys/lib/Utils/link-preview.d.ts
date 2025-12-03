@@ -1,5 +1,5 @@
-import type { WAMediaUploadFunction, WAUrlInfo } from '../Types';
-import type { ILogger } from './logger';
+import type { WAMediaUploadFunction, WAUrlInfo } from '../Types/index.js';
+import type { ILogger } from './logger.js';
 export type URLGenerationOptions = {
     thumbnailWidth: number;
     fetchOpts: {

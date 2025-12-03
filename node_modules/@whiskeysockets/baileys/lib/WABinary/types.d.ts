@@ -1,4 +1,4 @@
-import * as constants from './constants';
+import * as constants from './constants.js';
 /**
  * the binary node WA uses internally for communication
  *

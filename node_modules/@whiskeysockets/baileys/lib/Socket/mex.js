@@ -1,5 +1,5 @@
 import { Boom } from '@hapi/boom';
-import { getBinaryNodeChild, S_WHATSAPP_NET } from '../WABinary';
+import { getBinaryNodeChild, S_WHATSAPP_NET } from '../WABinary/index.js';
 const wMexQuery = (variables, queryId, query, generateMessageTag) => {
     return query({
         tag: 'iq',

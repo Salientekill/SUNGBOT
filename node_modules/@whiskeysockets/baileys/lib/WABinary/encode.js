@@ -1,5 +1,5 @@
-import * as constants from './constants';
-import { jidDecode } from './jid-utils';
+import * as constants from './constants.js';
+import { jidDecode } from './jid-utils.js';
 export const encodeBinaryNode = (node, opts = constants, buffer = [0]) => {
     const encoded = encodeBinaryNodeInner(node, opts, buffer);
     return Buffer.from(encoded);

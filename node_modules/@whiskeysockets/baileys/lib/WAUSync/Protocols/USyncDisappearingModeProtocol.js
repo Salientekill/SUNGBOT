@@ -1,4 +1,4 @@
-import { assertNodeErrorFree } from '../../WABinary';
+import { assertNodeErrorFree } from '../../WABinary/index.js';
 export class USyncDisappearingModeProtocol {
     constructor() {
         this.name = 'disappearing_mode';

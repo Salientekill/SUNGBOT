@@ -1,4 +1,4 @@
-import { SenderMessageKey } from './sender-message-key';
+import { SenderMessageKey } from './sender-message-key.js';
 export declare class SenderChainKey {
     private readonly MESSAGE_KEY_SEED;
     private readonly CHAIN_KEY_SEED;

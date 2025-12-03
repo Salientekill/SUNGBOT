@@ -1,5 +1,5 @@
-import { assertNodeErrorFree } from '../../WABinary';
-import { USyncUser } from '../USyncUser';
+import { assertNodeErrorFree } from '../../WABinary/index.js';
+import { USyncUser } from '../USyncUser.js';
 export class USyncContactProtocol {
     constructor() {
         this.name = 'contact';

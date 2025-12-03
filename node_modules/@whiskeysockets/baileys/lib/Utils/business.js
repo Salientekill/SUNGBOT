@@ -3,9 +3,9 @@ import { createHash } from 'crypto';
 import { createWriteStream, promises as fs } from 'fs';
 import { tmpdir } from 'os';
 import { join } from 'path';
-import { getBinaryNodeChild, getBinaryNodeChildren, getBinaryNodeChildString } from '../WABinary';
-import { generateMessageIDV2 } from './generics';
-import { getStream, getUrlFromDirectPath } from './messages-media';
+import { getBinaryNodeChild, getBinaryNodeChildren, getBinaryNodeChildString } from '../WABinary/index.js';
+import { generateMessageIDV2 } from './generics.js';
+import { getStream, getUrlFromDirectPath } from './messages-media.js';
 export const parseCatalogNode = (node) => {
     const catalogNode = getBinaryNodeChild(node, 'product_catalog');
     const products = getBinaryNodeChildren(catalogNode, 'product').map(parseProductNode);

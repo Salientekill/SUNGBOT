@@ -1,4 +1,4 @@
-import { SenderKeyState } from './sender-key-state';
+import { SenderKeyState } from './sender-key-state.js';
 export interface SenderKeyStateStructure {
     senderKeyId: number;
     senderChainKey: {

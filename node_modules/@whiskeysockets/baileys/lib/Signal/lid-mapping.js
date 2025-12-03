@@ -1,5 +1,5 @@
 import { LRUCache } from 'lru-cache';
-import { isHostedPnUser, isLidUser, isPnUser, jidDecode, jidNormalizedUser, WAJIDDomains } from '../WABinary';
+import { isHostedPnUser, isLidUser, isPnUser, jidDecode, jidNormalizedUser, WAJIDDomains } from '../WABinary/index.js';
 export class LIDMappingStore {
     constructor(keys, logger, pnToLIDFunc) {
         this.mappingCache = new LRUCache({

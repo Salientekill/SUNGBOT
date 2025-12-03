@@ -1,8 +1,8 @@
-import { getBinaryNodeChild } from '../WABinary';
-import { USyncBotProfileProtocol } from './Protocols/UsyncBotProfileProtocol';
-import { USyncLIDProtocol } from './Protocols/UsyncLIDProtocol';
-import { USyncContactProtocol, USyncDeviceProtocol, USyncDisappearingModeProtocol, USyncStatusProtocol } from './Protocols';
-import { USyncUser } from './USyncUser';
+import { getBinaryNodeChild } from '../WABinary/index.js';
+import { USyncBotProfileProtocol } from './Protocols/UsyncBotProfileProtocol.js';
+import { USyncLIDProtocol } from './Protocols/UsyncLIDProtocol.js';
+import { USyncContactProtocol, USyncDeviceProtocol, USyncDisappearingModeProtocol, USyncStatusProtocol } from './Protocols/index.js';
+import { USyncUser } from './USyncUser.js';
 export class USyncQuery {
     constructor() {
         this.protocols = [];

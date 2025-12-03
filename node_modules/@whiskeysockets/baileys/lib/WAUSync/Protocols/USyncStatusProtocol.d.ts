@@ -1,5 +1,5 @@
-import type { USyncQueryProtocol } from '../../Types/USync';
-import { type BinaryNode } from '../../WABinary';
+import type { USyncQueryProtocol } from '../../Types/USync.js';
+import { type BinaryNode } from '../../WABinary/index.js';
 export type StatusData = {
     status?: string | null;
     setAt?: Date;

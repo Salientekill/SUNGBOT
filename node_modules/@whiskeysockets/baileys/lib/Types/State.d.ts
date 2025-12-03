@@ -1,5 +1,5 @@
 import { Boom } from '@hapi/boom';
-import type { Contact } from './Contact';
+import type { Contact } from './Contact.js';
 export declare enum SyncState {
     /** The socket is connecting, but we haven't received pending notifications yet. */
     Connecting = 0,

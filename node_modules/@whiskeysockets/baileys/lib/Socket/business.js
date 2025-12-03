@@ -1,8 +1,8 @@
-import { getRawMediaUploadData } from '../Utils';
-import { parseCatalogNode, parseCollectionsNode, parseOrderDetailsNode, parseProductNode, toProductNode, uploadingNecessaryImagesOfProduct } from '../Utils/business';
-import { jidNormalizedUser, S_WHATSAPP_NET } from '../WABinary';
-import { getBinaryNodeChild } from '../WABinary/generic-utils';
-import { makeMessagesRecvSocket } from './messages-recv';
+import { getRawMediaUploadData } from '../Utils/index.js';
+import { parseCatalogNode, parseCollectionsNode, parseOrderDetailsNode, parseProductNode, toProductNode, uploadingNecessaryImagesOfProduct } from '../Utils/business.js';
+import { jidNormalizedUser, S_WHATSAPP_NET } from '../WABinary/index.js';
+import { getBinaryNodeChild } from '../WABinary/generic-utils.js';
+import { makeMessagesRecvSocket } from './messages-recv.js';
 export const makeBusinessSocket = (config) => {
     const sock = makeMessagesRecvSocket(config);
     const { authState, query, waUploadToServer } = sock;

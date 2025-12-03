@@ -1,8 +1,8 @@
-import { QueryIds, XWAPaths } from '../Types';
-import { generateProfilePicture } from '../Utils/messages-media';
-import { getBinaryNodeChild } from '../WABinary';
-import { makeGroupsSocket } from './groups';
-import { executeWMexQuery as genericExecuteWMexQuery } from './mex';
+import { QueryIds, XWAPaths } from '../Types/index.js';
+import { generateProfilePicture } from '../Utils/messages-media.js';
+import { getBinaryNodeChild } from '../WABinary/index.js';
+import { makeGroupsSocket } from './groups.js';
+import { executeWMexQuery as genericExecuteWMexQuery } from './mex.js';
 const parseNewsletterCreateResponse = (response) => {
     const { id, thread_metadata: thread, viewer_metadata: viewer } = response;
     return {
