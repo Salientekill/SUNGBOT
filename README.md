@@ -39,7 +39,7 @@ git clone https://github.com/Salientekill/SUNGBOT.git
 
 ### 🖥️ Requisitos de Sistema
 
-- **Node.js:** v14 ou superior
+- **Node.js:** v22 ou superior
 - **RAM:** Mínimo 512MB (recomendado 1GB+)
 - **SQLite:** Bibliotecas de desenvolvimento
 
