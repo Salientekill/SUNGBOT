@@ -1,0 +1,51 @@
+{
+  "name": "fb-downloader-scrapper",
+  "version": "3.0.1",
+  "description": "Scrap easily video info and direct url data from Facebook",
+  "main": "dist/facebook.js",
+  "types": "dist/types/facebook.d.ts",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "build": "tsc",
+    "postbuild": "rollup ./dist/facebook.js --format cjs --file ./dist/facebook.cjs"
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/facebook.cjs",
+      "import": "./dist/facebook.js",
+      "types": "./dist/types/facebook.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorsouzaleal/fb-downloader-scrapper.git"
+  },
+  "keywords": [
+    "fb",
+    "downloader",
+    "scrapper",
+    "url",
+    "download",
+    "facebook"
+  ],
+  "author": "Victorsouzaleal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/victorsouzaleal/fb-downloader-scrapper/issues"
+  },
+  "homepage": "https://github.com/victorsouzaleal/fb-downloader-scrapper#readme",
+  "dependencies": {
+    "axios": "^1.7.9"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "rollup": "^4.34.8",
+    "tsc-alias": "^1.8.10",
+    "typescript": "^5.7.3"
+  }
+}
