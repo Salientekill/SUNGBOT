@@ -1,4 +1,6 @@
 {
+  "antipv2": false,
+  "antipv3": false,
   "menu_audio": false,
   "verificado": false,
   "consoleoff": false,
@@ -23,7 +25,7 @@
   "donodorepo": "badDevelopper",
   "pastadorepo": "figus2",
   "pastacomfigu": "fig",
-  "botId": "",
+  "botId": "10278c6611b9_gnmuas_atp6u3",
   "rg_aluguelGB": false,
   "antipvmode": 4
 }

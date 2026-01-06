@@ -17,7 +17,8 @@ cassino: 5, // Vezes que pode jogar cassino por dia
 cara_coroa: 3,// Vezes que pode jogar cara ou coroa por dia
 quiz: 2, // Vezes que pode jogar quiz por dia
 caixamisteriosa: 5, // 🆕 Vezes que pode jogar caixa misteriosa por dia
-forca: 3 // 🆕 Vezes que pode ganhar gold na forca por dia
+forca: 3, // 🆕 Vezes que pode ganhar gold na forca por dia
+corrida: 5 // 🆕 Vezes que pode apostar na corrida por dia
 },
 
 // Limites de valores para apostas e transferências
@@ -223,6 +224,83 @@ settings: {
 goldPorAcerto: 100,// Gold ganho por acerto
 pontosPorAcerto: 1, // Pontos ganhos por acerto
 timeoutMinutos: 60// Timeout em minutos para novo desafio
+},
+
+// 🔥 SISTEMA DE COMBO/STREAK (#2)
+combo: {
+ativo: true,
+multiplicadores: {
+3: 1.5,  // 3 acertos seguidos = 1.5x gold
+5: 2.0,  // 5 acertos seguidos = 2x gold
+10: 3.0, // 10 acertos seguidos = 3x gold
+20: 5.0  // 20 acertos seguidos = 5x gold
+},
+quebraPorOutroAcertar: true, // Quebra streak quando OUTRO usuário acerta
+bonusStreakPerdida: 0.5, // Ganha 50% do que teria com streak ao quebrar (consolação)
+exibirProgresso: true    // Mostrar progresso do combo nas mensagens
+},
+
+// 🏆 SISTEMA DE CONQUISTAS (#8)
+conquistas: {
+ativo: true,
+lista: {
+iniciante: { acertos: 10, gold: 100, emoji: '🌱', nome: 'Iniciante' },
+aprendiz: { acertos: 20, gold: 200, emoji: '🌿', nome: 'Aprendiz' },
+dedicado: { acertos: 30, gold: 300, emoji: '🎯', nome: 'Dedicado' },
+persistente: { acertos: 40, gold: 500, emoji: '💪', nome: 'Persistente' },
+ativo: { acertos: 50, gold: 700, emoji: '⚡', nome: 'Ativo' },
+experiente: { acertos: 60, gold: 1000, emoji: '🎖️', nome: 'Experiente' },
+veterano: { acertos: 70, gold: 1500, emoji: '⭐', nome: 'Veterano' },
+campeao: { acertos: 80, gold: 2000, emoji: '🏆', nome: 'Campeão' },
+mestre: { acertos: 90, gold: 3000, emoji: '👑', nome: 'Mestre' },
+lenda: { acertos: 100, gold: 5000, emoji: '🔥', nome: 'Lenda' },
+perfeccionista: { streak20: true, gold: 1000, emoji: '💎', nome: 'Perfeccionista' },
+velocista: { acertos5MesmoDia: true, gold: 800, emoji: '⚡', nome: 'Velocista' },
+noturno: { acertos10noturno: true, gold: 1500, emoji: '🌙', nome: 'Coruja Noturna' }
+}
+},
+
+// ⭐ EMOJI DO DIA ESPECIAL (#12)
+emojiDoDia: {
+ativo: true,
+recompensa: 500,           // Gold especial para quem acertar
+unicoPorDia: true,         // Apenas 1 pessoa pode ganhar por dia
+notificarGrupo: true,      // Avisar quando aparecer
+categoriaEspecial: 'raro', // Categoria dos emojis especiais
+horarioAparicao: null,     // null = aleatório, ou hora específica tipo 12
+emoji: '⭐'
+},
+
+// 👥 MULTIPLICADOR GRUPAL (#13)
+multiplicadorGrupal: {
+ativo: true,
+niveis: {
+5: 1.2,  // 5+ participantes = 1.2x
+10: 1.5, // 10+ participantes = 1.5x
+20: 2.0, // 20+ participantes = 2x
+50: 3.0  // 50+ participantes = 3x (grupos grandes)
+},
+janelaTempo: 24 * 60 * 60 * 1000, // Conta participantes únicos nas últimas 24h
+exibirMultiplicador: true
+},
+
+// 🌙 MODO NOTURNO/INSÔNIA (#14)
+modoNoturno: {
+ativo: true,
+horarioInicio: 0,  // 00:00 (meia-noite)
+horarioFim: 6,     // 06:00 (6 da manhã)
+multiplicadorGold: 3.0, // 3x gold no modo noturno
+mensagemEspecial: true,
+emoji: '🌙'
+},
+
+// 🔄 SISTEMA ANTI-REPETIÇÃO INTELIGENTE (#15)
+antiRepeticao: {
+ativo: true,
+historicoSize: 50,        // Não repetir os últimos 50 emojis
+priorizarNaoUsados: true, // Priorizar emojis nunca usados
+poolRenovacao: 100,       // Tamanho do pool que vai renovando
+categoriaRotacao: true    // Rotacionar entre categorias para variedade
 }
 },
 
@@ -299,9 +377,86 @@ quiz: "🧩",
 cachaça: "🍾",
 aviator: "✈️",
 double: "🎲",
-revenge: "⚔️", 
+revenge: "⚔️",
 skull: "💀",
 fire: "🔥",
-caixamisteriosa: "🎁" // 🆕 Emoji para caixa misteriosa
+caixamisteriosa: "🎁",
+trabalho: "💼",
+investimento: "📈",
+boost: "🚀"
+},
+
+// 🆕 SISTEMA DE LOJA UNIFICADA
+loja: {
+    // Itens de recarga (já existentes, agora centralizados)
+    recargas: {
+        minerar: { preco: 100, quantidade: 3, emoji: "⛏️", nome: "Recarga Minerar" },
+        roubar: { preco: 150, quantidade: 3, emoji: "🥷", nome: "Recarga Roubar" },
+        aviator: { preco: 120, quantidade: 2, emoji: "✈️", nome: "Recarga Aviator" },
+        roleta: { preco: 100, quantidade: 2, emoji: "🎡", nome: "Recarga Roleta" },
+        doublegold: { preco: 100, quantidade: 3, emoji: "🎲", nome: "Recarga Double" },
+        cachaca: { preco: 80, quantidade: 2, emoji: "🍾", nome: "Recarga Cachaça" }
+    },
+
+    // Proteção
+    escudo: {
+        preco: 200,
+        duracao: 24, // horas
+        emoji: "🛡️",
+        nome: "Escudo Protetor"
+    },
+
+    // 🆕 Sistema de Investimento - Rende na primeira mensagem do dia
+    investimento: {
+        ativo: true,
+        minimo: 100,           // Mínimo para investir
+        maximo: 50000,         // Máximo total investido
+        rendimentoMin: 0.02,   // 2% mínimo por dia
+        rendimentoMax: 0.05,   // 5% máximo por dia
+        taxaSaque: 0.05,       // 5% de taxa para retirar investimento
+        emoji: "📈"
+    },
+
+    // 🆕 Sistema de Trabalho - Cargos e salário diário
+    trabalho: {
+        ativo: true,
+        emoji: "💼",
+        // Cargos baseados em dias online (consecutivos ou total)
+        cargos: [
+            { nome: "Estagiário", emoji: "📋", diasNecessarios: 0, salario: 50 },
+            { nome: "Assistente", emoji: "📝", diasNecessarios: 3, salario: 80 },
+            { nome: "Júnior", emoji: "💼", diasNecessarios: 7, salario: 120 },
+            { nome: "Pleno", emoji: "👔", diasNecessarios: 15, salario: 180 },
+            { nome: "Sênior", emoji: "🎖️", diasNecessarios: 30, salario: 250 },
+            { nome: "Especialista", emoji: "🏅", diasNecessarios: 50, salario: 350 },
+            { nome: "Gerente", emoji: "📊", diasNecessarios: 75, salario: 500 },
+            { nome: "Diretor", emoji: "🏛️", diasNecessarios: 100, salario: 700 },
+            { nome: "CEO", emoji: "👑", diasNecessarios: 150, salario: 1000 }
+        ],
+        bonusDiasConsecutivos: 0.05 // 5% extra por cada dia consecutivo (max 50%)
+    }
+},
+
+// 🆕 SISTEMA DE BOOST (para leveling, pago com gold)
+boosts: {
+    xp2x: {
+        preco: 500,
+        multiplicador: 2.0,
+        duracao: 60,       // minutos
+        emoji: "🚀",
+        nome: "Boost 2x XP"
+    },
+    xp15x: {
+        preco: 300,
+        multiplicador: 1.5,
+        duracao: 120,      // minutos
+        emoji: "⚡",
+        nome: "Boost 1.5x XP"
+    },
+    dailyReset: {
+        preco: 200,
+        emoji: "🔄",
+        nome: "Reset Daily"
+    }
 }
 };

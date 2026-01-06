@@ -317,6 +317,46 @@ NOVO_DESAFIO: `╭━━━━━━━━━━━━━━╮
 
 💡 *#prefix#mencgold* para alertas`,
 
+// Mensagem de novo desafio MODO NOTURNO
+NOVO_DESAFIO_NOTURNO: `╭━━━━━━━━━━━━━━╮
+┃ 🌙 𝐌𝐎𝐃𝐎 𝐍𝐎𝐓𝐔𝐑𝐍𝐎 🌙
+╰━━━━━━━━━━━━━━╯
+
+🎯 *DESAFIO INSÔNIA!*
+
+📌 Emoji para: *#palavra#*
+🏆 Prêmio: *#reward# Golds* (3x) 🌙
+⚡ O primeiro a acertar, ganha!
+
+💡 *#prefix#mencgold* para alertas`,
+
+// Mensagem de novo desafio com MULTIPLICADOR GRUPAL
+NOVO_DESAFIO_MULTI: `╭━━━━━━━━━━━━━━╮
+┃ #emojibot# 𝐄𝐌𝐎𝐉𝐈 𝐆𝐎𝐋𝐃 #emojibot#
+╰━━━━━━━━━━━━━━╯
+
+🎯 *NOVO DESAFIO!*
+
+📌 Emoji para: *#palavra#*
+🏆 Prêmio: *#reward# Golds*
+👥 Multiplicador grupal: *#multi#x*
+⚡ O primeiro a acertar, ganha!
+
+💡 *#prefix#mencgold* para alertas`,
+
+// Mensagem EMOJI DO DIA
+EMOJI_DO_DIA: `╭━━━━━━━━━━━━━━╮
+┃ ⭐ 𝐄𝐌𝐎𝐉𝐈 𝐃𝐎 𝐃𝐈𝐀 ⭐
+╰━━━━━━━━━━━━━━╯
+
+🌟 *DESAFIO ESPECIAL!*
+
+📌 Emoji para: *#palavra#*
+💎 Prêmio ÚNICO: *#reward# Golds*
+⚡ Apenas o PRIMEIRO acerta ganha!
+
+🔥 Este é o emoji especial do dia!`,
+
 // Mensagem de sucesso quando acerta
 // #reward# = quantidade de gold, #points# = quantidade de pontos
 ACERTOU: `┏━━━━━━━━━━━━━┓
@@ -328,6 +368,38 @@ ACERTOU: `┏━━━━━━━━━━━━━┓
 ⭐ *+#points#* Pontos
 
 🔥 Continue jogando!`,
+
+// Mensagem de acerto COM COMBO
+ACERTOU_COMBO: `┏━━━━━━━━━━━━━┓
+┃ 🎉 𝐀𝐂𝐄𝐑𝐓𝐎𝐔! 🎉
+┗━━━━━━━━━━━━━┛
+
+✅ Resposta correta!
+💰 *+#reward#* Golds
+⭐ *+#points#* Pontos
+🔥 Combo: *#streak#* | Multiplicador: *#multi#x*
+
+🚀 Continue a sequência!`,
+
+// Lista de quem perdeu combo quando outro acertou (aparece na mensagem de acerto)
+COMBOS_PERDIDOS: `
+💔 *Perderam o combo:* #lista_perdidos#`,
+
+// Mensagem de conquista desbloqueada
+CONQUISTA_DESBLOQUEADA: `┏━━━━━━━━━━━━━━━━┓
+┃ 🏆 𝐂𝐎𝐍𝐐𝐔𝐈𝐒𝐓𝐀! 🏆
+┗━━━━━━━━━━━━━━━━┛
+
+#emoji# *#nome#*
+✨ Desbloqueada!
+
+💰 Recompensa: *+#gold#* Golds
+🎉 Parabéns pelo feito!`,
+
+// Mensagem do emoji do dia já foi ganho
+EMOJI_DIA_JA_GANHO: `⭐ O Emoji do Dia de hoje já foi ganho por @#winner#!
+
+💡 Volte amanhã para ter sua chance!`,
 
 // Mensagens de erro (apenas para logs)
 ERRORS: {
