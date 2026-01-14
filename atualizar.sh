@@ -99,6 +99,8 @@ for item in *; do
     [[ "$item" == "$BACKUP_DIR" ]] && continue
     [[ "$item" == "$LOG_FILE" ]] && continue
     [[ "$item" == "$DADOS_BACKUP_SEG" ]] && continue
+    [[ "$item" == ".git" ]] && continue
+    [[ "$item" == ".npm" ]] && continue
     cp -r "$item" "$BACKUP_DIR/" 2>/dev/null || true
 done
 shopt -u dotglob
@@ -163,14 +165,24 @@ if command -v npm >/dev/null 2>&1 && [ -f "package.json" ]; then
 fi
 
 # 7. Limpeza final
+info "Limpeza final..."
+
 [ -d "$BACKUP_DIR" ] && rm -rf "$BACKUP_DIR"
+[ -f "$DADOS_BACKUP_SEG" ] && rm -f "$DADOS_BACKUP_SEG"
+[ -f "$DADOS_BACKUP" ] && rm -f "$DADOS_BACKUP"
+
+# Remover pastas desnecessárias para economizar espaço
+[ -d ".git" ] && rm -rf .git && info ".git removido"
+[ -d ".npm" ] && rm -rf .npm && info ".npm removido"
+
+# Remover todos os logs de atualização
+find . -maxdepth 1 -name "atualizar_*.log" -delete 2>/dev/null && info "Logs removidos"
+
+ok "Limpeza final concluída"
 
 # 8. Finalização
 echo ""
 ok "Atualização concluída!"
-echo ""
-info "Backup de segurança: $DADOS_BACKUP_SEG"
-info "Log: $LOG_FILE"
 echo ""
 
 log "===== ATUALIZAÇÃO CONCLUÍDA ====="

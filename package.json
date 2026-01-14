@@ -2,7 +2,6 @@
   "dependencies": {
     "@aqul/akinator-api": "^3.0.1",
     "@faouzkk/tiktok-dl": "^1.0.1",
-    "@imgly/background-removal-node": "^1.4.5",
     "@vitalets/google-translate-api": "^9.2.1",
     "@whiskeysockets/baileys": "github:Salientekill/Baileys",
     "arif-babu-downloader": "^1.0.2",
@@ -40,7 +39,7 @@
   },
   "name": "SUNG BOT",
   "description": "Sempre buscando melhorar, qualquer duvida chama la no WhatsApp: +55 21 99540-0244",
-  "version": "4.0",
+  "version": "2.0",
   "config": {
     "storage": "redis"
   },
