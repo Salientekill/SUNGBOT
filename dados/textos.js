@@ -867,7 +867,7 @@ MENSAGEM_GRUPO_FECHOU: `╭━━━━━━━━━━━━━━━━━�
 // ========================================
 
 // URL da imagem para o comando de prefixo
-PREFIXO_IMAGEM_URL: "https://sungbot.vip/api/media/get/93c05bad-dc67-4b0e-adcc-1b60008c1858",
+PREFIXO_IMAGEM_URL: "http://sungbot.vip/api/media/get/358bd1e0-da02-4c8d-8d12-8cf09e275b56",
 
 // URL de redirecionamento - #numerodono# será substituído pelo número do dono
 PREFIXO_REDIRECT_URL: "https://wa.me/#numerodono#",
@@ -882,7 +882,19 @@ PREFIXO_MENSAGEM: `╔┉✼┉══༺◈✼#emoji#✼◈༻══┉✼┉╗
 PREFIXO_PREVIEW_TITULO: "#nomebot#",
 
 // Subtítulo que aparece no preview da mensagem
-PREFIXO_PREVIEW_SUBTITULO: "O Caçador Mais Forte"
+PREFIXO_PREVIEW_SUBTITULO: "O Caçador Mais Forte",
+
+// ===== GARTIC - JOGO DE ADIVINHAÇÃO POR IMAGEM =====
+GARTIC: {
+  INICIO: '🎮 Gartic iniciado! Boa sorte!',
+  ACERTOU: '🎉 @{usuario} ACERTOU!\n\n⚡ Tempo: {tempo}s\n🏆 Pontos: +{pontos}\n📊 Total: {total} pontos',
+  QUASE: '🔥 @{usuario} QUASE LÁ! Continue tentando! 💪',
+  TIMEOUT: '⏰ TEMPO ESGOTADO!\n\n📝 A resposta era: *{resposta}*',
+  SKIP: '⏭️ RODADA PULADA!\n\n📝 A resposta era: *{resposta}*',
+  FINALIZADO: '🏁 JOGO FINALIZADO!\n\nObrigado por jogar! 🎮',
+  JA_EXISTE: '⚠️ Já existe um jogo Gartic ativo! Use #endgartic para finalizar.',
+  NENHUM_ATIVO: '⚠️ Nenhum jogo Gartic ativo.'
+}
 
 }
 

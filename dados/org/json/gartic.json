@@ -1,0 +1,602 @@
+[
+  {
+    "img": "",
+    "tema": "filme",
+    "dica": "Filme de super-heróis da Marvel",
+    "resposta": "homem-aranha"
+  },
+  {
+    "img": "",
+    "tema": "serie",
+    "dica": "Série sobre química e drogas",
+    "resposta": "breaking-bad"
+  },
+  {
+    "img": "",
+    "tema": "pais",
+    "dica": "Maior país da América do Sul",
+    "resposta": "brasil"
+  },
+  {
+    "img": "",
+    "tema": "objeto",
+    "dica": "Usado para proteção da chuva",
+    "resposta": "guarda-chuva"
+  },
+  {
+    "img": "",
+    "tema": "animal",
+    "dica": "Maior felino do mundo",
+    "resposta": "tigre"
+  },
+  {
+    "img": "",
+    "tema": "comida",
+    "dica": "Prato italiano com massa e molho",
+    "resposta": "pizza"
+  },
+  {
+    "img": "",
+    "tema": "personagem",
+    "dica": "Personagem amarelo que vive em Gotham City",
+    "resposta": "batman"
+  },
+  {
+    "img": "",
+    "tema": "marca",
+    "dica": "Marca de refrigerante vermelha",
+    "resposta": "coca-cola"
+  },
+  {
+    "img": "",
+    "tema": "esporte",
+    "dica": "Esporte com bola e cesta",
+    "resposta": "basquete"
+  },
+  {
+    "img": "",
+    "tema": "profissao",
+    "dica": "Profissional que cuida da saúde",
+    "resposta": "medico"
+  },
+  {
+    "img": "",
+    "tema": "filme",
+    "dica": "Filme sobre dinossauros em um parque",
+    "resposta": "jurassic-park"
+  },
+  {
+    "img": "",
+    "tema": "serie",
+    "dica": "Série sobre dragões e tronos",
+    "resposta": "game-of-thrones"
+  },
+  {
+    "img": "",
+    "tema": "pais",
+    "dica": "País das pirâmides",
+    "resposta": "egito"
+  },
+  {
+    "img": "",
+    "tema": "objeto",
+    "dica": "Objeto para medir temperatura",
+    "resposta": "termometro"
+  },
+  {
+    "img": "",
+    "tema": "animal",
+    "dica": "Animal mais rápido do mundo",
+    "resposta": "guepardo"
+  },
+  {
+    "img": "",
+    "tema": "comida",
+    "dica": "Fruta amarela alongada",
+    "resposta": "banana"
+  },
+  {
+    "img": "",
+    "tema": "personagem",
+    "dica": "Mago de Hogwarts com cicatriz em forma de raio",
+    "resposta": "harry-potter"
+  },
+  {
+    "img": "",
+    "tema": "marca",
+    "dica": "Marca de tênis com três listras",
+    "resposta": "adidas"
+  },
+  {
+    "img": "",
+    "tema": "esporte",
+    "dica": "Esporte mais popular do mundo",
+    "resposta": "futebol"
+  },
+  {
+    "img": "",
+    "tema": "profissao",
+    "dica": "Profissional que ensina",
+    "resposta": "professor"
+  },
+  {
+    "img": "",
+    "tema": "filme",
+    "dica": "Filme sobre navio que afunda",
+    "resposta": "titanic"
+  },
+  {
+    "img": "",
+    "tema": "serie",
+    "dica": "Série sobre professora de papel",
+    "resposta": "la-casa-de-papel"
+  },
+  {
+    "img": "",
+    "tema": "pais",
+    "dica": "País do sushi",
+    "resposta": "japao"
+  },
+  {
+    "img": "",
+    "tema": "objeto",
+    "dica": "Objeto para cortar papel",
+    "resposta": "tesoura"
+  },
+  {
+    "img": "",
+    "tema": "animal",
+    "dica": "Maior animal terrestre",
+    "resposta": "elefante"
+  },
+  {
+    "img": "",
+    "tema": "comida",
+    "dica": "Massa recheada italiana",
+    "resposta": "ravioli"
+  },
+  {
+    "img": "",
+    "tema": "personagem",
+    "dica": "Princesa da Disney que perdeu o sapato",
+    "resposta": "cinderela"
+  },
+  {
+    "img": "",
+    "tema": "marca",
+    "dica": "Marca de celular com maçã",
+    "resposta": "apple"
+  },
+  {
+    "img": "",
+    "tema": "esporte",
+    "dica": "Esporte com raquete e rede",
+    "resposta": "tenis"
+  },
+  {
+    "img": "",
+    "tema": "profissao",
+    "dica": "Profissional que defende a lei",
+    "resposta": "advogado"
+  },
+  {
+    "img": "",
+    "tema": "filme",
+    "dica": "Filme sobre brinquedos que ganham vida",
+    "resposta": "toy-story"
+  },
+  {
+    "img": "",
+    "tema": "serie",
+    "dica": "Série sobre médicos em hospital",
+    "resposta": "greys-anatomy"
+  },
+  {
+    "img": "",
+    "tema": "pais",
+    "dica": "País da torre Eiffel",
+    "resposta": "franca"
+  },
+  {
+    "img": "",
+    "tema": "objeto",
+    "dica": "Objeto para ver as horas",
+    "resposta": "relogio"
+  },
+  {
+    "img": "",
+    "tema": "animal",
+    "dica": "Rei da selva",
+    "resposta": "leao"
+  },
+  {
+    "img": "",
+    "tema": "comida",
+    "dica": "Pão recheado americano",
+    "resposta": "hamburguer"
+  },
+  {
+    "img": "",
+    "tema": "personagem",
+    "dica": "Super-herói com capa vermelha que voa",
+    "resposta": "superman"
+  },
+  {
+    "img": "",
+    "tema": "marca",
+    "dica": "Marca de fast food com palhaço",
+    "resposta": "mcdonalds"
+  },
+  {
+    "img": "",
+    "tema": "esporte",
+    "dica": "Esporte americano com capacete",
+    "resposta": "futebol-americano"
+  },
+  {
+    "img": "",
+    "tema": "profissao",
+    "dica": "Profissional que constrói casas",
+    "resposta": "engenheiro"
+  },
+  {
+    "img": "",
+    "tema": "filme",
+    "dica": "Filme sobre sonhos dentro de sonhos",
+    "resposta": "inception"
+  },
+  {
+    "img": "",
+    "tema": "serie",
+    "dica": "Série sobre zumbis",
+    "resposta": "the-walking-dead"
+  },
+  {
+    "img": "",
+    "tema": "pais",
+    "dica": "País da pizza",
+    "resposta": "italia"
+  },
+  {
+    "img": "",
+    "tema": "objeto",
+    "dica": "Objeto para escrever",
+    "resposta": "caneta"
+  },
+  {
+    "img": "",
+    "tema": "animal",
+    "dica": "Animal preto e branco que come bambu",
+    "resposta": "panda"
+  },
+  {
+    "img": "",
+    "tema": "comida",
+    "dica": "Doce de chocolate com recheio",
+    "resposta": "brigadeiro"
+  },
+  {
+    "img": "",
+    "tema": "personagem",
+    "dica": "Ogro verde que mora no pântano",
+    "resposta": "shrek"
+  },
+  {
+    "img": "",
+    "tema": "marca",
+    "dica": "Marca de roupas com jacaré",
+    "resposta": "lacoste"
+  },
+  {
+    "img": "",
+    "tema": "esporte",
+    "dica": "Esporte com bola e raquete pequena",
+    "resposta": "ping-pong"
+  },
+  {
+    "img": "",
+    "tema": "profissao",
+    "dica": "Profissional que corta cabelo",
+    "resposta": "cabeleireiro"
+  },
+  {
+    "img": "",
+    "tema": "filme",
+    "dica": "Filme sobre magia e escola de bruxos",
+    "resposta": "harry-potter"
+  },
+  {
+    "img": "",
+    "tema": "serie",
+    "dica": "Série sobre amigos em apartamento com ciência",
+    "resposta": "the-big-bang-theory"
+  },
+  {
+    "img": "",
+    "tema": "pais",
+    "dica": "País do futebol",
+    "resposta": "brasil"
+  },
+  {
+    "img": "",
+    "tema": "objeto",
+    "dica": "Objeto que apaga escrita de lápis",
+    "resposta": "borracha"
+  },
+  {
+    "img": "",
+    "tema": "animal",
+    "dica": "Animal com pescoço longo",
+    "resposta": "girafa"
+  },
+  {
+    "img": "",
+    "tema": "comida",
+    "dica": "Comida japonesa com arroz e peixe",
+    "resposta": "sushi"
+  },
+  {
+    "img": "",
+    "tema": "personagem",
+    "dica": "Rato que usa roupa vermelha",
+    "resposta": "mickey-mouse"
+  },
+  {
+    "img": "",
+    "tema": "marca",
+    "dica": "Marca de chocolate com nome suíço",
+    "resposta": "nestle"
+  },
+  {
+    "img": "",
+    "tema": "esporte",
+    "dica": "Esporte na água com prancha",
+    "resposta": "surf"
+  },
+  {
+    "img": "",
+    "tema": "profissao",
+    "dica": "Profissional que pilota avião",
+    "resposta": "piloto"
+  },
+  {
+    "img": "",
+    "tema": "filme",
+    "dica": "Filme sobre máfia italiana",
+    "resposta": "o-poderoso-chefao"
+  },
+  {
+    "img": "",
+    "tema": "serie",
+    "dica": "Série sobre laboratório secreto",
+    "resposta": "stranger-things"
+  },
+  {
+    "img": "",
+    "tema": "pais",
+    "dica": "País do tango",
+    "resposta": "argentina"
+  },
+  {
+    "img": "",
+    "tema": "objeto",
+    "dica": "Objeto para iluminar no escuro",
+    "resposta": "lanterna"
+  },
+  {
+    "img": "",
+    "tema": "animal",
+    "dica": "Animal que vive no gelo",
+    "resposta": "pinguim"
+  },
+  {
+    "img": "",
+    "tema": "comida",
+    "dica": "Prato brasileiro com feijão e arroz",
+    "resposta": "feijoada"
+  },
+  {
+    "img": "",
+    "tema": "personagem",
+    "dica": "Homem de ferro da Marvel",
+    "resposta": "iron-man"
+  },
+  {
+    "img": "",
+    "tema": "marca",
+    "dica": "Marca de roupas esportivas com swoosh",
+    "resposta": "nike"
+  },
+  {
+    "img": "",
+    "tema": "esporte",
+    "dica": "Esporte com cavalo",
+    "resposta": "hipismo"
+  },
+  {
+    "img": "",
+    "tema": "profissao",
+    "dica": "Profissional que cuida de animais",
+    "resposta": "veterinario"
+  },
+  {
+    "img": "",
+    "tema": "filme",
+    "dica": "Filme sobre corrida de carros",
+    "resposta": "velozes-e-furiosos"
+  },
+  {
+    "img": "",
+    "tema": "serie",
+    "dica": "Série sobre advogada em Nova York",
+    "resposta": "suits"
+  },
+  {
+    "img": "",
+    "tema": "pais",
+    "dica": "País da rainha Elizabeth",
+    "resposta": "inglaterra"
+  },
+  {
+    "img": "",
+    "tema": "objeto",
+    "dica": "Objeto para abrir portas",
+    "resposta": "chave"
+  },
+  {
+    "img": "",
+    "tema": "animal",
+    "dica": "Animal com tromba",
+    "resposta": "elefante"
+  },
+  {
+    "img": "",
+    "tema": "comida",
+    "dica": "Massa italiana longa e fina",
+    "resposta": "espaguete"
+  },
+  {
+    "img": "",
+    "tema": "personagem",
+    "dica": "Pirata que procura tesouro",
+    "resposta": "jack-sparrow"
+  },
+  {
+    "img": "",
+    "tema": "marca",
+    "dica": "Marca de carros alemã com quatro aros",
+    "resposta": "audi"
+  },
+  {
+    "img": "",
+    "tema": "esporte",
+    "dica": "Esporte com bola e aro alto",
+    "resposta": "basquete"
+  },
+  {
+    "img": "",
+    "tema": "profissao",
+    "dica": "Profissional que cozinha",
+    "resposta": "chef"
+  },
+  {
+    "img": "",
+    "tema": "filme",
+    "dica": "Filme sobre lutadores em clube secreto",
+    "resposta": "clube-da-luta"
+  },
+  {
+    "img": "",
+    "tema": "serie",
+    "dica": "Série sobre família moderna",
+    "resposta": "modern-family"
+  },
+  {
+    "img": "",
+    "tema": "pais",
+    "dica": "País do curry",
+    "resposta": "india"
+  },
+  {
+    "img": "",
+    "tema": "objeto",
+    "dica": "Objeto para fotografar",
+    "resposta": "camera"
+  },
+  {
+    "img": "",
+    "tema": "animal",
+    "dica": "Animal que muda de cor",
+    "resposta": "camaleao"
+  },
+  {
+    "img": "",
+    "tema": "comida",
+    "dica": "Pão francês com queijo derretido",
+    "resposta": "misto-quente"
+  },
+  {
+    "img": "",
+    "tema": "personagem",
+    "dica": "Guerreiro com escudo redondo",
+    "resposta": "capitao-america"
+  },
+  {
+    "img": "",
+    "tema": "marca",
+    "dica": "Marca de carros italianos vermelhos",
+    "resposta": "ferrari"
+  },
+  {
+    "img": "",
+    "tema": "esporte",
+    "dica": "Esporte com luvas e ringue",
+    "resposta": "boxe"
+  },
+  {
+    "img": "",
+    "tema": "profissao",
+    "dica": "Profissional que apaga incêndios",
+    "resposta": "bombeiro"
+  },
+  {
+    "img": "",
+    "tema": "filme",
+    "dica": "Filme sobre robôs que se transformam",
+    "resposta": "transformers"
+  },
+  {
+    "img": "",
+    "tema": "serie",
+    "dica": "Série sobre hospital com médicos jovens",
+    "resposta": "the-resident"
+  },
+  {
+    "img": "",
+    "tema": "pais",
+    "dica": "País do maple syrup",
+    "resposta": "canada"
+  },
+  {
+    "img": "",
+    "tema": "objeto",
+    "dica": "Objeto para cortar madeira",
+    "resposta": "serrote"
+  },
+  {
+    "img": "",
+    "tema": "animal",
+    "dica": "Animal que uiva para a lua",
+    "resposta": "lobo"
+  },
+  {
+    "img": "",
+    "tema": "comida",
+    "dica": "Sobremesa gelada com leite",
+    "resposta": "sorvete"
+  },
+  {
+    "img": "",
+    "tema": "personagem",
+    "dica": "Cientista maluco de desenho animado",
+    "resposta": "rick"
+  },
+  {
+    "img": "",
+    "tema": "marca",
+    "dica": "Marca de relógios suíços",
+    "resposta": "rolex"
+  },
+  {
+    "img": "",
+    "tema": "esporte",
+    "dica": "Esporte com bola e raquete em quadra",
+    "resposta": "tenis"
+  },
+  {
+    "img": "",
+    "tema": "profissao",
+    "dica": "Profissional que cuida dos dentes",
+    "resposta": "dentista"
+  }
+]
