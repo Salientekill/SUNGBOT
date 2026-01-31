@@ -1,4 +1,4 @@
-import PQueue from 'p-queue';
+import { Mutex } from 'async-mutex';
 /**
  * Manages pre-key operations with proper concurrency control
  */
@@ -6,16 +6,16 @@ export class PreKeyManager {
     constructor(store, logger) {
         this.store = store;
         this.logger = logger;
-        this.queues = new Map();
+        this.mutexes = new Map();
     }
     /**
-     * Get or create a queue for a specific key type
+     * Get or create a mutex for a specific key type
      */
-    getQueue(keyType) {
-        if (!this.queues.has(keyType)) {
-            this.queues.set(keyType, new PQueue({ concurrency: 1 }));
+    getMutex(keyType) {
+        if (!this.mutexes.has(keyType)) {
+            this.mutexes.set(keyType, new Mutex());
         }
-        return this.queues.get(keyType);
+        return this.mutexes.get(keyType);
     }
     /**
      * Process pre-key operations (updates and deletions)
@@ -24,7 +24,7 @@ export class PreKeyManager {
         const keyData = data[keyType];
         if (!keyData)
             return;
-        return this.getQueue(keyType).add(async () => {
+        return this.getMutex(keyType).runExclusive(async () => {
             // Ensure structures exist
             transactionCache[keyType] = transactionCache[keyType] || {};
             mutations[keyType] = mutations[keyType] || {};
@@ -87,7 +87,7 @@ export class PreKeyManager {
         const keyData = data[keyType];
         if (!keyData)
             return;
-        return this.getQueue(keyType).add(async () => {
+        return this.getMutex(keyType).runExclusive(async () => {
             // Find all deletion requests
             const deletionIds = Object.keys(keyData).filter(id => keyData[id] === null);
             if (deletionIds.length === 0)
