@@ -80,7 +80,7 @@ export const shouldIncludeReportingToken = (message) => !message.reactionMessage
     !message.encReactionMessage &&
     !message.encEventResponseMessage &&
     !message.pollUpdateMessage;
-const generateMsgSecretKey = async (modificationType, origMsgId, origMsgSender, modificationSender, origMsgSecret) => {
+const generateMsgSecretKey = (modificationType, origMsgId, origMsgSender, modificationSender, origMsgSecret) => {
     const useCaseSecret = Buffer.concat([
         Buffer.from(origMsgId, 'utf8'),
         Buffer.from(origMsgSender, 'utf8'),
@@ -237,7 +237,7 @@ export const getMessageReportingToken = async (msgProtobuf, message, key) => {
     }
     const from = key.fromMe ? key.remoteJid : key.participant || key.remoteJid;
     const to = key.fromMe ? key.participant || key.remoteJid : key.remoteJid;
-    const reportingSecret = await generateMsgSecretKey(ENC_SECRET_REPORT_TOKEN, key.id, from, to, msgSecret);
+    const reportingSecret = generateMsgSecretKey(ENC_SECRET_REPORT_TOKEN, key.id, from, to, msgSecret);
     const content = extractReportingTokenContent(msgProtobuf, compiledReportingFields);
     if (!content || content.length === 0) {
         return null;

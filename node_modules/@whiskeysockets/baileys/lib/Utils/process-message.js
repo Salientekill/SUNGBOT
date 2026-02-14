@@ -168,14 +168,11 @@ const processMessage = async (message, { shouldProcessHistoryMsg, placeholderRes
                         });
                     }
                     const data = await downloadAndProcessHistorySyncNotification(histNotification, options, logger);
-                    // Emit LID-PN mappings from history sync
-                    // This is how WhatsApp Web learns mappings for chats with non-contacts
                     if (data.lidPnMappings?.length) {
                         logger?.debug({ count: data.lidPnMappings.length }, 'processing LID-PN mappings from history sync');
-                        // eslint-disable-next-line max-depth
-                        for (const mapping of data.lidPnMappings) {
-                            ev.emit('lid-mapping.update', mapping);
-                        }
+                        await signalRepository.lidMapping
+                            .storeLIDPNMappings(data.lidPnMappings)
+                            .catch(err => logger?.warn({ err }, 'failed to store LID-PN mappings from history sync'));
                     }
                     ev.emit('messaging-history.set', {
                         ...data,

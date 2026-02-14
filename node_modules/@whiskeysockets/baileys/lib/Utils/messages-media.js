@@ -75,7 +75,7 @@ export async function getMediaKeys(buffer, mediaType) {
         buffer = Buffer.from(buffer.replace('data:;base64,', ''), 'base64');
     }
     // expand using HKDF to 112 bytes, also pass in the relevant app info
-    const expandedMediaKey = await hkdf(buffer, 112, { info: hkdfInfoKey(mediaType) });
+    const expandedMediaKey = hkdf(buffer, 112, { info: hkdfInfoKey(mediaType) });
     return {
         iv: expandedMediaKey.slice(0, 16),
         cipherKey: expandedMediaKey.slice(16, 48),
@@ -690,11 +690,11 @@ const getMediaRetryKey = (mediaKey) => {
 /**
  * Generate a binary node that will request the phone to re-upload the media & return the newly uploaded URL
  */
-export const encryptMediaRetryRequest = async (key, mediaKey, meId) => {
+export const encryptMediaRetryRequest = (key, mediaKey, meId) => {
     const recp = { stanzaId: key.id };
     const recpBuffer = proto.ServerErrorReceipt.encode(recp).finish();
     const iv = Crypto.randomBytes(12);
-    const retryKey = await getMediaRetryKey(mediaKey);
+    const retryKey = getMediaRetryKey(mediaKey);
     const ciphertext = aesEncryptGCM(recpBuffer, retryKey, iv, Buffer.from(key.id));
     const req = {
         tag: 'receipt',
@@ -759,8 +759,8 @@ export const decodeMediaRetryNode = (node) => {
     }
     return event;
 };
-export const decryptMediaRetryData = async ({ ciphertext, iv }, mediaKey, msgId) => {
-    const retryKey = await getMediaRetryKey(mediaKey);
+export const decryptMediaRetryData = ({ ciphertext, iv }, mediaKey, msgId) => {
+    const retryKey = getMediaRetryKey(mediaKey);
     const plaintext = aesDecryptGCM(ciphertext, retryKey, iv, Buffer.from(msgId));
     return proto.MediaRetryNotification.decode(plaintext);
 };

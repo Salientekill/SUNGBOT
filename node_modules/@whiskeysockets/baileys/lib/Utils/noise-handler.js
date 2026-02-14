@@ -83,12 +83,12 @@ export const makeNoiseHandler = ({ keyPair: { private: privateKey, public: publi
         authenticate(ciphertext);
         return result;
     };
-    const localHKDF = async (data) => {
-        const key = await hkdf(Buffer.from(data), 64, { salt, info: '' });
+    const localHKDF = (data) => {
+        const key = hkdf(Buffer.from(data), 64, { salt, info: '' });
         return [key.subarray(0, 32), key.subarray(32)];
     };
-    const mixIntoKey = async (data) => {
-        const [write, read] = await localHKDF(data);
+    const mixIntoKey = (data) => {
+        const [write, read] = localHKDF(data);
         salt = write;
         encKey = read;
         decKey = read;
@@ -96,7 +96,7 @@ export const makeNoiseHandler = ({ keyPair: { private: privateKey, public: publi
     };
     const finishInit = async () => {
         isWaitingForTransport = true;
-        const [write, read] = await localHKDF(new Uint8Array(0));
+        const [write, read] = localHKDF(new Uint8Array(0));
         transport = new TransportState(write, read);
         isWaitingForTransport = false;
         logger.trace('Noise handler transitioned to Transport state');
@@ -134,11 +134,11 @@ export const makeNoiseHandler = ({ keyPair: { private: privateKey, public: publi
         authenticate,
         mixIntoKey,
         finishInit,
-        processHandshake: async ({ serverHello }, noiseKey) => {
+        processHandshake: ({ serverHello }, noiseKey) => {
             authenticate(serverHello.ephemeral);
-            await mixIntoKey(Curve.sharedKey(privateKey, serverHello.ephemeral));
+            mixIntoKey(Curve.sharedKey(privateKey, serverHello.ephemeral));
             const decStaticContent = decrypt(serverHello.static);
-            await mixIntoKey(Curve.sharedKey(privateKey, decStaticContent));
+            mixIntoKey(Curve.sharedKey(privateKey, decStaticContent));
             const certDecoded = decrypt(serverHello.payload);
             const { intermediate: certIntermediate, leaf } = proto.CertChain.decode(certDecoded);
             // leaf
@@ -162,7 +162,7 @@ export const makeNoiseHandler = ({ keyPair: { private: privateKey, public: publi
                 throw new Boom('certification match failed', { statusCode: 400 });
             }
             const keyEnc = encrypt(noiseKey.public);
-            await mixIntoKey(Curve.sharedKey(noiseKey.private, serverHello.ephemeral));
+            mixIntoKey(Curve.sharedKey(noiseKey.private, serverHello.ephemeral));
             return keyEnc;
         },
         encodeFrame: (data) => {

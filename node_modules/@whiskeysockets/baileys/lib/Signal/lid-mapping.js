@@ -7,16 +7,16 @@ export class LIDMappingStore {
             ttlAutopurge: true,
             updateAgeOnGet: true
         });
+        this.inflightLIDLookups = new Map();
+        this.inflightPNLookups = new Map();
         this.keys = keys;
         this.pnToLIDFunc = pnToLIDFunc;
         this.logger = logger;
     }
-    /**
-     * Store LID-PN mapping - USER LEVEL
-     */
     async storeLIDPNMappings(pairs) {
-        // Validate inputs
-        const pairMap = {};
+        if (pairs.length === 0)
+            return;
+        const validatedPairs = [];
         for (const { lid, pn } of pairs) {
             if (!((isLidUser(lid) && isPnUser(pn)) || (isPnUser(lid) && isLidUser(pn)))) {
                 this.logger.warn(`Invalid LID-PN mapping: ${lid}, ${pn}`);
@@ -26,48 +26,84 @@ export class LIDMappingStore {
             const pnDecoded = jidDecode(pn);
             if (!lidDecoded || !pnDecoded)
                 continue;
-            const pnUser = pnDecoded.user;
-            const lidUser = lidDecoded.user;
-            let existingLidUser = this.mappingCache.get(`pn:${pnUser}`);
-            if (!existingLidUser) {
-                this.logger.trace(`Cache miss for PN user ${pnUser}; checking database`);
-                const stored = await this.keys.get('lid-mapping', [pnUser]);
-                existingLidUser = stored[pnUser];
+            validatedPairs.push({ pnUser: pnDecoded.user, lidUser: lidDecoded.user });
+        }
+        if (validatedPairs.length === 0)
+            return;
+        const cacheMissSet = new Set();
+        const existingMappings = new Map();
+        for (const { pnUser } of validatedPairs) {
+            const cached = this.mappingCache.get(`pn:${pnUser}`);
+            if (cached) {
+                existingMappings.set(pnUser, cached);
+            }
+            else {
+                cacheMissSet.add(pnUser);
+            }
+        }
+        if (cacheMissSet.size > 0) {
+            const cacheMisses = [...cacheMissSet];
+            this.logger.trace(`Batch fetching ${cacheMisses.length} LID mappings from database`);
+            const stored = await this.keys.get('lid-mapping', cacheMisses);
+            for (const pnUser of cacheMisses) {
+                const existingLidUser = stored[pnUser];
                 if (existingLidUser) {
-                    // Update cache with database value
+                    existingMappings.set(pnUser, existingLidUser);
                     this.mappingCache.set(`pn:${pnUser}`, existingLidUser);
                     this.mappingCache.set(`lid:${existingLidUser}`, pnUser);
                 }
             }
+        }
+        const pairMap = {};
+        for (const { pnUser, lidUser } of validatedPairs) {
+            const existingLidUser = existingMappings.get(pnUser);
             if (existingLidUser === lidUser) {
                 this.logger.debug({ pnUser, lidUser }, 'LID mapping already exists, skipping');
                 continue;
             }
             pairMap[pnUser] = lidUser;
         }
+        if (Object.keys(pairMap).length === 0)
+            return;
         this.logger.trace({ pairMap }, `Storing ${Object.keys(pairMap).length} pn mappings`);
+        const batchData = {};
+        for (const [pnUser, lidUser] of Object.entries(pairMap)) {
+            batchData[pnUser] = lidUser;
+            batchData[`${lidUser}_reverse`] = pnUser;
+        }
         await this.keys.transaction(async () => {
-            for (const [pnUser, lidUser] of Object.entries(pairMap)) {
-                await this.keys.set({
-                    'lid-mapping': {
-                        [pnUser]: lidUser,
-                        [`${lidUser}_reverse`]: pnUser
-                    }
-                });
-                this.mappingCache.set(`pn:${pnUser}`, lidUser);
-                this.mappingCache.set(`lid:${lidUser}`, pnUser);
-            }
+            await this.keys.set({ 'lid-mapping': batchData });
         }, 'lid-mapping');
+        // Update cache after successful DB write
+        for (const [pnUser, lidUser] of Object.entries(pairMap)) {
+            this.mappingCache.set(`pn:${pnUser}`, lidUser);
+            this.mappingCache.set(`lid:${lidUser}`, pnUser);
+        }
     }
-    /**
-     * Get LID for PN - Returns device-specific LID based on user mapping
-     */
     async getLIDForPN(pn) {
         return (await this.getLIDsForPNs([pn]))?.[0]?.lid || null;
     }
     async getLIDsForPNs(pns) {
+        if (pns.length === 0)
+            return null;
+        const sortedPns = [...new Set(pns)].sort();
+        const cacheKey = sortedPns.join(',');
+        const inflight = this.inflightLIDLookups.get(cacheKey);
+        if (inflight) {
+            this.logger.trace(`Coalescing getLIDsForPNs request for ${sortedPns.length} PNs`);
+            return inflight;
+        }
+        const promise = this._getLIDsForPNsImpl(pns);
+        this.inflightLIDLookups.set(cacheKey, promise);
+        try {
+            return await promise;
+        }
+        finally {
+            this.inflightLIDLookups.delete(cacheKey);
+        }
+    }
+    async _getLIDsForPNsImpl(pns) {
         const usyncFetch = {};
-        // mapped from pn to lid mapping to prevent duplication in results later
         const successfulPairs = {};
         const pending = [];
         const addResolvedPair = (pn, decoded, lidUser) => {
@@ -89,7 +125,6 @@ export class LIDMappingStore {
             const decoded = jidDecode(pn);
             if (!decoded)
                 continue;
-            // Check cache first for PN → LID mapping
             const pnUser = decoded.user;
             const cached = this.mappingCache.get(`pn:${pnUser}`);
             if (cached && typeof cached === 'string') {
@@ -161,13 +196,29 @@ export class LIDMappingStore {
         }
         return Object.values(successfulPairs).length > 0 ? Object.values(successfulPairs) : null;
     }
-    /**
-     * Get PN for LID - USER LEVEL with device construction
-     */
     async getPNForLID(lid) {
         return (await this.getPNsForLIDs([lid]))?.[0]?.pn || null;
     }
     async getPNsForLIDs(lids) {
+        if (lids.length === 0)
+            return null;
+        const sortedLids = [...new Set(lids)].sort();
+        const cacheKey = sortedLids.join(',');
+        const inflight = this.inflightPNLookups.get(cacheKey);
+        if (inflight) {
+            this.logger.trace(`Coalescing getPNsForLIDs request for ${sortedLids.length} LIDs`);
+            return inflight;
+        }
+        const promise = this._getPNsForLIDsImpl(lids);
+        this.inflightPNLookups.set(cacheKey, promise);
+        try {
+            return await promise;
+        }
+        finally {
+            this.inflightPNLookups.delete(cacheKey);
+        }
+    }
+    async _getPNsForLIDsImpl(lids) {
         const successfulPairs = {};
         const pending = [];
         const addResolvedPair = (lid, decoded, pnUser) => {
