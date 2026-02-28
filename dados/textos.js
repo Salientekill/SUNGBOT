@@ -894,32 +894,31 @@ GARTIC: {
   FINALIZADO: '🏁 JOGO FINALIZADO!\n\nObrigado por jogar! 🎮',
   JA_EXISTE: '⚠️ Já existe um jogo Gartic ativo! Use #endgartic para finalizar.',
   NENHUM_ATIVO: '⚠️ Nenhum jogo Gartic ativo.'
-}
+},
 
-}
+// ========================================
+// 💼 SISTEMA DE ALUGUEL
+// ========================================
+// Placeholders disponíveis: #nomegp#, #idgp#, #lermais#, #numerodono#, #usuario#
 
-// FILTRO DE PALAVRAS PARA O SIMIH2 (agora usando o mesmo filtro unificado)
-const FiltroSimih2 = PALAVRAS_FILTRO_UNIFICADO;
-
-// #nomegp# é o nome do grupo, #idgp# é o nome do grupo, #lermais# é aquele ler mais, #numerodono e o numero do dono
-
-// MSG DE QUASE VENCIDO
-const QVcnd = `┏━━『 ⚠️ *AVISO* ⚠️ 』━━┓
+ALUGUEL: {
+  // Mensagem enviada ao grupo quando faltam 24h para vencer
+  QUASE_VENCIDO: `┏━━『 ⚠️ *AVISO* ⚠️ 』━━┓
 ┃
 ┃ 🕰️ *ALUGUEL PRESTES*
 ┃ *A VENCER*
 ┃
-┃ ⏰ Grupo *#nomegp#* 
+┃ ⏰ Grupo *#nomegp#*
 ┃ expira em 24h!
 ┃
 ┃ 📢 Renove agora para
 ┃ evitar interrupções!
 ┃
 ┃ 💎 Mantenha ativo!
-┗━━━━━━━━━━━━━━━━━━━━━━┛`; 
- 
-// MSG DE VENCIDO 
-const Vcnd = `┏━━『 🚨 *ALERTA* 🚨 』━━┓#lermais#
+┗━━━━━━━━━━━━━━━━━━━━━━┛`,
+
+  // Mensagem enviada ao grupo quando vence
+  VENCIDO: `┏━━『 🚨 *ALERTA* 🚨 』━━┓#lermais#
 ┃
 ┃ ❌ *ALUGUEL VENCIDO*
 ┃
@@ -930,27 +929,39 @@ const Vcnd = `┏━━『 🚨 *ALERTA* 🚨 』━━┓#lermais#
 ┃ sem renovação.
 ┃
 ┃ 📞 Contate o dono!
-┗━━━━━━━━━━━━━━━━━━━━━━┛`; 
- 
-// MSG DE SAÍDA 
-const Saida = `┏━━『 ⏳ *ESGOTADO* ⏳ 』━━┓
+┗━━━━━━━━━━━━━━━━━━━━━━┛`,
+
+  // Mensagem de despedida ao sair do grupo (2 dias após vencer)
+  SAIDA: `╭━━━━━━━━━━━━━━━━━━━━━━━╮
+┃ 👋 *DESPEDIDA* 👋
 ┃
-┃ 😔 *REMOVENDO BOT*
+┃ Olá, membros do grupo
+┃ *#nomegp#*!
 ┃
-┃ 📅 2 dias desde o 
-┃ vencimento do grupo
-┃ *#nomegp#*
+┃ ⏰ O período de aluguel
+┃ expirou e não foi renovado.
 ┃
-┃ 💔 Remoção automática
+┃ 😢 Infelizmente, preciso
+┃ me despedir do grupo.
 ┃
-┃ 📞 Para renovar:
-┃ wa.me/#numerodono#
+┃ ✨ Foi um prazer servir
+┃ vocês! Espero que tenham
+┃ aproveitado meus recursos!
 ┃
-┃ 🔄 Esperamos você!
-┗━━━━━━━━━━━━━━━━━━━━━━┛`; 
- 
-// MSG DE AVISO AO DONO DE QUASE VENCIDO 
-const ADnQVcnd = `┏━『 📊 *GESTÃO* 📊 』━┓
+┃ 💚 Caso queiram me ter
+┃ de volta, entre em contato:
+┃
+┃ 📱 wa.me/#numerodono#
+┃
+┃ 🔄 Estou sempre disponível
+┃ para retornar!
+┃
+┃ 🌟 Até logo e obrigado
+┃ por tudo!
+╰━━━━━━━━━━━━━━━━━━━━━━━╯`,
+
+  // Aviso ao dono quando faltam 24h
+  DONO_QUASE_VENCIDO: `┏━『 📊 *GESTÃO* 📊 』━┓
 ┃
 ┃ 🔔 *ALERTA VENCIMENTO*
 ┃
@@ -961,10 +972,10 @@ const ADnQVcnd = `┏━『 📊 *GESTÃO* 📊 』━┓
 ┃ 🚨 Ação urgente!
 ┃
 ┃ 💰 Preparar renovação!
-┗━━━━━━━━━━━━━━━━━━━━━━┛`; 
- 
-// MSG DE AVISO AO DONO DE VENCIDO 
-const ADnVcnd = `┏━『 📊 *GESTÃO* 📊 』━┓
+┗━━━━━━━━━━━━━━━━━━━━━━┛`,
+
+  // Aviso ao dono quando vence
+  DONO_VENCIDO: `┏━『 📊 *GESTÃO* 📊 』━┓
 ┃
 ┃ 📛 *ALUGUEL VENCIDO*
 ┃
@@ -975,10 +986,10 @@ const ADnVcnd = `┏━『 📊 *GESTÃO* 📊 』━┓
 ┃ 🚫 Bot inativo!
 ┃
 ┃ 📞 Contatar cliente!
-┗━━━━━━━━━━━━━━━━━━━━━━┛`; 
- 
-// MSG DE AVISO AO DONO DE SAÍDA 
-const ADnSd = `┏━『 📊 *GESTÃO* 📊 』━┓
+┗━━━━━━━━━━━━━━━━━━━━━━┛`,
+
+  // Aviso ao dono quando bot sai do grupo
+  DONO_SAIDA: `┏━『 📊 *GESTÃO* 📊 』━┓
 ┃
 ┃ ❌ *BOT REMOVIDO*
 ┃
@@ -989,10 +1000,10 @@ const ADnSd = `┏━『 📊 *GESTÃO* 📊 』━┓
 ┃ 🤖 Removido do grupo
 ┃
 ┃ 📋 Atualizar lista!
-┗━━━━━━━━━━━━━━━━━━━━━━┛`; 
- 
-// MSG DE NÃO REGISTRADO AO TENTAR USAR CMD 
-const NrgIndex = `┏━━『 🔒 *RESTRITO* 🔒 』━━┓
+┗━━━━━━━━━━━━━━━━━━━━━━┛`,
+
+  // Mensagem quando grupo não está registrado
+  NAO_REGISTRADO: `┏━━『 🔒 *RESTRITO* 🔒 』━━┓
 ┃
 ┃ 👋 Olá, #usuario#!
 ┃
@@ -1008,10 +1019,10 @@ const NrgIndex = `┏━━『 🔒 *RESTRITO* 🔒 』━━┓
 ┃ acesso às funções!
 ┃
 ┃ 💎 Vale a pena!
-┗━━━━━━━━━━━━━━━━━━━━━━━━┛`; 
- 
-// MSG DE VENCIDO AO TENTAR USAR CMD 
-const Vcndindex = `┏━━『 ⏰ *EXPIRADO* ⏰ 』━━┓
+┗━━━━━━━━━━━━━━━━━━━━━━━━┛`,
+
+  // Mensagem quando grupo vencido tenta usar comando
+  VENCIDO_CMD: `┏━━『 ⏰ *EXPIRADO* ⏰ 』━━┓
 ┃
 ┃ 👋 Olá, #usuario#!
 ┃
@@ -1031,18 +1042,32 @@ const Vcndindex = `┏━━『 ⏰ *EXPIRADO* ⏰ 』━━┓
 ┃
 ┃ ⚡ Renovação rápida!
 ┃ 💎 Melhor bot!
-┗━━━━━━━━━━━━━━━━━━━━━━━━┛`;
+┗━━━━━━━━━━━━━━━━━━━━━━━━┛`
+}
 
-module.exports = { 
-QVcnd, 
-Vcnd, 
-Saida, 
-ADnQVcnd, 
-ADnVcnd, 
-ADnSd, 
-Vcndindex, 
-NrgIndex, 
-TEXTOS_GERAL, 
+}
+
+// FILTRO DE PALAVRAS PARA O SIMIH2 (agora usando o mesmo filtro unificado)
+const FiltroSimih2 = PALAVRAS_FILTRO_UNIFICADO;
+
+// ========================================
+// 📤 EXPORTAÇÃO DO MÓDULO
+// ========================================
+// As mensagens de aluguel agora estão em TEXTOS_GERAL.ALUGUEL
+// Mantendo exports antigos para retrocompatibilidade
+module.exports = {
+// Retrocompatibilidade - mensagens antigas de aluguel
+QVcnd: TEXTOS_GERAL.ALUGUEL.QUASE_VENCIDO,
+Vcnd: TEXTOS_GERAL.ALUGUEL.VENCIDO,
+Saida: TEXTOS_GERAL.ALUGUEL.SAIDA,
+ADnQVcnd: TEXTOS_GERAL.ALUGUEL.DONO_QUASE_VENCIDO,
+ADnVcnd: TEXTOS_GERAL.ALUGUEL.DONO_VENCIDO,
+ADnSd: TEXTOS_GERAL.ALUGUEL.DONO_SAIDA,
+Vcndindex: TEXTOS_GERAL.ALUGUEL.VENCIDO_CMD,
+NrgIndex: TEXTOS_GERAL.ALUGUEL.NAO_REGISTRADO,
+
+// Exportações principais
+TEXTOS_GERAL,
 FiltroSimih2,
-PALAVRAS_FILTRO_UNIFICADO 
+PALAVRAS_FILTRO_UNIFICADO
 };

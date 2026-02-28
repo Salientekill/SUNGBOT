@@ -433,7 +433,9 @@ loja: {
             { nome: "Diretor", emoji: "🏛️", diasNecessarios: 100, salario: 700 },
             { nome: "CEO", emoji: "👑", diasNecessarios: 150, salario: 1000 }
         ],
-        bonusDiasConsecutivos: 0.05 // 5% extra por cada dia consecutivo (max 50%)
+        bonusDiasConsecutivos: 0.05, // 5% extra por cada dia consecutivo
+        bonusMaximo: 0.50,           // Bônus máximo de 50% por dias consecutivos
+        voltaAoInicioDoCargo: true   // Se perder 1 dia, volta ao mínimo do cargo atual
     }
 },
 

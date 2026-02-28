@@ -27,5 +27,6 @@
   "pastacomfigu": "fig",
   "botId": "10278c6611b9_gnmuas_atp6u3",
   "rg_aluguelGB": false,
-  "antipvmode": 4
+  "antipvmode": 4,
+  "limite_msg_auto_global": 1
 }
