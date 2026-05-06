@@ -1,8 +1,8 @@
 {
   "dependencies": {
     "@hapi/boom": "^10.0.1",
-    "@oxidezap/baileyrs": "github:oxidezap/baileyrs",
     "@vitalets/google-translate-api": "^9.2.1",
+    "@whiskeysockets/baileys": "github:WhiskeySockets/Baileys",
     "assemblyai": "^4.8.0",
     "async-mutex": "^0.5.0",
     "axios": "^1.13.1",
@@ -30,7 +30,7 @@
     "sharp": "^0.32.6",
     "spinnies": "^0.5.1",
     "uuid": "^13.0.0",
-    "whatsapp-rust-bridge": "^0.5.2",
+    "whatsapp-rust-bridge": "^0.5.3",
     "yt-search": "^2.12.1",
     "zod": "^3.23.8"
   },

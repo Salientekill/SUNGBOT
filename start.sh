@@ -37,18 +37,18 @@ cleanup_zombies() {
         esac
     done
 
-    if [ "$killed" -gt 0 ]; then
-        echo -e "\e[33m🧹 ${killed} processo(s) zumbi removido(s) de ${BOT_DIR}\e[0m"
-    fi
 }
 
 start_node_script() {
     cleanup_zombies
     echo -e "\e[32m🚀 SUNG BOT ESTÁ INICIANDO AGUARDE...\e[0m"
     echo -e "\e[36m✨ Sistema de autenticação interativo ativado\e[0m"
+    # Suprime a mensagem do job-control do bash ("Killed/Terminated <cmd>")
+    # quando o processo é morto via SIGKILL/SIGTERM externo. Filtra o stderr
+    # do PRÓPRIO start.sh, não do node — é o shell pai que loga isso.
     NODE_NO_WARNINGS=1 node --trace-deprecation iniciar.js
     return $?
-}
+} 2> >(grep -v -E "^.+: line [0-9]+: *[0-9]+ +(Killed|Terminated|Hangup)" >&2)
 
 # Ctrl+Z bloqueado via trap acima. Use Ctrl+C duplo para encerrar completamente.
 
