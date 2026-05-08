@@ -100,6 +100,7 @@ export declare const makeGroupsSocket: (config: SocketConfig) => {
     cleanDirtyBits: (type: "account_sync" | "groups", fromTimestamp?: number | string) => Promise<void>;
     addOrEditContact: (jid: string, contact: proto.SyncActionValue.IContactAction) => Promise<void>;
     removeContact: (jid: string) => Promise<void>;
+    placeholderResendCache: import("../Types/index.js").CacheStore;
     addLabel: (jid: string, labels: import("../Types/Label.js").LabelActionBody) => Promise<void>;
     addChatLabel: (jid: string, labelId: string) => Promise<void>;
     removeChatLabel: (jid: string, labelId: string) => Promise<void>;
@@ -119,6 +120,7 @@ export declare const makeGroupsSocket: (config: SocketConfig) => {
         createBufferedFunction<A extends any[], T>(work: (...args: A) => Promise<T>): (...args: A) => Promise<T>;
         flush(): boolean;
         isBuffering(): boolean;
+        destroy(): void;
     };
     authState: {
         creds: import("../Types/index.js").AuthenticationCreds;
@@ -134,8 +136,9 @@ export declare const makeGroupsSocket: (config: SocketConfig) => {
     sendNode: (frame: BinaryNode) => Promise<void>;
     logout: (msg?: string) => Promise<void>;
     end: (error: Error | undefined) => Promise<void>;
+    registerSocketEndHandler: (handler: (error: Error | undefined) => void | Promise<void>) => void;
     onUnexpectedError: (err: Error | Boom, msg: string) => void;
-    uploadPreKeys: (count?: number, retryCount?: number) => Promise<void>;
+    uploadPreKeys: (count?: number) => Promise<void>;
     uploadPreKeysToServerIfRequired: () => Promise<void>;
     digestKeyBundle: () => Promise<void>;
     rotateSignedPreKey: () => Promise<void>;

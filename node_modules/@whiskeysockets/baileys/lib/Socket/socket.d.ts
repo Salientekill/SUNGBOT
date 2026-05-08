@@ -19,6 +19,7 @@ export declare const makeSocket: (config: SocketConfig) => {
         createBufferedFunction<A extends any[], T>(work: (...args: A) => Promise<T>): (...args: A) => Promise<T>;
         flush(): boolean;
         isBuffering(): boolean;
+        destroy(): void;
     };
     authState: {
         creds: import("../Types/index.js").AuthenticationCreds;
@@ -34,8 +35,9 @@ export declare const makeSocket: (config: SocketConfig) => {
     sendNode: (frame: BinaryNode) => Promise<void>;
     logout: (msg?: string) => Promise<void>;
     end: (error: Error | undefined) => Promise<void>;
+    registerSocketEndHandler: (handler: (error: Error | undefined) => void | Promise<void>) => void;
     onUnexpectedError: (err: Error | Boom, msg: string) => void;
-    uploadPreKeys: (count?: number, retryCount?: number) => Promise<void>;
+    uploadPreKeys: (count?: number) => Promise<void>;
     uploadPreKeysToServerIfRequired: () => Promise<void>;
     digestKeyBundle: () => Promise<void>;
     rotateSignedPreKey: () => Promise<void>;

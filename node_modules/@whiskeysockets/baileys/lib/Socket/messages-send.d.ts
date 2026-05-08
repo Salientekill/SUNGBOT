@@ -1,3 +1,4 @@
+import NodeCache from '@cacheable/node-cache';
 import { Boom } from '@hapi/boom';
 import { proto } from '../../WAProto/index.js';
 import type { AnyMessageContent, MediaConnInfo, MessageReceiptType, MessageRelayOptions, MiscMessageGenerationOptions, SocketConfig, WAMessage, WAMessageKey } from '../Types/index.js';
@@ -5,6 +6,10 @@ import { MessageRetryManager } from '../Utils/index.js';
 import { type BinaryNode, type JidWithDevice } from '../WABinary/index.js';
 import { USyncQuery } from '../WAUSync/index.js';
 export declare const makeMessagesSocket: (config: SocketConfig) => {
+    userDevicesCache: import("../Types/index.js").PossiblyExtendedCacheStore | NodeCache<JidWithDevice[]>;
+    devicesMutex: {
+        mutex<T>(code: () => Promise<T> | T): Promise<T>;
+    };
     issuePrivacyTokens: (jids: string[], timestamp?: number) => Promise<any>;
     assertSessions: (jids: string[], force?: boolean) => Promise<boolean>;
     relayMessage: (jid: string, message: proto.IMessage, { messageId: msgId, participant, additionalAttributes, additionalNodes, useUserDevicesCache, useCachedGroupMetadata, statusJidList }: MessageRelayOptions) => Promise<string>;
@@ -12,6 +17,7 @@ export declare const makeMessagesSocket: (config: SocketConfig) => {
     sendReceipts: (keys: WAMessageKey[], type: MessageReceiptType) => Promise<void>;
     readMessages: (keys: WAMessageKey[]) => Promise<void>;
     refreshMediaConn: (forceGet?: boolean) => Promise<MediaConnInfo>;
+    getMediaHost: () => string;
     waUploadToServer: import("../Types/index.js").WAMediaUploadFunction;
     fetchPrivacySettings: (force?: boolean) => Promise<{
         [_: string]: string;
@@ -134,6 +140,7 @@ export declare const makeMessagesSocket: (config: SocketConfig) => {
     cleanDirtyBits: (type: "account_sync" | "groups", fromTimestamp?: number | string) => Promise<void>;
     addOrEditContact: (jid: string, contact: proto.SyncActionValue.IContactAction) => Promise<void>;
     removeContact: (jid: string) => Promise<void>;
+    placeholderResendCache: import("../Types/index.js").CacheStore;
     addLabel: (jid: string, labels: import("../Types/Label.js").LabelActionBody) => Promise<void>;
     addChatLabel: (jid: string, labelId: string) => Promise<void>;
     removeChatLabel: (jid: string, labelId: string) => Promise<void>;
@@ -153,6 +160,7 @@ export declare const makeMessagesSocket: (config: SocketConfig) => {
         createBufferedFunction<A extends any[], T>(work: (...args: A) => Promise<T>): (...args: A) => Promise<T>;
         flush(): boolean;
         isBuffering(): boolean;
+        destroy(): void;
     };
     authState: {
         creds: import("../Types/index.js").AuthenticationCreds;
@@ -168,8 +176,9 @@ export declare const makeMessagesSocket: (config: SocketConfig) => {
     sendNode: (frame: BinaryNode) => Promise<void>;
     logout: (msg?: string) => Promise<void>;
     end: (error: Error | undefined) => Promise<void>;
+    registerSocketEndHandler: (handler: (error: Error | undefined) => void | Promise<void>) => void;
     onUnexpectedError: (err: Error | Boom, msg: string) => void;
-    uploadPreKeys: (count?: number, retryCount?: number) => Promise<void>;
+    uploadPreKeys: (count?: number) => Promise<void>;
     uploadPreKeysToServerIfRequired: () => Promise<void>;
     digestKeyBundle: () => Promise<void>;
     rotateSignedPreKey: () => Promise<void>;

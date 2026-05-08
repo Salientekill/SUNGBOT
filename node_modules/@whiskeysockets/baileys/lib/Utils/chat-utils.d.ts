@@ -86,7 +86,7 @@ export declare const extractSyncdPatches: (result: BinaryNode, options: RequestI
 }>;
 export declare const downloadExternalBlob: (blob: proto.IExternalBlobReference, options: RequestInit) => Promise<Buffer<ArrayBuffer>>;
 export declare const downloadExternalPatch: (blob: proto.IExternalBlobReference, options: RequestInit) => Promise<proto.SyncdMutations>;
-export declare const decodeSyncdSnapshot: (name: WAPatchName, snapshot: proto.ISyncdSnapshot, getAppStateSyncKey: FetchAppStateSyncKey, minimumVersionNumber: number | undefined, validateMacs?: boolean) => Promise<{
+export declare const decodeSyncdSnapshot: (name: WAPatchName, snapshot: proto.ISyncdSnapshot, getAppStateSyncKey: FetchAppStateSyncKey, minimumVersionNumber: number | undefined, validateMacs?: boolean, logger?: ILogger) => Promise<{
     state: LTHashState;
     mutationMap: ChatMutationMap;
 }>;
