@@ -1,0 +1,40 @@
+# ─── Sensíveis / locais (nunca commitar) ──────────────────────────────────────
+.claude/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ─── Sessão do bot (auth do WhatsApp, NUNCA commitar) ────────────────────────
+.bot-session-id
+sessao/
+sessao-*/
+dados/SUNG-AUTH.db
+dados/SUNG-AUTH.db-shm
+dados/SUNG-AUTH.db-wal
+dados/DB/SUNG-AUTH.db
+dados/DB/SUNG-AUTH.db-*
+dados/DB/*.db.backup-*
+
+# ─── Logs ─────────────────────────────────────────────────────────────────────
+*.log
+logs/
+npm-debug.log*
+
+# ─── Cache / temporário ───────────────────────────────────────────────────────
+.cache/
+tmp/
+temp/
+dados/midias/tmp/
+midias/
+
+# ─── Backups locais ───────────────────────────────────────────────────────────
+*.backup
+*.backup-*
+*.old
+*.old.js
+backups/
+sung-backup.zip
+
+# ─── Builds e cache de ferramentas ────────────────────────────────────────────
+scripts/.obfuscate-cache.json
