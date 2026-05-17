@@ -6,7 +6,7 @@
   <p align="center">
     <a href="https://github.com/Salientekill/SUNGBOT.git"><img title="Author" src="https://img.shields.io/badge/Author-LotusDev-red.svg?style=for-the-badge&logo=github" /></a>
     <img src="https://img.shields.io/badge/NodeJS-22.0+-green.svg?style=for-the-badge&logo=nodejs" alt="NodeJS Version" />
-    <img src="https://img.shields.io/badge/Versão-5.1-blue.svg?style=for-the-badge" alt="Versão" />
+    <img src="https://img.shields.io/badge/Versão-5.2-blue.svg?style=for-the-badge" alt="Versão" />
   </p>
 
   > 🚨 **ATENÇÃO: BOT PAGO** 🚨
@@ -89,13 +89,22 @@ bash start.sh -code
 
 ## 🤝 Suporte e Comunidade
 
-Se precisar de suporte durante a instalação ou uso do bot, entre no nosso grupo oficial:
+Para suporte durante instalação, configuração ou compra de chave, fale com Lotus diretamente ou entre no grupo oficial:
 
 <div align="center">
+
+<a href="https://wa.me/5521972202744">
+<img src="https://img.shields.io/badge/Lotus%20(direto)-WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="Contato direto" />
+</a>
+&nbsp;
 <a href="https://chat.whatsapp.com/GTXYQ9ipObnKfHU1jMPLII">
 <img src="https://img.shields.io/badge/Grupo%20Oficial-WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="Grupo Oficial" />
 </a>
+
 </div>
+
+- 📱 **Direto:** [wa.me/+5521972202744](https://wa.me/5521972202744)
+- 👥 **Grupo:** [chat.whatsapp.com/GTXYQ9ipObnKfHU1jMPLII](https://chat.whatsapp.com/GTXYQ9ipObnKfHU1jMPLII)
 
 ## ✨ Funcionalidades
 
