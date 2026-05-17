@@ -3,8 +3,18 @@
 # Diretório do bot — usado pra filtrar zumbis com segurança
 BOT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-# 🚫 Bloqueia Ctrl+Z neste shell (evita SIGTSTP virar zumbi em estado Tl)
-trap '' SIGTSTP
+# 🚫 Ctrl+Z desabilitado no NÍVEL DO TTY (não no nível do processo).
+# Quando rodado via `npm start`, há 3 processos no foreground group: npm,
+# bash start.sh, node. SIGTSTP do TTY suspende todos. Trap apenas no shell
+# ou handler apenas no node não basta — o `npm` (pai) suspende mesmo assim.
+# `stty -susp` REMOVE o caractere de suspensão do terminal: Ctrl+Z vira um
+# byte qualquer e nunca gera SIGTSTP. Restauramos no exit (trap EXIT).
+if [ -t 0 ]; then
+    OLD_STTY=$(stty -g 2>/dev/null) || OLD_STTY=
+    stty susp '' intr ^C 2>/dev/null
+    trap 'stty susp \^Z 2>/dev/null; [ -n "$OLD_STTY" ] && stty "$OLD_STTY" 2>/dev/null' EXIT
+fi
+trap '' SIGTSTP  # defesa em profundidade — caso algum filho herde TTY com susp
 
 cleanup_files() {
     rm -f *jpg *webp *opus *jpeg *.mp* *m4a *ga *.ogg *mp4 *mp3
@@ -43,9 +53,9 @@ start_node_script() {
     cleanup_zombies
     echo -e "\e[32m🚀 SUNG BOT ESTÁ INICIANDO AGUARDE...\e[0m"
     echo -e "\e[36m✨ Sistema de autenticação interativo ativado\e[0m"
-    # Suprime a mensagem do job-control do bash ("Killed/Terminated <cmd>")
-    # quando o processo é morto via SIGKILL/SIGTERM externo. Filtra o stderr
-    # do PRÓPRIO start.sh, não do node — é o shell pai que loga isso.
+    # node em foreground normal — Ctrl+C, SIGINT, SIGTERM funcionam como esperado.
+    # SIGTSTP (Ctrl+Z) é interceptado dentro do iniciar.js via process.on('SIGTSTP')
+    # e tratado como no-op, evitando suspensão e conflito 440.
     NODE_NO_WARNINGS=1 node --trace-deprecation iniciar.js
     return $?
 } 2> >(grep -v -E "^.+: line [0-9]+: *[0-9]+ +(Killed|Terminated|Hangup)" >&2)
