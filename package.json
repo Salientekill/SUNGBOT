@@ -37,7 +37,7 @@
   },
   "name": "SUNG BOT",
   "description": "Sempre buscando melhorar, qualquer duvida chama la no WhatsApp: +55 21 99540-0244",
-  "version": "2.0",
+  "version": "5.0",
   "scripts": {
     "start": "bash start.sh",
     "start2": "bash start.sh",
