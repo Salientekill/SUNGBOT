@@ -66,6 +66,11 @@ echo -e "${CYAN}=== SUNGBOT - Atualização v2.0 ===${RESET}\n"
 
 [ "${1:-}" == "2" ] && INICIAR_BOT=false
 
+# $2 = tag alvo (ex: v5.8). Vazio → clona o HEAD do branch padrão (comportamento
+# antigo). Com tag → clona AQUELA versão. Crítico: sem isso um cliente do major 5
+# baixaria o HEAD (possível major 6) e se brickaria. O gate de versão decide o tag.
+TARGET_TAG="${2:-}"
+
 log "===== INÍCIO DA ATUALIZAÇÃO ====="
 
 # 1. Verificações
@@ -127,7 +132,13 @@ ok "Limpeza concluída"
 # 4. Clone
 info "Clonando repositório..."
 
-git clone --depth 1 "$REPO_URL" SUNGBOT >> "$LOG_FILE" 2>&1 || fatal "Falha no clone"
+if [ -n "$TARGET_TAG" ]; then
+    info "Alvo: tag $TARGET_TAG"
+    git clone --depth 1 --branch "$TARGET_TAG" "$REPO_URL" SUNGBOT >> "$LOG_FILE" 2>&1 \
+        || fatal "Falha no clone da tag $TARGET_TAG (a versão existe no repositório?)"
+else
+    git clone --depth 1 "$REPO_URL" SUNGBOT >> "$LOG_FILE" 2>&1 || fatal "Falha no clone"
+fi
 
 [ ! -d "SUNGBOT" ] && fatal "Clone falhou"
 
