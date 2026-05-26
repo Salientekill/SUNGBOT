@@ -2,7 +2,7 @@
   "dependencies": {
     "@hapi/boom": "^10.0.1",
     "@vitalets/google-translate-api": "^9.2.1",
-    "@whiskeysockets/baileys": "github:Salientekill/Baileys#feat/decrypt-secret-encrypted-edit",
+    "@whiskeysockets/baileys": "file:./.baileys-rebased-on-develop.tgz",
     "assemblyai": "^4.8.0",
     "async-mutex": "^0.5.0",
     "axios": "^1.13.1",
@@ -37,7 +37,7 @@
   },
   "name": "SUNG BOT",
   "description": "Sempre buscando melhorar, qualquer duvida chama la no WhatsApp: +55 21 99540-0244",
-  "version": "5.14",
+  "version": "5.15",
   "scripts": {
     "start": "bash start.sh",
     "start2": "bash start.sh",
