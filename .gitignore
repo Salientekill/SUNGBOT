@@ -39,3 +39,10 @@ sung-backup.zip
 # ─── Builds e cache de ferramentas ────────────────────────────────────────────
 scripts/.obfuscate-cache.json
 keys-out/
+
+# ─── SEGREDOS (garantido pelo obfuscate.js — NUNCA versionar) ───
+**/ChaveDeAcesso.js
+dados/org/json/credenciais.json
+credenciais.json
+nescessario.json
+*.key
