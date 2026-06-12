@@ -38,3 +38,4 @@ sung-backup.zip
 
 # ─── Builds e cache de ferramentas ────────────────────────────────────────────
 scripts/.obfuscate-cache.json
+keys-out/
