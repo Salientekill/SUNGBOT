@@ -86,5 +86,8 @@ do
     fi
 
     # Caso contrário (código 1 = Ctrl+C simples ou erro), reinicia
-    sleep 3
+    # [perf] reduzido de 3s p/ 1.5s — o restart é o vetor DOMINANTE de reconexão,
+    # então esse sleep entra em toda reconexão. Os circuit-breakers (515/outdated/
+    # conflito) já fazem exit 0 para parar loops, então 1.5s não causa storm de CPU.
+    sleep 1.5
 done
