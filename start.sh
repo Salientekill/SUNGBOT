@@ -73,6 +73,30 @@ echo -e "\e[92m✅ QR Code e Código de Emparelhamento disponíveis\e[0m"
 echo -e "\e[94m📱 Você escolherá o método durante a inicialização\e[0m"
 echo -e "\e[95m════════════════════════════════════════════════════════════════════════════════\e[0m"
 
+# ===== PREFLIGHT: módulo nativo x versão do Node do container =====
+# O node_modules distribuído pode ter sido compilado numa versão de Node com ABI
+# diferente da do container (ex.: build em Node 24 / NODE_MODULE_VERSION 137, mas o
+# container roda Node 22 / 127). Aí o better-sqlite3 quebra no boot com
+# "was compiled against a different Node.js version". Se ele não carregar, baixamos
+# o binário certo PARA ESTE Node via prebuild-install (sem compilador). No-op quando
+# já está compatível — só age quando há mismatch.
+ensure_native_ok() {
+    if node -e "require('better-sqlite3')" >/dev/null 2>&1; then
+        return 0
+    fi
+    local abi; abi=$(node -e 'process.stdout.write(String(process.versions.modules))' 2>/dev/null)
+    echo -e "\e[93m⚠️ better-sqlite3 incompatível com este Node (ABI ${abi}). Baixando o binário nativo correto...\e[0m"
+    if ( cd "$BOT_DIR/node_modules/better-sqlite3" && npm run install ) >/dev/null 2>&1 \
+       && node -e "require('better-sqlite3')" >/dev/null 2>&1; then
+        echo -e "\e[92m✅ better-sqlite3 ajustado para este Node. Iniciando...\e[0m"
+    else
+        echo -e "\e[91m❌ Não deu para ajustar o better-sqlite3 automaticamente.\e[0m"
+        echo -e "\e[91m   Rode no console do painel:  npm install better-sqlite3@12.9.0\e[0m"
+        echo -e "\e[91m   OU use a MESMA versão do Node do build (Node 24) no painel.\e[0m"
+    fi
+}
+ensure_native_ok
+
 while :
 do
     cleanup_files
