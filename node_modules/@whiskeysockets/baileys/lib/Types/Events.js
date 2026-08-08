@@ -1,2 +1,2 @@
-import { proto } from '../../WAProto/index.js';
+export {};
 //# sourceMappingURL=Events.js.map

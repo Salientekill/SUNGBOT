@@ -1,2 +1,2 @@
-import { proto } from '../../WAProto/index.js';
+export {};
 //# sourceMappingURL=Signal.js.map
