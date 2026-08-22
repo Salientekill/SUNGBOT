@@ -91,7 +91,12 @@ ensure_native_ok() {
         echo -e "\e[92m✅ better-sqlite3 ajustado para este Node. Iniciando...\e[0m"
     else
         echo -e "\e[91m❌ Não deu para ajustar o better-sqlite3 automaticamente.\e[0m"
-        echo -e "\e[91m   Rode no console do painel:  npm install better-sqlite3@12.9.0\e[0m"
+        # Versão lida do package.json: fixa no texto ela envelhece e passa a
+        # mandar o dono DESCER de versão (estava em 12.9.0 com o projeto em
+        # 12.11.1), o que ainda briga com o package-lock.
+        local versao_bsq
+        versao_bsq=$(node -p "require('$BOT_DIR/package.json').dependencies['better-sqlite3']" 2>/dev/null || echo '')
+        echo -e "\e[91m   Rode no console do painel:  npm install better-sqlite3@${versao_bsq:-latest}\e[0m"
         echo -e "\e[91m   OU use a MESMA versão do Node do build (Node 24) no painel.\e[0m"
     fi
 }

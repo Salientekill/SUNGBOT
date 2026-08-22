@@ -10,6 +10,30 @@
 
 ---
 
+### :rocket: Obfuscator.io with VM Obfuscation
+
+[![Obfuscator.io - JavaScript VM Obfuscation](https://raw.githubusercontent.com/javascript-obfuscator/javascript-obfuscator/master/images/obfuscator_io_promo.png)](https://obfuscator.io)
+
+**Obfuscator.io** adds **VM-based bytecode obfuscation** to this package - your JavaScript functions are compiled to custom bytecode that runs on an embedded virtual machine. Each build produces unique opcodes and VM structure, making reverse engineering and automated deobfuscation dramatically harder.
+
+| Protection goal | Free (this package)                                                               | [obfuscator.io](https://obfuscator.io)                                                                                                                                                                        |
+| --- |-----------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Rename identifiers | ✅ variable/function renaming                                                      | ✅ + VM-local symbols never exposed as JavaScript                                                                                                                                                              |
+| Obscure strings | ✅ string array + base64/rc4 | ✅ + strings embedded in bytecode constants                                                                                                                                                                    |
+| Obscure control flow | ✅ control flow flattening | ✅ full bytecode virtualization, [`vmJumpsEncoding`](#vmjumpsencoding) (runtime-computed jump targets), [`vmDeadCodeInjection`](#vmdeadcodeinjection) (fake bytecode sequences)                                |
+| Resist decompilation | ⚠️ output is still JavaScript | ✅ custom opcodes, [`vmStatefulOpcodes`](#vmstatefulopcodes) (position-dependent opcode mapping), [`vmMacroOps`](#vmmacroops) (fused instructions), [`vmDecoyOpcodes`](#vmdecoyopcodes) (fake opcode handlers) |
+| Resist automated LLM-based analysis | ❌ fully vulnerable (no LLM-specific defenses) | ✅ bytecode encryption + anti-LLM defenses in [`vmSelfDefending`](#vmselfdefending) and [`vmDebugProtection`](#vmdebugProtection)                                                                              |
+| Encryption | ✅ [`stringArrayEncoding`](#stringarrayencoding) (base64/rc4 on extracted strings) | ✅ [`vmBytecodeEncoding`](#vmbytecodeencoding) (per-instruction encoding), [`vmBytecodeArrayEncoding`](#vmbytecodeArrayEncoding) (whole bytecode array as single block)                                        |
+| Anti-debugging | ✅ `debugProtection` (freezes browser DevTools) | ✅ [`vmDebugProtection`](#vmdebugProtection) (multi-layered anti-debugging and anti-analysis defenses)                                                                                                         |
+| Tamper detection | ✅ `selfDefending` (breaks if beautified) | ✅ [`vmSelfDefending`](#vmselfdefending) (multi-layered tamper detection, anti-hooking, anti-reverse-engineering protection)                                                                                   |
+| Runs offline, no network | ✅ | ❌ uses obfuscator.io API (requires token)                                                                                                                                                                     |
+
+[Visit Obfuscator.io](https://obfuscator.io) · [Pro API methods](#shield-pro-api-methods-vm-obfuscation)
+
+This package provides access to Obfuscator.io API via CLI and Node.js API.
+
+---
+
 ### Do you use JavaScript Obfuscator at your company?
 
 JavaScript Obfuscator has reached over **1 million npm downloads per week**. I am currently preparing an **EB-1 immigration case** and collecting independent evidence of the project’s real-world professional usage and impact.
@@ -29,28 +53,6 @@ I can provide a simple draft/template to make this easy.
 Please contact me at: **referenceletter@obfuscator.io**
 
 Thank you for supporting the project.
-
----
-
-### :rocket: Obfuscator.io with VM Obfuscation
-
-**Obfuscator.io** adds **VM-based bytecode obfuscation** to this package - your JavaScript functions are compiled to custom bytecode that runs on an embedded virtual machine. Each build produces unique opcodes and VM structure, making reverse engineering and automated deobfuscation dramatically harder.
-
-| Protection goal | Free (this package)                                                               | [obfuscator.io](https://obfuscator.io)                                                                                                                                                                        |
-| --- |-----------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Rename identifiers | ✅ variable/function renaming                                                      | ✅ + VM-local symbols never exposed as JavaScript                                                                                                                                                              |
-| Obscure strings | ✅ string array + base64/rc4 | ✅ + strings embedded in bytecode constants                                                                                                                                                                    |
-| Obscure control flow | ✅ control flow flattening | ✅ full bytecode virtualization, [`vmJumpsEncoding`](#vmjumpsencoding) (runtime-computed jump targets), [`vmDeadCodeInjection`](#vmdeadcodeinjection) (fake bytecode sequences)                                |
-| Resist decompilation | ⚠️ output is still JavaScript | ✅ custom opcodes, [`vmStatefulOpcodes`](#vmstatefulopcodes) (position-dependent opcode mapping), [`vmMacroOps`](#vmmacroops) (fused instructions), [`vmDecoyOpcodes`](#vmdecoyopcodes) (fake opcode handlers) |
-| Resist automated LLM-based analysis | ❌ fully vulnerable (no LLM-specific defenses) | ✅ bytecode encryption + anti-LLM defenses in [`vmSelfDefending`](#vmselfdefending) and [`vmDebugProtection`](#vmdebugProtection)                                                                              |
-| Encryption | ✅ [`stringArrayEncoding`](#stringarrayencoding) (base64/rc4 on extracted strings) | ✅ [`vmBytecodeEncoding`](#vmbytecodeencoding) (per-instruction encoding), [`vmBytecodeArrayEncoding`](#vmbytecodeArrayEncoding) (whole bytecode array as single block)                                        |
-| Anti-debugging | ✅ `debugProtection` (freezes browser DevTools) | ✅ [`vmDebugProtection`](#vmdebugProtection) (multi-layered anti-debugging and anti-analysis defenses)                                                                                                         |
-| Tamper detection | ✅ `selfDefending` (breaks if beautified) | ✅ [`vmSelfDefending`](#vmselfdefending) (multi-layered tamper detection, anti-hooking, anti-reverse-engineering protection)                                                                                   |
-| Runs offline, no network | ✅ | ❌ uses obfuscator.io API (requires token)                                                                                                                                                                     |
-
-[Visit Obfuscator.io](https://obfuscator.io) · [Pro API methods](#shield-pro-api-methods-vm-obfuscation)
-
-This package provides access to Obfuscator.io API via CLI and Node.js API.
 
 ---
 

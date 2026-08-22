@@ -1,5 +1,9 @@
 Change Log
 
+v5.5.1
+---
+* Fixed leading whitespace of the source code being stripped without being reflected in the source map, shifting all `sourcesContent` and original position mappings. Fixes https://github.com/javascript-obfuscator/javascript-obfuscator/issues/1437
+
 v5.5.0
 ---
 * Pro API: reworked large file uploads — fixed `413 Content Too Large` for ~4.4–4.6MB request bodies, and Blob uploads now send the raw source (`blobFormat: 'raw'`) instead of the JSON request body, so uploads always fit the plan's file size cap
