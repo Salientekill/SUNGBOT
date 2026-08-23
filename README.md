@@ -6,7 +6,7 @@
   <p align="center">
     <a href="https://github.com/Salientekill/SUNGBOT.git"><img title="Author" src="https://img.shields.io/badge/Author-LotusDev-red.svg?style=for-the-badge&logo=github" /></a>
     <img src="https://img.shields.io/badge/NodeJS-22.0+-green.svg?style=for-the-badge&logo=nodejs" alt="NodeJS Version" />
-    <img src="https://img.shields.io/badge/Versão-6.45-blue.svg?style=for-the-badge" alt="Versão" />
+    <img src="https://img.shields.io/badge/Versão-6.46-blue.svg?style=for-the-badge" alt="Versão" />
   </p>
 
   > 🚨 **ATENÇÃO: BOT PAGO** 🚨
