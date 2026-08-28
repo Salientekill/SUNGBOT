@@ -1,71 +1,27 @@
 #!/bin/bash
 
 # ╔═══════════════════════════════════════════════════════╗
-# ║         RESET DE SESSÃO WHATSAPP - Dual Mode          ║
-# ║              Redis + SQLite Support                   ║
+# ║            RESET DE SESSÃO WHATSAPP                   ║
 # ╚═══════════════════════════════════════════════════════╝
 #
-# Este script limpa a sessão do bot baseado na configuração do settings.json
-# Após executar, o bot pedirá para escanear QR code novamente.
+# Apaga a sessão do bot. Depois de rodar, o bot pede QR code (ou código de
+# pareamento) de novo.
+#
+# A sessão vive num arquivo só: dados/DB/SUNG-AUTH.db, o store nativo da
+# baileyrs. Houve um tempo em que ela podia viver no Redis, e este script
+# tinha dois modos; o Redis saiu do bot em jun/2026 (ioredis removido no
+# commit 522ae98b52) e o ramo ficou aqui sem ter como ser alcançado, porque
+# dados/settings.json fixa "storage": "sqlite" e nenhum .js lê essa chave.
 #
 # USO: bash reset.sh
 
 echo ""
 echo "╔═══════════════════════════════════════════════════════╗"
-echo "║      🔄 RESET DE SESSÃO WHATSAPP - Dual Mode          ║"
+echo "║          🔄 RESET DE SESSÃO WHATSAPP                  ║"
 echo "╚═══════════════════════════════════════════════════════╝"
 echo ""
 
 # ===== FUNÇÕES AUXILIARES =====
-
-# Detectar qual storage está configurado no dados/settings.json
-detect_storage_mode() {
-    if [ -f dados/settings.json ]; then
-        STORAGE_MODE=$(grep '"storage"' dados/settings.json 2>/dev/null | sed 's/.*"storage".*:.*"\([^"]*\)".*/\1/' | tr '[:upper:]' '[:lower:]')
-
-        if [ -z "$STORAGE_MODE" ]; then
-            STORAGE_MODE="sqlite"
-        fi
-    else
-        STORAGE_MODE="sqlite"
-    fi
-
-    echo "$STORAGE_MODE"
-}
-
-# Verificar se Redis está disponível
-check_redis_available() {
-    # Verificar se redis-cli existe
-    if ! command -v redis-cli &>/dev/null; then
-        return 1
-    fi
-
-    # ✅ PRIORIDADE 1: Tentar socket em dados/.redis (local do bot)
-    if [ -S dados/.redis/redis.sock ] && redis-cli -s dados/.redis/redis.sock ping &>/dev/null 2>&1; then
-        echo "socket:dados/.redis/redis.sock"
-        return 0
-    fi
-
-    # PRIORIDADE 2: Tentar socket local .redis (fallback)
-    if [ -S .redis/redis.sock ] && redis-cli -s .redis/redis.sock ping &>/dev/null 2>&1; then
-        echo "socket:.redis/redis.sock"
-        return 0
-    fi
-
-    # PRIORIDADE 3: Tentar TCP (padrão 6379)
-    if redis-cli ping &>/dev/null 2>&1; then
-        echo "tcp"
-        return 0
-    fi
-
-    # PRIORIDADE 4: Tentar Unix Socket global
-    if redis-cli -s /run/redis/redis-server.sock ping &>/dev/null 2>&1; then
-        echo "socket:/run/redis/redis-server.sock"
-        return 0
-    fi
-
-    return 1
-}
 
 # Obter BotId (prioriza dados/.bot-session-id que é o correto)
 get_bot_id() {
@@ -80,84 +36,20 @@ get_bot_id() {
 
 # ===== INÍCIO DO PROCESSO =====
 
-STORAGE_MODE=$(detect_storage_mode)
-echo "📊 Storage configurado: $STORAGE_MODE"
-echo ""
+SQLITE_DB_PATH="dados/DB/SUNG-AUTH.db"
 
-# ===== VERIFICAR O QUE SERÁ DELETADO BASEADO NO STORAGE CONFIGURADO =====
-
-if [ "$STORAGE_MODE" = "redis" ]; then
-    # ===== MODO REDIS - PRECISA DE BOTID =====
-    BOTID=$(get_bot_id)
-
-    if [ -z "$BOTID" ]; then
-        echo "⚠️  Arquivo .bot-session-id não encontrado!"
-        echo ""
-        read -p "Digite o BotId para resetar: " BOTID
-
-        if [ -z "$BOTID" ]; then
-            echo "❌ BotId não pode ser vazio!"
-            exit 1
-        fi
-    else
-        echo "🆔 BotId: $BOTID"
-    fi
-
-    echo ""
-    echo "═══════════════════════════════════════════════════════"
-    echo ""
-
-    REDIS_CONNECTION=$(check_redis_available)
-    REDIS_AVAILABLE=$?
-
-    if [ $REDIS_AVAILABLE -ne 0 ]; then
-        echo "❌ ERRO: Storage configurado como Redis mas Redis não está disponível!"
-        echo ""
-        echo "Verifique:"
-        echo "  • Redis está rodando?"
-        echo "  • Comando redis-cli está instalado?"
-        echo ""
-        exit 1
-    fi
-
-    # Contar chaves
-    if [[ "$REDIS_CONNECTION" == socket:* ]]; then
-        SOCKET_PATH="${REDIS_CONNECTION#socket:}"
-        REDIS_KEYS_COUNT=$(redis-cli -s "$SOCKET_PATH" keys "sessions:${BOTID}:*" 2>/dev/null | wc -l)
-    else
-        REDIS_KEYS_COUNT=$(redis-cli keys "sessions:${BOTID}:*" 2>/dev/null | wc -l)
-    fi
-
-    echo "📊 Dados encontrados (Redis):"
-    echo "   • Conexão: $REDIS_CONNECTION"
-    echo "   • Chaves: $REDIS_KEYS_COUNT"
-    echo ""
-
-    if [ $REDIS_KEYS_COUNT -eq 0 ]; then
-        echo "ℹ️  Nenhuma sessão encontrada no Redis para '$BOTID'!"
-        exit 0
-    fi
-
-else
-    # ===== MODO SQLITE - NÃO PRECISA DE BOTID =====
-    echo "═══════════════════════════════════════════════════════"
-    echo ""
-
-    SQLITE_DB_PATH="dados/DB/SUNG-AUTH.db"
-
-    if [ ! -f "$SQLITE_DB_PATH" ]; then
-        echo "ℹ️  Nenhuma sessão encontrada no SQLite!"
-        echo "   Arquivo esperado: $SQLITE_DB_PATH"
-        exit 0
-    fi
-
-    SQLITE_SIZE=$(du -h "$SQLITE_DB_PATH" 2>/dev/null | cut -f1 || echo "?")
-
-    echo "📊 Dados encontrados (SQLite):"
-    echo "   • Arquivo: $SQLITE_DB_PATH"
-    echo "   • Tamanho: $SQLITE_SIZE"
-    echo ""
+if [ ! -f "$SQLITE_DB_PATH" ]; then
+    echo "ℹ️  Nenhuma sessão encontrada!"
+    echo "   Arquivo esperado: $SQLITE_DB_PATH"
+    exit 0
 fi
+
+SQLITE_SIZE=$(du -h "$SQLITE_DB_PATH" 2>/dev/null | cut -f1 || echo "?")
+
+echo "📊 Dados encontrados:"
+echo "   • Arquivo: $SQLITE_DB_PATH"
+echo "   • Tamanho: $SQLITE_SIZE"
+echo ""
 
 echo "═══════════════════════════════════════════════════════"
 echo ""
@@ -192,71 +84,36 @@ echo ""
 mkdir -p ./backups 2>/dev/null || true
 
 BACKUP_TIMESTAMP=$(date +%Y%m%d-%H%M%S 2>/dev/null || echo "backup")
+
+echo "🗑️  Limpando a sessão..."
+echo ""
+
+# Obter BotId para backup (se existir)
+BOTID=$(get_bot_id)
+[ -z "$BOTID" ] && BOTID="session"
+
+# Backup antes de apagar — é o que torna isto reversível
+SQLITE_BACKUP="./backups/sqlite-${BOTID}-${BACKUP_TIMESTAMP}.db"
+cp "$SQLITE_DB_PATH" "$SQLITE_BACKUP" 2>/dev/null && echo "   📦 Backup: $SQLITE_BACKUP"
+
+# Deletar os 3 arquivos do SQLite (WAL mode)
 ITEMS_DELETED=0
-
-# ===== EXECUTAR LIMPEZA BASEADO NO STORAGE =====
-
-if [ "$STORAGE_MODE" = "redis" ]; then
-    echo "🗑️  Limpando Redis..."
-    echo ""
-
-    # Backup das chaves
-    BACKUP_FILE="./backups/redis-keys-${BOTID}-${BACKUP_TIMESTAMP}.txt"
-
-    if [[ "$REDIS_CONNECTION" == socket:* ]]; then
-        SOCKET_PATH="${REDIS_CONNECTION#socket:}"
-        redis-cli -s "$SOCKET_PATH" keys "sessions:${BOTID}:*" > "$BACKUP_FILE" 2>/dev/null
-
-        # Deletar usando SCAN + UNLINK com pipeline (otimizado)
-        ITEMS_DELETED=$(redis-cli -s "$SOCKET_PATH" --scan --pattern "sessions:${BOTID}:*" 2>/dev/null | xargs -r -n 100 redis-cli -s "$SOCKET_PATH" unlink 2>/dev/null | awk '{s+=$1} END {print s+0}')
-
-        # Remover registro de bot ativo
-        redis-cli -s "$SOCKET_PATH" del "active-bot:${BOTID}" &>/dev/null || true
-    else
-        redis-cli keys "sessions:${BOTID}:*" > "$BACKUP_FILE" 2>/dev/null
-
-        # Deletar usando SCAN + UNLINK com pipeline (otimizado)
-        ITEMS_DELETED=$(redis-cli --scan --pattern "sessions:${BOTID}:*" 2>/dev/null | xargs -r -n 100 redis-cli unlink 2>/dev/null | awk '{s+=$1} END {print s+0}')
-
-        # Remover registro de bot ativo
-        redis-cli del "active-bot:${BOTID}" &>/dev/null || true
+for ext in "" "-shm" "-wal"; do
+    if [ -f "${SQLITE_DB_PATH}${ext}" ]; then
+        rm -f "${SQLITE_DB_PATH}${ext}" 2>/dev/null
+        [ ! -f "${SQLITE_DB_PATH}${ext}" ] && ITEMS_DELETED=$((ITEMS_DELETED + 1))
     fi
+done
 
-    echo "   ✅ Redis limpo ($ITEMS_DELETED chaves deletadas)"
-    [ -f "$BACKUP_FILE" ] && echo "   📦 Backup: $BACKUP_FILE"
-    echo "   ℹ️  BotId mantido: $BOTID (arquivo dados/.bot-session-id preservado)"
-
+if [ $ITEMS_DELETED -gt 0 ]; then
+    echo "   ✅ Sessão limpa ($ITEMS_DELETED arquivos deletados)"
 else
-    echo "🗑️  Limpando SQLite..."
-    echo ""
+    echo "   ⚠️  Nenhum arquivo foi deletado"
+fi
 
-    # Obter BotId para backup (se existir)
-    BOTID=$(get_bot_id)
-    [ -z "$BOTID" ] && BOTID="session"
-
-    # Backup dos 3 arquivos SQLite (db, shm, wal)
-    SQLITE_BACKUP="./backups/sqlite-${BOTID}-${BACKUP_TIMESTAMP}.db"
-    cp "$SQLITE_DB_PATH" "$SQLITE_BACKUP" 2>/dev/null && echo "   📦 Backup: $SQLITE_BACKUP"
-
-    # Deletar os 3 arquivos do SQLite (WAL mode)
-    ITEMS_DELETED=0
-    for ext in "" "-shm" "-wal"; do
-        if [ -f "${SQLITE_DB_PATH}${ext}" ]; then
-            rm -f "${SQLITE_DB_PATH}${ext}" 2>/dev/null
-            [ ! -f "${SQLITE_DB_PATH}${ext}" ] && ITEMS_DELETED=$((ITEMS_DELETED + 1))
-        fi
-    done
-
-    if [ $ITEMS_DELETED -gt 0 ]; then
-        echo "   ✅ SQLite limpo ($ITEMS_DELETED arquivos deletados)"
-    else
-        echo "   ⚠️  Nenhum arquivo foi deletado"
-    fi
-
-    BOTID=$(get_bot_id)
-    if [ -n "$BOTID" ]; then
-        echo "   ℹ️  BotId mantido: $BOTID (arquivo dados/.bot-session-id preservado)"
-    fi
+BOTID=$(get_bot_id)
+if [ -n "$BOTID" ]; then
+    echo "   ℹ️  BotId mantido: $BOTID (arquivo dados/.bot-session-id preservado)"
 fi
 
 echo ""
@@ -265,10 +122,7 @@ echo "║             ✅ RESET CONCLUÍDO COM SUCESSO!           ║"
 echo "╚═══════════════════════════════════════════════════════╝"
 echo ""
 echo "📊 Resumo:"
-if [ "$STORAGE_MODE" = "redis" ]; then
-    echo "   • BotId: $BOTID"
-fi
-echo "   • Storage: $STORAGE_MODE"
+echo "   • Sessão: $SQLITE_DB_PATH"
 echo ""
 echo "🔄 Próximos passos:"
 echo ""

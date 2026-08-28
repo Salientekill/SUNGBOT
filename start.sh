@@ -63,7 +63,7 @@ start_node_script() {
 # Ctrl+Z bloqueado via trap acima. Use Ctrl+C duplo para encerrar completamente.
 
 # ===== SCRIPT SIMPLIFICADO =====
-# Redis inicia automaticamente via iniciar.js
+# Sem serviço externo para subir: a sessão vive em dados/DB/SUNG-AUTH.db.
 
 echo -e "\e[95m════════════════════════════════════════════════════════════════════════════════\e[0m"
 echo -e "\e[96m                           🤖 SUNG BOT - INICIALIZAÇÃO                         \e[0m"
