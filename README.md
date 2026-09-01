@@ -1,4 +1,4 @@
-# SUNG BOT V6
+# SUNG BOT V7
 
 <div align="center">
   <img src="https://i.ibb.co/Fq0ThVbF/IMG-20250505-WA1002.jpg" alt="SUNG BOT" width="300" />
@@ -6,7 +6,7 @@
   <p align="center">
     <a href="https://github.com/Salientekill/SUNGBOT.git"><img title="Author" src="https://img.shields.io/badge/Author-LotusDev-red.svg?style=for-the-badge&logo=github" /></a>
     <img src="https://img.shields.io/badge/NodeJS-22.0+-green.svg?style=for-the-badge&logo=nodejs" alt="NodeJS Version" />
-    <img src="https://img.shields.io/badge/Versão-6.49-blue.svg?style=for-the-badge" alt="Versão" />
+    <img src="https://img.shields.io/badge/Versão-7.0-blue.svg?style=for-the-badge" alt="Versão" />
   </p>
 
   > 🚨 **ATENÇÃO: BOT PAGO** 🚨
