@@ -6,7 +6,7 @@
   <p align="center">
     <a href="https://github.com/Salientekill/SUNGBOT.git"><img title="Author" src="https://img.shields.io/badge/Author-LotusDev-red.svg?style=for-the-badge&logo=github" /></a>
     <img src="https://img.shields.io/badge/NodeJS-22.0+-green.svg?style=for-the-badge&logo=nodejs" alt="NodeJS Version" />
-    <img src="https://img.shields.io/badge/Versão-7.6-blue.svg?style=for-the-badge" alt="Versão" />
+    <img src="https://img.shields.io/badge/Versão-7.7-blue.svg?style=for-the-badge" alt="Versão" />
   </p>
 
   > 🚨 **ATENÇÃO: BOT PAGO** 🚨
@@ -161,6 +161,28 @@ Para configuração avançada, consulte os arquivos:
 - `dados/nescessario.json` - Chaves de API e configurações sensíveis
 - `dados/org/json/configsgold.js` - Configuração do sistema gold
 - `dados/org/json/configleveling.js` - Configuração do sistema leveling
+
+### 🧠 Memória (variáveis de ambiente)
+
+O consumo de RAM do bot é uma **catraca**: o motor Rust (WASM) e o sharp não
+devolvem ao sistema a memória de um pico — ela fica marcada até o bot reiniciar.
+Use `!memoria` (dono) para ver em qual camada está o consumo antes de ajustar.
+
+| Variável | Padrão | O que faz |
+|---|---|---|
+| `SUNG_MEM_LIMITE_PCT` | `85` | Reinicia o bot ao passar dessa % da cota de memória, por 3 leituras seguidas (~15 min). `0` desliga. |
+| `SUNG_HISTORICO` | *(mínimo)* | O bot pede o mínimo de histórico no pareamento, já que não usa histórico. `padrao` volta ao comportamento da lib. |
+| `SUNG_CACHE_GRUPOS` | *(motor)* | Teto do cache de grupos do motor. |
+| `SUNG_CACHE_MSG_RECENTES` | *(motor)* | Teto das mensagens recentes guardadas para reenvio. |
+| `SUNG_CACHE_DISPOSITIVOS` | *(motor)* | Teto do cache de dispositivos. |
+| `SUNG_CACHE_REGISTRO_DISPOSITIVOS` | *(motor)* | Teto do registro de dispositivos. |
+| `SUNG_CACHE_LIDPN` | *(motor)* | Teto do mapeamento LID↔telefone. |
+| `SUNG_CACHE_MSG_REENVIADAS` | *(motor)* | Teto das mensagens de grupo já reenviadas. |
+| `SUNG_CACHE_RETRY` | *(motor)* | Teto dos contadores de retry. |
+
+Os `SUNG_CACHE_*` **não têm padrão nosso**: sem eles o motor usa os próprios
+limites. Defina só depois de ver as contagens no `!memoria` — um teto baixo
+demais no cache de grupos vira mais consulta ao servidor e pode render 429.
 
 ## 📜 Licença e Informações
 
