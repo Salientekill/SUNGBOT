@@ -6,7 +6,7 @@
   <p align="center">
     <a href="https://github.com/Salientekill/SUNGBOT.git"><img title="Author" src="https://img.shields.io/badge/Author-LotusDev-red.svg?style=for-the-badge&logo=github" /></a>
     <img src="https://img.shields.io/badge/NodeJS-22.0+-green.svg?style=for-the-badge&logo=nodejs" alt="NodeJS Version" />
-    <img src="https://img.shields.io/badge/Versão-7.7-blue.svg?style=for-the-badge" alt="Versão" />
+    <img src="https://img.shields.io/badge/Versão-7.8-blue.svg?style=for-the-badge" alt="Versão" />
   </p>
 
   > 🚨 **ATENÇÃO: BOT PAGO** 🚨
@@ -170,6 +170,7 @@ Use `!memoria` (dono) para ver em qual camada está o consumo antes de ajustar.
 
 | Variável | Padrão | O que faz |
 |---|---|---|
+| `SUNG_HEAP_MB` | *(metade da cota)* | Teto do heap do V8. Sem isso o Node dimensiona o heap pela RAM do **host**, não pela cota do painel — num plano de 2 GB ele acha que pode usar ~4 GB, adia o GC e o bot fica lento com a RAM alta. O `start.sh` lê a cota do cgroup e passa metade ao V8; a outra metade é do motor Rust, do sharp e dos Buffers, que vivem fora do heap. Em VPS/PC sem cota, nada é imposto. |
 | `SUNG_MEM_LIMITE_PCT` | `85` | Reinicia o bot ao passar dessa % da cota de memória, por 3 leituras seguidas (~15 min). `0` desliga. |
 | `SUNG_HISTORICO` | *(mínimo)* | O bot pede o mínimo de histórico no pareamento, já que não usa histórico. `padrao` volta ao comportamento da lib. |
 | `SUNG_CACHE_GRUPOS` | *(motor)* | Teto do cache de grupos do motor. |
