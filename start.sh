@@ -94,10 +94,17 @@ if [ -n "$SUNG_HEAP_MB" ]; then
     NODE_FLAGS+=(--max-old-space-size="$SUNG_HEAP_MB")
     echo -e "\e[96m🧠 Heap do V8 fixado em ${SUNG_HEAP_MB} MB (SUNG_HEAP_MB)\e[0m"
 elif COTA_MB=$(detectar_cota_mb); then
-    # Metade da cota. A outra metade é do motor Rust (WASM), do sharp/libvips e
-    # dos Buffers de mídia — todos vivem FORA do heap do V8, então não adianta
-    # entregar a cota inteira ao heap.
+    # Metade da cota, MAS com teto absoluto. A outra metade é do motor Rust
+    # (WASM ~200 MB), do glibc (~220 MB) e do binário do Node (~57 MB), que
+    # vivem FORA do heap do V8 — entregar a cota inteira ao heap não adianta.
+    #
+    # O teto de 768 MB veio de medição, não de chute: o conjunto VIVO do heap
+    # é ~460 MB (e cai para ~360 com o build leve), então 768 dá de 1,7x a 2x
+    # de folga. Sem ele, numa cota de 2,3 GB o V8 ganhava 1177 MB e usava —
+    # era isso que permitia o pico de 1,8 GB de RSS. Bound no heap é o que
+    # limita o pico; a base se resolve no tamanho do código.
     HEAP_MB=$((COTA_MB / 2))
+    [ "$HEAP_MB" -gt 768 ] && HEAP_MB=768
     [ "$HEAP_MB" -lt 384 ] && HEAP_MB=384
     NODE_FLAGS+=(--max-old-space-size="$HEAP_MB")
     echo -e "\e[96m🧠 Cota do container: ${COTA_MB} MB → heap do V8 limitado a ${HEAP_MB} MB\e[0m"
