@@ -80,6 +80,15 @@ detectar_cota_mb() {
     echo "$mb"
 }
 
+# ===== ARENAS DO MALLOC =====
+# O glibc cria até 8 arenas de malloc POR NÚCLEO e praticamente não as devolve
+# ao sistema. Num host grande — e o libvips/sharp abre threads — isso vira
+# dezenas de MB parados que não aparecem no heap do V8 nem em `external`: caem
+# na fatia "não atribuído" do !memoria, que na medição de 17/09 tinha 233 MB.
+# Limitar a 2 é o ajuste padrão para Node em container. Só afeta alocação
+# nativa; nada de lógica do bot muda.
+export MALLOC_ARENA_MAX="${MALLOC_ARENA_MAX:-2}"
+
 NODE_FLAGS=(--trace-deprecation)
 if [ -n "$SUNG_HEAP_MB" ]; then
     NODE_FLAGS+=(--max-old-space-size="$SUNG_HEAP_MB")
