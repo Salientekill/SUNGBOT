@@ -61,7 +61,8 @@ fatal() {
 }
 
 # Início
-clear
+# Sem TERM (pm2/systemd) o `clear` retorna 1 e o `set -e` abortava o script.
+clear 2>/dev/null || true
 echo -e "${CYAN}=== SUNGBOT - Atualização v2.0 ===${RESET}\n"
 
 [ "${1:-}" == "2" ] && INICIAR_BOT=false
@@ -85,7 +86,12 @@ done
 [ ! -d "dados" ] && fatal "Pasta 'dados' não encontrada"
 
 DADOS_SIZE=$(du -sm "dados" 2>/dev/null | awk '{print $1}')
-REQUIRED=$((DADOS_SIZE * 3 + 100))
+# O backup copia a instalação INTEIRA (node_modules ~160 MB) e o clone traz
+# outra do mesmo tamanho — contar só `dados/` subestimava e o disco enchia no meio.
+INSTALL_SIZE=$(du -sm . 2>/dev/null | awk '{print $1}')
+# Pico: cópia de backup da instalação + 2 zips de dados; o clone só chega
+# depois da limpeza liberar a instalação antiga (a atual já está ocupada).
+REQUIRED=$((INSTALL_SIZE + DADOS_SIZE * 2 + 100))
 AVAILABLE=$(df . | awk 'NR==2 {print int($4/1024)}')
 
 [ $AVAILABLE -lt $REQUIRED ] && fatal "Espaço insuficiente (precisa ~${REQUIRED}MB)"
@@ -106,15 +112,19 @@ for item in *; do
     [[ "$item" == "$DADOS_BACKUP_SEG" ]] && continue
     [[ "$item" == ".git" ]] && continue
     [[ "$item" == ".npm" ]] && continue
-    cp -r "$item" "$BACKUP_DIR/" 2>/dev/null || true
+    # Falha aqui é fatal: nada foi apagado ainda, e seguir sem backup completo
+    # deixaria o rollback restaurando uma instalação pela metade.
+    # `dados/` tem backup próprio em zip (verificado abaixo) e o bot pode estar
+    # vivo criando/apagando temporários nela: falha ali não aborta.
+    cp -r "$item" "$BACKUP_DIR/" >> "$LOG_FILE" 2>&1 || [ "$item" = "dados" ] || { shopt -u dotglob; ROLLBACK_OK=false; rm -rf "$BACKUP_DIR"; fatal "Falha ao copiar '$item' para o backup"; }
 done
 shopt -u dotglob
 ROLLBACK_OK=true
 
-zip -r -q -y "$DADOS_BACKUP" dados -x '*.sock' -x '*.pid' >> "$LOG_FILE" 2>&1 || fatal "Falha no backup principal"
+zip -r -q -y "$DADOS_BACKUP" dados -x 'dados/midias/tmp/*' -x '*.sock' -x '*.pid' >> "$LOG_FILE" 2>&1 || fatal "Falha no backup principal"
 unzip -t "$DADOS_BACKUP" >/dev/null 2>&1 || fatal "Backup corrompido"
 
-zip -r -q -y "$DADOS_BACKUP_SEG" dados -x '*.sock' -x '*.pid' >> "$LOG_FILE" 2>&1 || warn "Backup de segurança falhou"
+zip -r -q -y "$DADOS_BACKUP_SEG" dados -x 'dados/midias/tmp/*' -x '*.sock' -x '*.pid' >> "$LOG_FILE" 2>&1 || warn "Backup de segurança falhou"
 
 TOTAL_FILES=$(find dados -type f 2>/dev/null | wc -l)
 
@@ -142,7 +152,7 @@ fi
 
 [ ! -d "SUNGBOT" ] && fatal "Clone falhou"
 
-mv SUNGBOT/* . 2>/dev/null || true
+mv SUNGBOT/* . >> "$LOG_FILE" 2>&1 || fatal "Falha ao mover os arquivos novos"
 mv SUNGBOT/.[!.]* . 2>/dev/null || true
 rm -rf SUNGBOT
 
